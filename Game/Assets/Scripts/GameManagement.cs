@@ -9,6 +9,7 @@ public class GameManagement : MonoBehaviour
 
     private Transform playerTransform;
     private AudioSource mapCompleteSound;
+    public int time;
 
 
     private void Awake()
@@ -29,7 +30,7 @@ public class GameManagement : MonoBehaviour
         mapCompleteSound.Play();
         
 
-        Invoke("LoadScene", 1);
+        Invoke("LoadScene", time);
     }
 
     void Update()

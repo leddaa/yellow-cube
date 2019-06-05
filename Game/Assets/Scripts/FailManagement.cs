@@ -17,7 +17,6 @@ public class FailManagement : MonoBehaviour
     void Update()
     {
         failText.text = failCounter.ToString() + " fails";
-
         if (playerTransform.position.y < -10)
         {
             failCounter++;

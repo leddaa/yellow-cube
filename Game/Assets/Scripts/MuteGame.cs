@@ -7,14 +7,6 @@ public class MuteGame : MonoBehaviour
 
     public bool isplaying;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
 
@@ -23,18 +15,16 @@ public class MuteGame : MonoBehaviour
             if(isplaying == true)
             {
                 isplaying = false;
-                GetComponent<AudioSource>().Stop();
+               
+                GameObject.FindGameObjectWithTag("Music").GetComponent<AudioSource>().Stop();
             }
             else
             {
                 isplaying = true;
-                GetComponent<AudioSource>().Play();
+                GameObject.FindGameObjectWithTag("Music").GetComponent<AudioSource>().Play();
             }
-        
-            
-            
+ 
         }
-
 
     }
 }

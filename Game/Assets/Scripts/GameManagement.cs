@@ -8,15 +8,13 @@ public class GameManagement : MonoBehaviour
     public string nextScene;
 
     private Transform playerTransform;
+    private AudioSource mapCompleteSound;
+
 
     private void Awake()
     {
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-    }
-
-    private void Hook()
-    {
-        
+        mapCompleteSound = GameObject.FindGameObjectWithTag("MapCompleteSound").GetComponent<AudioSource>();
     }
 
     private void LoadScene()
@@ -28,6 +26,8 @@ public class GameManagement : MonoBehaviour
     {
         GameObject.FindGameObjectWithTag("TimeTracker").GetComponent<TimeTracker>().isDone = true;
         FailManagement.failCounter = 0;
+        mapCompleteSound.Play();
+        
 
         Invoke("LoadScene", 1);
     }

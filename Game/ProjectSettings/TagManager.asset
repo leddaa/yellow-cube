@@ -12,6 +12,7 @@ TagManager:
   - FailText
   - TimeTracker
   - GameManager
+  - MapCompleteSound
   layers:
   - Default
   - TransparentFX

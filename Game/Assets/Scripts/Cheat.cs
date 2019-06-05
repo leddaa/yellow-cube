@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class Jump : MonoBehaviour
+public class Cheat : MonoBehaviour
 
 {
 

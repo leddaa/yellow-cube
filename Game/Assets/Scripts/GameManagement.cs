@@ -14,6 +14,11 @@ public class GameManagement : MonoBehaviour
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
+    private void Hook()
+    {
+        
+    }
+
     private void LoadScene()
     {
         SceneManager.LoadScene(nextScene);

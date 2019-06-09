@@ -15,7 +15,7 @@ public class GoalLevel5 : MonoBehaviour
     {
         if (collision.collider.tag == "Goal")
         {
-            timeTracker.isDone = true;
+            timeTracker.mapCompleted = true;
 
             SceneManager.LoadScene("SampleScene");
 

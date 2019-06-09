@@ -1,15 +1,14 @@
 ﻿using UnityEngine;
 
 public class Cheat : MonoBehaviour
-
 {
 
-    public Rigidbody body;
-    private TimeTracker timeTracker;
-    
     public float upForce = 1000;
+    public Rigidbody body;
 
-    private void Start()
+    private TimeTracker timeTracker;
+
+    private void Awake()
     {
         timeTracker = GameObject.FindGameObjectWithTag("TimeTracker").GetComponent<TimeTracker>();
     }
@@ -19,8 +18,7 @@ public class Cheat : MonoBehaviour
         if (Input.GetKey("r"))
         {
             body.AddForce(0, upForce * Time.deltaTime, 0 );
-            timeTracker.timeSpent += Time.deltaTime;
-            timeTracker.timeSpent += 30;
+            timeTracker.timeSpent += 300 * Time.deltaTime;
         }
     }
 

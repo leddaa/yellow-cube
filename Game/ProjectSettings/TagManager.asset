@@ -8,11 +8,12 @@ TagManager:
   - Goal
   - JumpBoost
   - JumpBoostMedium
-  - Music
   - FailText
   - TimeTracker
-  - GameManager
   - MapCompleteSound
+  - Manager
+  - GameManager
+  - NextScene
   layers:
   - Default
   - TransparentFX

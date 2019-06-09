@@ -4,26 +4,25 @@ using UnityEngine.UI;
 public class TimeTracker : MonoBehaviour
 {
 
-    public Text text;
-   
+    [HideInInspector]
     public float timeSpent = 0;
-    public bool isDone;
-    
+    [HideInInspector]
+    public bool mapCompleted = false;
 
-    void start() {
-        isDone = false;
+    private Text text;
+
+    private void Awake()
+    {
+        text = GetComponent<Text>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if(!isDone) {
+        if(!mapCompleted)
+        {
             timeSpent += Time.deltaTime;
             text.text = timeSpent.ToString("0") + " s";
-           
-            
         }
-
         
     }
 

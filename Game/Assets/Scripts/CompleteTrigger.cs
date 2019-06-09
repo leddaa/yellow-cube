@@ -3,9 +3,16 @@
 public class CompleteTrigger : MonoBehaviour
 {
 
+    public LevelManager levelManager;
+
+    private void Awake()
+    {
+        levelManager = GameObject.FindGameObjectWithTag("Manager").GetComponent<LevelManager>();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManagement>().CompleteMap();
+        levelManager.CompleteMap();
     }
 
 }

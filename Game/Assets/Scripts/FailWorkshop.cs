@@ -1,22 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine.SceneManagement;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class FailWorkshop : MonoBehaviour
-
-
 {
 
-
     Vector3 originalPos;
-    public Rigidbody Rigidbody;
-
+    public Rigidbody rigidBody;
 
     void start()
     {
         originalPos = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
-
     }
 
     void Update()
@@ -24,12 +16,10 @@ public class FailWorkshop : MonoBehaviour
         if (transform.position.y < -10)
         {
             gameObject.transform.position = originalPos;
-            Rigidbody.velocity = Vector3.zero;
-            Rigidbody.angularVelocity = Vector3.zero;
-            Rigidbody.angularDrag = 0;
-
-
-
+            rigidBody.velocity = Vector3.zero;
+            rigidBody.angularVelocity = Vector3.zero;
+            rigidBody.angularDrag = 0;
         }
     }
+
 }

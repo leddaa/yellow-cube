@@ -4,7 +4,7 @@ public class CameraMovement : MonoBehaviour
 {
 
     private Transform playerTransform;
-    public Vector3 offset;
+    private Vector3 offset;
     public float smoothSpeed = 10f;
 
     private void Awake()
@@ -12,12 +12,18 @@ public class CameraMovement : MonoBehaviour
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
+    private void Start()
+    {
+        offset = new Vector3(0, 2, -8);
+    }
+
     void FixedUpdate()
     {
         // update camera position
         Vector3 pos = playerTransform.position + offset;
-        Vector3 smoothedPos = Vector3.Lerp(transform.position, pos, smoothSpeed * Time.deltaTime);
-        Debug.Log(smoothSpeed * Time.deltaTime);
+        Vector3 initialPos = transform.position;
+        initialPos.z = pos.z; // avoid lerping camera on z-axis
+        Vector3 smoothedPos = Vector3.Lerp(initialPos, pos, smoothSpeed * Time.deltaTime);
         transform.position = smoothedPos;
     }
 

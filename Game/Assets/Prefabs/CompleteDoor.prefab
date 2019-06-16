@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1531043778925325785}
   - component: {fileID: 1531043778925325786}
   m_Layer: 0
-  m_Name: EndLevel1Trigger
+  m_Name: EndLevelCompleteTrigger
   m_TagString: Goal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -104,6 +104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a23bef63b97728140ae5eb14f9725986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelManager: {fileID: 0}
 --- !u!1 &1685478902845147954
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,6 +11,8 @@ public class AudioManager : MonoBehaviour
     public AudioSource musicSource;
     public AudioClip musicClip;
     public Sound[] sounds;
+    private bool musicisplaying;
+
 
     void Awake()
     {
@@ -41,9 +43,29 @@ public class AudioManager : MonoBehaviour
         musicSource.Play();
     }
 
+
     public void Play(string name)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
         s.source.Play();
     }
+
+    public void Update()
+    {
+        // Mute function
+        if (Input.GetKey("p"))
+        {
+            if (musicisplaying)
+            {
+                musicSource.Stop();
+                musicisplaying = false;
+            } else
+            {
+                musicSource.Play();
+                musicisplaying = true;
+            }            
+        }
+    }
+
 }
+ 

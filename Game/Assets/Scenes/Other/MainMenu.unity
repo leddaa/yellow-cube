@@ -397,29 +397,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1052531483}
   - component: {fileID: 1052531484}
-  - component: {fileID: 1052531482}
   m_Layer: 0
-  m_Name: PlayManager
+  m_Name: StartManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1052531482
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1052531481}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10546b2ef892f3b419a8f430ac5cd806, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  musicSource: {fileID: 0}
-  musicClip: {fileID: 0}
-  sounds: []
 --- !u!4 &1052531483
 Transform:
   m_ObjectHideFlags: 0

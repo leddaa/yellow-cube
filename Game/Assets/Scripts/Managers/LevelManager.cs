@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-    public static int DEPTH_OF_MAP = -1 ;
+    public static int DEPTH_OF_MAP = -1;
 
     [HideInInspector]
     public int TIME_TO_LOAD_NEXT_MAP = 0;

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class Cheat : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class Cheat : MonoBehaviour
         {
             body.AddForce(0, upForce * Time.deltaTime, 0 );
             timeTracker.timeSpent += 300 * Time.deltaTime;
+            GameObject.FindGameObjectWithTag("CheatText").GetComponent<Text>().text = "Cheats Activated!";
         }
     }
 

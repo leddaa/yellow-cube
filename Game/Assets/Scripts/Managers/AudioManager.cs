@@ -52,8 +52,7 @@ public class AudioManager : MonoBehaviour
 
     public void Update()
     {
-
-        
+        // Mute function
         if (Input.GetKey("p"))
         {
             if (musicisplaying)
@@ -64,9 +63,9 @@ public class AudioManager : MonoBehaviour
             {
                 musicSource.Play();
                 musicisplaying = true;
-            }
-               
+            }            
         }
     }
+
 }
  

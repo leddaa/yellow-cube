@@ -16,10 +16,16 @@ public class ShopSystem : MonoBehaviour
         PlayerPrefs.SetInt("index", 1);
     }
 
-    // Upgrade Button 2 - Changes skin to "Black Medic"
+    // Upgrade Button 3 - Changes skin to "Hacker"
     public void Upgrade3()
     {
         PlayerPrefs.SetInt("index", 2);
+    }
+
+    // Upgrade Button 4 - Changes skin to "Matrix"
+    public void Upgrade4()
+    {
+        PlayerPrefs.SetInt("index", 3);
     }
 
     // Main Menu Button

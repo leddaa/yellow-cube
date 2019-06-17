@@ -182,3 +182,5 @@ MonoBehaviour:
   - mesh: {fileID: 5036783770805219575, guid: a55a0ba5869244d4ba204032af4d63a3, type: 3}
     material: {fileID: -9005223747805884326, guid: a55a0ba5869244d4ba204032af4d63a3,
       type: 3}
+  - mesh: {fileID: -6009551273143027190, guid: ef85f710c43e34649812d82b470b8c2d, type: 3}
+    material: {fileID: 2100000, guid: 7296775637ec6d24783c1b5454898b74, type: 2}

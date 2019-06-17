@@ -28,6 +28,12 @@ public class ShopSystem : MonoBehaviour
         PlayerPrefs.SetInt("index", 3);
     }
 
+    // Upgrade Button 5 - Changes skin to "Burger"
+    public void Upgrade5()
+    {
+        PlayerPrefs.SetInt("index", 4);
+    }
+
     // Main Menu Button
     public void LoadMainMenu()
     {

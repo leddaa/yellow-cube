@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SelectLevelManager : MonoBehaviour
+public class SelectLevelMenu : MonoBehaviour
 {
     // Load Main Menu
     public void LoadMainMenu()

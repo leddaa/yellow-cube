@@ -15,7 +15,8 @@ TagManager:
   - GameManager
   - NextScene
   - CheatText
-  - Nextlevel
+  - NextLevel
+  - AudioManager
   layers:
   - Default
   - TransparentFX

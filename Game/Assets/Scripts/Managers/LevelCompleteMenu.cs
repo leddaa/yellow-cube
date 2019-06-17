@@ -1,18 +1,12 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MapCompleteManager : MonoBehaviour
+public class LevelCompleteMenu : MonoBehaviour
 {
-
-    private void Awake()
-    {
-        Debug.Log("menuload" + LevelManager.nextLevel);
-    }
 
     public void LoadNextLevel()
     {
-        SceneManager.LoadScene(LevelManager.nextLevel);
-        Debug.Log("OnClick" + LevelManager.nextLevel);
+        SceneManager.LoadScene(PlayerPrefs.GetString("next_level"));
     }
 
     public void LoadMainMenu()

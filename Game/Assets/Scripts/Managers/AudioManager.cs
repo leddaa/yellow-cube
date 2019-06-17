@@ -50,22 +50,17 @@ public class AudioManager : MonoBehaviour
         s.source.Play();
     }
 
-    public void Update()
+    public void ToggleMusic()
     {
-        // Mute function
-        if (Input.GetKey("p"))
+        if (musicisplaying)
         {
-            if (musicisplaying)
-            {
-                musicSource.Stop();
-                musicisplaying = false;
-            } else
-            {
-                musicSource.Play();
-                musicisplaying = true;
-            }            
+            musicisplaying = false;
+            musicSource.Stop();
+        } else
+        {
+            musicisplaying = true;
+            musicSource.Play();
         }
     }
-
 }
  

@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 7308034043805319559}
   - component: {fileID: 7308034043805319556}
   - component: {fileID: 7308034043805319579}
+  - component: {fileID: 7126207998294842739}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -160,3 +161,21 @@ MonoBehaviour:
   material3: {fileID: 0}
   meshrenderer: {fileID: 0}
   MaterialCounter: 0
+--- !u!114 &7126207998294842739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7308034043805319564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7422985d076629445ad0334b85883c62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characters:
+  - mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+    material: {fileID: 2100000, guid: dc7f71fbc753818449d338b4dded7214, type: 2}
+  - mesh: {fileID: 9189712496547360266, guid: 29832c34ee39043419aae85d24046feb, type: 3}
+    material: {fileID: -9005223747805884326, guid: 29832c34ee39043419aae85d24046feb,
+      type: 3}

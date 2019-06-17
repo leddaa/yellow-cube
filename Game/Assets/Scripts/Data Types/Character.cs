@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 [System.Serializable]
-public class Character : MonoBehaviour
+public class Character
 {
 
     public Mesh mesh;

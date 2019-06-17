@@ -7,6 +7,7 @@ public class InitCharacter : MonoBehaviour
 
     private void Start()
     {
+
         int index = PlayerPrefs.GetInt("index");
         GetComponent<MeshFilter>().mesh = characters[index].mesh;
         GetComponent<Renderer>().material = characters[index].material;

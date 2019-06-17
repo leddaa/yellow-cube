@@ -1,4 +1,4 @@
-﻿ using UnityEngine.SceneManagement;
+﻿using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -32,10 +32,6 @@ public class PlayerMovement : MonoBehaviour
 
         if(Input.GetKey("space")) {
             SceneManager.LoadScene( SceneManager.GetActiveScene().name );
-        }
-
-        if(Input.GetKey("escape")) {
-            Application.Quit();
         }
 
         if(rigidBody.velocity.magnitude > MAX_VELOCITY)

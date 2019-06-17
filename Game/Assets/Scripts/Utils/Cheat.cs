@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class Cheat : MonoBehaviour
 {
 
+    public Material materialCheater;
     public float upForce = 1000;
     public Rigidbody body;
 
@@ -21,6 +22,8 @@ public class Cheat : MonoBehaviour
             body.AddForce(0, upForce * Time.deltaTime, 0 );
             timeTracker.timeSpent += 300 * Time.deltaTime;
             GameObject.FindGameObjectWithTag("CheatText").GetComponent<Text>().text = "Cheats Activated!";
+            Renderer rend = GetComponent<Renderer>();
+            rend.material = materialCheater;
         }
     }
 

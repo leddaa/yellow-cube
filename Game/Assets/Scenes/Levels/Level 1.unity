@@ -1319,6 +1319,11 @@ PrefabInstance:
       propertyPath: timeTracker
       value: 
       objectReference: {fileID: 289785727}
+    - target: {fileID: 7308034043805319556, guid: aa10e9b8beb16ff4d92106958c6154d7,
+        type: 3}
+      propertyPath: materialCheater
+      value: 
+      objectReference: {fileID: 2100000, guid: 1688d5eed14f0db4a9beaf898ec912ea, type: 2}
     - target: {fileID: 7308034043805319557, guid: aa10e9b8beb16ff4d92106958c6154d7,
         type: 3}
       propertyPath: timeTracker

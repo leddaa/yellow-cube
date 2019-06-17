@@ -135,6 +135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4640002523431c49b36eec48241d17a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  materialCheater: {fileID: 2100000, guid: 1688d5eed14f0db4a9beaf898ec912ea, type: 2}
   upForce: 1000
   body: {fileID: 7308034043805319558}
 --- !u!114 &7308034043805319579

@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class FailManager : MonoBehaviour
 {
+    public static int DEPTH_OF_MAP = -1;
 
     public static int failCounter;
 
@@ -11,7 +12,7 @@ public class FailManager : MonoBehaviour
 
     private void Awake()
     {
-        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+            playerTransform = GameObject.FindGameObjectWithTag("Player").transform; 
     }
 
     // add listener for map finished loading
@@ -28,14 +29,17 @@ public class FailManager : MonoBehaviour
 
     void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode)
     {
-        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-        GameObject.FindGameObjectWithTag("FailText").GetComponent<Text>().text = failCounter.ToString() + " fails";
+            playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+            GameObject.FindGameObjectWithTag("FailText").GetComponent<Text>().text = failCounter.ToString() + " fails";
     }
 
     void Update()
     {
-        if (playerTransform.position.y < LevelManager.DEPTH_OF_MAP)
+        if (playerTransform.position.y < DEPTH_OF_MAP)
+        {
             failCounter++;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 
 }

@@ -57,8 +57,6 @@ public class ChangeMaterial : MonoBehaviour
                 rend.material = material3;
                 MaterialCounter = 0;
             }
-            
-         
 
         }
     }

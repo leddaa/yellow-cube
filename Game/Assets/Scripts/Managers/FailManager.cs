@@ -11,7 +11,7 @@ public class FailManager : MonoBehaviour
 
     private void Awake()
     {
-        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+            playerTransform = GameObject.FindGameObjectWithTag("Player").transform; 
     }
 
     // add listener for map finished loading
@@ -28,14 +28,21 @@ public class FailManager : MonoBehaviour
 
     void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode)
     {
-        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-        GameObject.FindGameObjectWithTag("FailText").GetComponent<Text>().text = failCounter.ToString() + " fails";
+
+            playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+            GameObject.FindGameObjectWithTag("FailText").GetComponent<Text>().text = failCounter.ToString() + " fails";
+     
     }
 
     void Update()
     {
-        if (playerTransform.position.y < LevelManager.DEPTH_OF_MAP)
-            failCounter++;
+        if (playerTransform != null)
+        {
+            if (playerTransform.position.y < LevelManager.DEPTH_OF_MAP)
+                failCounter++;
+            
+        }
+            
     }
 
 }

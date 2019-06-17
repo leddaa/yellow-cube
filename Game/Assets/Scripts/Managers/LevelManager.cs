@@ -8,13 +8,15 @@ public class LevelManager : MonoBehaviour
     [HideInInspector]
     public int TIME_TO_LOAD_NEXT_MAP = 0;
 
-    private string nextScene;
+    public static string nextScene;
+    public static string nextLevel;
     private Transform playerTransform;
     private AudioManager audioManager;
 
     private void Awake()
     {
         audioManager = GameObject.FindGameObjectWithTag("Manager").GetComponent<AudioManager>();
+
     }
 
     private void LoadScene()
@@ -46,15 +48,24 @@ public class LevelManager : MonoBehaviour
 
     void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode)
     {
-        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-        nextScene = GameObject.FindGameObjectWithTag("NextScene").GetComponent<NextScene>().nextScene;
+            playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+            nextScene = GameObject.FindGameObjectWithTag("NextScene").GetComponent<NextScene>().nextScene;
+            nextLevel = GameObject.FindGameObjectWithTag("NextLevel").GetComponent<NextLevel>().nextLevel;
+
+        Debug.Log("OnLevelLoad, nextScene: " + LevelManager.nextScene);
+        Debug.Log("OnLevelLoad, nextLevel: " + LevelManager.nextLevel);
+
     }
 
     void Update()
     {
-        // reload scene if player has fallen outside of the map
-        if (playerTransform.position.y < DEPTH_OF_MAP)
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        if (playerTransform != null)
+        {
+            // reload scene if player has fallen outside of the map
+            if (playerTransform.position.y < DEPTH_OF_MAP)
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+        
     }
 
 }

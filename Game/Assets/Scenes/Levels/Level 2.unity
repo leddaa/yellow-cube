@@ -165,11 +165,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
-    - target: {fileID: 4744126743089780627, guid: e22bebbb68be50d479ed7ad6ec892261,
-        type: 3}
-      propertyPath: nextScene
-      value: Level 3
-      objectReference: {fileID: 0}
     - target: {fileID: 4744126743089780624, guid: e22bebbb68be50d479ed7ad6ec892261,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -244,6 +239,11 @@ PrefabInstance:
         type: 3}
       propertyPath: sounds.Array.data[0].name
       value: complete_sound
+      objectReference: {fileID: 0}
+    - target: {fileID: 4744126743089780627, guid: e22bebbb68be50d479ed7ad6ec892261,
+        type: 3}
+      propertyPath: nextScene
+      value: Level 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e22bebbb68be50d479ed7ad6ec892261, type: 3}
@@ -611,7 +611,7 @@ PrefabInstance:
     - target: {fileID: 1185200513057978653, guid: 95024ef1f5f20ca478f49a4c72a25249,
         type: 3}
       propertyPath: nextScene
-      value: Level 3
+      value: MapCompleteMenu
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95024ef1f5f20ca478f49a4c72a25249, type: 3}
@@ -1433,12 +1433,6 @@ Transform:
   m_Father: {fileID: 1703659050}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: -33.688, y: 0, z: 0}
---- !u!224 &1035572341 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 5201348341178916764, guid: 8504689d62c54af4fb7192a5f1df80ee,
-    type: 3}
-  m_PrefabInstance: {fileID: 1268243614}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1059685506
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1607,10 +1601,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1302009469}
     m_Modifications:
-    - target: {fileID: 5201348341178916737, guid: 8504689d62c54af4fb7192a5f1df80ee,
+    - target: {fileID: 6711308151237026121, guid: 8504689d62c54af4fb7192a5f1df80ee,
         type: 3}
-      propertyPath: m_Name
-      value: CheatsText
+      propertyPath: m_RootOrder
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5201348341178916764, guid: 8504689d62c54af4fb7192a5f1df80ee,
         type: 3}
@@ -1732,8 +1726,19 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.92059845
       objectReference: {fileID: 0}
+    - target: {fileID: 5201348341178916737, guid: 8504689d62c54af4fb7192a5f1df80ee,
+        type: 3}
+      propertyPath: m_Name
+      value: CheatsText
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8504689d62c54af4fb7192a5f1df80ee, type: 3}
+--- !u!224 &1268243615 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 6711308151237026121, guid: 8504689d62c54af4fb7192a5f1df80ee,
+    type: 3}
+  m_PrefabInstance: {fileID: 1268243614}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1302009465
 GameObject:
   m_ObjectHideFlags: 0
@@ -1826,7 +1831,7 @@ RectTransform:
   m_Children:
   - {fileID: 289785724}
   - {fileID: 768275930}
-  - {fileID: 1035572341}
+  - {fileID: 1268243615}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -9,7 +9,7 @@ public class CameraMovement : MonoBehaviour
 
     private void Awake()
     {
-        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        playerTransform = GameObject.FindGameObjectWithTag(Tags.PLAYER).transform;
     }
 
     private void Start()

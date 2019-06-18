@@ -7,22 +7,22 @@ public class LevelCompleteMenu : MonoBehaviour
 
     public void LoadNextLevel()
     {
-        SceneManager.LoadScene(PlayerPrefs.GetString("next_level"));
+        SceneManager.LoadScene(PlayerPrefs.GetString(Keys.NEXT_LEVEL));
     }
 
     public void LoadMainMenu()
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene(Scenes.MAIN_MENU);
     }
 
     public void LoadShop()
     {
-        SceneManager.LoadScene("ShopMenu");
+        SceneManager.LoadScene(Scenes.SHOP_MENU);
     }
 
     private void Awake()
     {
-        GameObject.FindGameObjectWithTag("CompleteTime").GetComponent<Text>().text = PlayerPrefs.GetFloat("CompleteTime").ToString(".0") + " Sec";
-        GameObject.FindGameObjectWithTag("TotalFails").GetComponent<Text>().text = PlayerPrefs.GetInt(CompleteManager.TOTAL_FAIL_COUNTER_KEY).ToString() + " fails";
+        GameObject.FindGameObjectWithTag(Tags.COMPLETE_TIME).GetComponent<Text>().text = PlayerPrefs.GetFloat(Keys.COMPLETE_TIME).ToString(".0") + " Sec";
+        GameObject.FindGameObjectWithTag(Tags.TOTAL_FAILS).GetComponent<Text>().text = PlayerPrefs.GetInt(Keys.TOTAL_FAIL_COUNTER).ToString() + " fails";
     }
 }

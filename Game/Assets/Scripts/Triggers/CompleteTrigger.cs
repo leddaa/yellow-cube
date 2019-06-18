@@ -7,7 +7,7 @@ public class CompleteTrigger : MonoBehaviour
 
     private void Awake()
     {
-        completeManager = GameObject.FindGameObjectWithTag("Manager").GetComponent<CompleteManager>();
+        completeManager = GameObject.FindGameObjectWithTag(Tags.GAME_MANAGER).GetComponent<CompleteManager>();
     }
 
     private void OnTriggerEnter(Collider other)

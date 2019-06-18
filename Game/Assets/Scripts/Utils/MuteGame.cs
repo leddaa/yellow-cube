@@ -16,15 +16,14 @@ public class MuteGame : MonoBehaviour
             {
                 isplaying = false;
                
-                GameObject.FindGameObjectWithTag("Music").GetComponent<AudioSource>().Stop();
+                GameObject.FindGameObjectWithTag(Tags.MUSIC).GetComponent<AudioSource>().Stop();
             }
             else
             {
                 isplaying = true;
-                GameObject.FindGameObjectWithTag("Music").GetComponent<AudioSource>().Play();
+                GameObject.FindGameObjectWithTag(Tags.MUSIC).GetComponent<AudioSource>().Play();
             }
- 
         }
-
     }
+
 }

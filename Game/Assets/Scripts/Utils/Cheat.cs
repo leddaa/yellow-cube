@@ -12,7 +12,7 @@ public class Cheat : MonoBehaviour
 
     private void Awake()
     {
-        timeTracker = GameObject.FindGameObjectWithTag("TimeTracker").GetComponent<TimeTracker>();
+        timeTracker = GameObject.FindGameObjectWithTag(Tags.TIME_TRACKER).GetComponent<TimeTracker>();
     }
 
     void Update()
@@ -21,7 +21,7 @@ public class Cheat : MonoBehaviour
         {
             body.AddForce(0, upForce * Time.deltaTime, 0 );
             timeTracker.timeSpent += 300 * Time.deltaTime;
-            GameObject.FindGameObjectWithTag("CheatText").GetComponent<Text>().text = "Cheats Activated!";
+            GameObject.FindGameObjectWithTag(Tags.CHEAT_TEXT).GetComponent<Text>().text = "Cheats Activated!";
             Renderer rend = GetComponent<Renderer>();
             rend.material = materialCheater;
         }

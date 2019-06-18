@@ -6,7 +6,7 @@ public class OptionsMenu : MonoBehaviour
 
     public void MuteMusic()
     {
-        GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>().ToggleMusic();
+        GameObject.FindGameObjectWithTag(Tags.AUDIO_MANAGER).GetComponent<AudioManager>().ToggleMusic();
     }
 
     public void MuteGame()
@@ -16,6 +16,6 @@ public class OptionsMenu : MonoBehaviour
 
     public void MainMenu()
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene(Scenes.MAIN_MENU);
     }
 }

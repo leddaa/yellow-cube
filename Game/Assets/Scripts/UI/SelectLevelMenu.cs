@@ -6,31 +6,31 @@ public class SelectLevelMenu : MonoBehaviour
     // Load Main Menu
     public void LoadMainMenu()
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene(Scenes.MAIN_MENU);
     }
 
     // Load Level 1
     public void LoadLevel1()
     {
-        SceneManager.LoadScene("Level 1");
+        SceneManager.LoadScene(Scenes.LEVEL_1);
     }
 
     // Load Level 2
     public void LoadLevel2()
     {
-        SceneManager.LoadScene("Level 2");
+        SceneManager.LoadScene(Scenes.LEVEL_2);
     }
 
     // Load Level 3
     public void LoadLevel3()
     {
-        SceneManager.LoadScene("Level 3");
+        SceneManager.LoadScene(Scenes.LEVEL_3);
     }
 
     // Load Level 4
     public void LoadLevel4()
     {
-        SceneManager.LoadScene("Level 4");
+        SceneManager.LoadScene(Scenes.LEVEL_4);
     }
 
     // Load Level 5 - Interactable set to false

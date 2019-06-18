@@ -4,29 +4,25 @@ using UnityEngine.SceneManagement;
 public class CompleteManager : MonoBehaviour
 {
 
-    public static string NEXT_SCENE = "MapCompleteMenu";
-    public static string TOTAL_FAIL_COUNTER_KEY = "totalFailCounter";
-
     private AudioManager audioManager;
 
     private void Awake()
     {
-        audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
+        audioManager = GameObject.FindGameObjectWithTag(Tags.AUDIO_MANAGER).GetComponent<AudioManager>();
 
     }
 
     public void CompleteMap()
     {
-        PlayerPrefs.SetFloat("CompleteTime", GameObject.FindGameObjectWithTag("TimeTracker").GetComponent<TimeTracker>().timeSpent);
-        GameObject.FindGameObjectWithTag("TimeTracker").GetComponent<TimeTracker>().mapCompleted = true;
+        PlayerPrefs.SetFloat(Keys.COMPLETE_TIME, GameObject.FindGameObjectWithTag(Tags.TIME_TRACKER).GetComponent<TimeTracker>().timeSpent);
+        GameObject.FindGameObjectWithTag(Tags.TIME_TRACKER).GetComponent<TimeTracker>().mapCompleted = true;
 
-        PlayerPrefs.SetInt(TOTAL_FAIL_COUNTER_KEY, PlayerPrefs.GetInt(FailManager.FAIL_COUNTER_KEY));
-        PlayerPrefs.SetInt(FailManager.FAIL_COUNTER_KEY, 0);
-        Debug.Log(FailManager.FAIL_COUNTER_KEY);
+        PlayerPrefs.SetInt(Keys.TOTAL_FAIL_COUNTER, PlayerPrefs.GetInt(Keys.FAIL_COUNTER));
+        PlayerPrefs.SetInt(Keys.FAIL_COUNTER, 0);
 
-        audioManager.Play("complete_sound");
+        audioManager.Play(Audio.COMPLETE_SOUND);
         
-        SceneManager.LoadScene(NEXT_SCENE);
+        SceneManager.LoadScene(Scenes.MAP_COMPLETE);
 
 
     }

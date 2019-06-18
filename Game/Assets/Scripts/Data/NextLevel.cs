@@ -7,7 +7,7 @@ public class NextLevel : MonoBehaviour
 
     private void Start()
     {
-        PlayerPrefs.SetString("next_level", nextLevel);
+        PlayerPrefs.SetString(Keys.NEXT_LEVEL, nextLevel);
     }
 
 }

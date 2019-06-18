@@ -11,13 +11,13 @@ public class InputManager : MonoBehaviour
         // Exit to Main menu
         if (Input.GetKey("escape"))
         {
-            SceneManager.LoadScene("MainMenu");
+            SceneManager.LoadScene(Scenes.MAIN_MENU);
         }
 
         // Toggle music on/off
         if (Input.GetKeyDown("p"))
         {
-            GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>().ToggleMusic();
+            GameObject.FindGameObjectWithTag(Tags.AUDIO_MANAGER).GetComponent<AudioManager>().ToggleMusic();
         }
     }
 

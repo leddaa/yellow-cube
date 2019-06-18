@@ -1,11 +1,7 @@
-﻿
-// Triggers PlayerBooster (Upforce)
-
+﻿// Triggers PlayerBooster (Upforce)
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class JumpPadTrigger : MonoBehaviour
-
 {
 
     public float upForce;
@@ -16,7 +12,7 @@ public class JumpPadTrigger : MonoBehaviour
     void Awake()
     {
         bounceSound = GetComponent<AudioSource>();
-        playerBooster = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerBooster>();
+        playerBooster = GameObject.FindGameObjectWithTag(Tags.PLAYER).GetComponent<PlayerBooster>();
     }
 
     private void OnTriggerEnter(Collider other)

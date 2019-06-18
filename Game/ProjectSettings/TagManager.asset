@@ -17,6 +17,9 @@ TagManager:
   - CheatText
   - NextLevel
   - AudioManager
+  - CompleteTime
+  - TotalCoins
+  - TotalFails
   layers:
   - Default
   - TransparentFX

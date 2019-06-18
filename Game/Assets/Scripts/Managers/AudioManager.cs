@@ -27,6 +27,9 @@ public class AudioManager : MonoBehaviour
             Destroy(gameObject);
         }
 
+        // Set so it's true by default when game loads.
+        musicisplaying = true;
+
         // Set AudioManager to DontDestroyOnLoad so that it won't be destroyed when reloading the scene.
         DontDestroyOnLoad(gameObject);
 
@@ -50,6 +53,7 @@ public class AudioManager : MonoBehaviour
         s.source.Play();
     }
 
+    // Toggle music on/off - Called in inputManager.
     public void ToggleMusic()
     {
         if (musicisplaying)

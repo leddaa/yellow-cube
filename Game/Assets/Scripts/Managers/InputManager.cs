@@ -14,15 +14,11 @@ public class InputManager : MonoBehaviour
             SceneManager.LoadScene("MainMenu");
         }
 
-        // Mute function
+        // Toggle music on/off
         if (Input.GetKeyDown("p"))
         {
             GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>().ToggleMusic();
         }
     }
 
-    private void Update()
-    {
-        
-    }
 }

@@ -24,6 +24,11 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("ShopMenu");
     }
 
+    public void LoadOptionsMenu()
+    {
+        SceneManager.LoadScene("OptionsMenu");
+    }
+
     public void QuitGame()
     {
         Application.Quit();

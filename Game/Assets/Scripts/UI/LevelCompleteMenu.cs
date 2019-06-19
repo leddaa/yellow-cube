@@ -10,6 +10,12 @@ public class LevelCompleteMenu : MonoBehaviour
         SceneManager.LoadScene(PlayerPrefs.GetString(Keys.NEXT_LEVEL));
     }
 
+    public void LoadPreviousLevel()
+    {
+        SceneManager.LoadScene(PlayerPrefs.GetString(Keys.PREVIOUS_LEVEL));
+        Debug.Log(PlayerPrefs.GetString(Keys.PREVIOUS_LEVEL));
+    }
+
     public void LoadMainMenu()
     {
         SceneManager.LoadScene(Scenes.MAIN_MENU);
@@ -18,6 +24,7 @@ public class LevelCompleteMenu : MonoBehaviour
     public void LoadShop()
     {
         SceneManager.LoadScene(Scenes.SHOP_MENU);
+        Debug.Log("Shop Loaded");
     }
 
     private void Awake()

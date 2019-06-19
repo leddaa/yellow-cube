@@ -36,7 +36,7 @@ public class SelectLevelMenu : MonoBehaviour
     // Load Level 5 - Interactable set to false
     public void LoadLevel5()
     {
-        SceneManager.LoadScene("Level 5");
+        SceneManager.LoadScene(Scenes.LEVEL_5);
     }
 
     // Load Level 6

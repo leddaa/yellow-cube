@@ -34,6 +34,13 @@ public class ShopSystem : MonoBehaviour
         PlayerPrefs.SetInt(Keys.CURRENT_CHARACTER, 4);
     }
 
+    // Upgrade Button 5 - Changes skin to "Scetchy Blue"
+    public void Upgrade6()
+    {
+        PlayerPrefs.SetInt(Keys.CURRENT_CHARACTER, 5);
+        Debug.Log("Model not set!");
+    }
+
     // Main Menu Button
     public void LoadMainMenu()
     {

@@ -1366,6 +1366,23 @@ PrefabInstance:
       propertyPath: sceneName
       value: Level 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7126207998294842739, guid: aa10e9b8beb16ff4d92106958c6154d7,
+        type: 3}
+      propertyPath: characters.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7126207998294842739, guid: aa10e9b8beb16ff4d92106958c6154d7,
+        type: 3}
+      propertyPath: characters.Array.data[5].mesh
+      value: 
+      objectReference: {fileID: -3724242731433456866, guid: 26e83a06885e4dc449545a212769bb91,
+        type: 3}
+    - target: {fileID: 7126207998294842739, guid: aa10e9b8beb16ff4d92106958c6154d7,
+        type: 3}
+      propertyPath: characters.Array.data[5].material
+      value: 
+      objectReference: {fileID: -9005223747805884326, guid: d28e1d3fcadec624890ac1649f46ba31,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa10e9b8beb16ff4d92106958c6154d7, type: 3}
 --- !u!4 &1143134921 stripped

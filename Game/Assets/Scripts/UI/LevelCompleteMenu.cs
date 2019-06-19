@@ -24,12 +24,11 @@ public class LevelCompleteMenu : MonoBehaviour
     public void LoadShop()
     {
         SceneManager.LoadScene(Scenes.SHOP_MENU);
-        Debug.Log("Shop Loaded");
     }
 
     private void Awake()
     {
-        GameObject.FindGameObjectWithTag(Tags.COMPLETE_TIME).GetComponent<Text>().text = PlayerPrefs.GetFloat(Keys.COMPLETE_TIME).ToString(".0") + " Sec";
+        GameObject.FindGameObjectWithTag(Tags.COMPLETE_TIME).GetComponent<Text>().text = PlayerPrefs.GetFloat(Keys.COMPLETE_TIME).ToString(".0", System.Globalization.CultureInfo.InvariantCulture) + " Sec";
         GameObject.FindGameObjectWithTag(Tags.TOTAL_FAILS).GetComponent<Text>().text = PlayerPrefs.GetInt(Keys.TOTAL_FAIL_COUNTER).ToString() + " fails";
     }
 }

@@ -19,6 +19,13 @@ public class InputManager : MonoBehaviour
         {
             GameObject.FindGameObjectWithTag(Tags.AUDIO_MANAGER).GetComponent<AudioManager>().ToggleMusic();
         }
+
+        // Restart level
+        if (Input.GetKey("space"))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            PlayerPrefs.SetInt(Keys.FAIL_COUNTER, PlayerPrefs.GetInt(Keys.FAIL_COUNTER) + 1);
+        }
     }
 
 }

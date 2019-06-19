@@ -16,12 +16,14 @@ public class TimeTracker : MonoBehaviour
         text = GetComponent<Text>();
     }
 
+
+    // System.Globalization.CultureInfo.InvariantCulture (Changes , to .)
     private void Update()
     {
         if(!mapCompleted)
         {
             timeSpent += Time.deltaTime;
-            text.text = timeSpent.ToString("0") + " s";
+            text.text = timeSpent.ToString(".0", System.Globalization.CultureInfo.InvariantCulture) + " s";
         }
         
     }

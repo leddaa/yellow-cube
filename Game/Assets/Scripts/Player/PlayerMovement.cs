@@ -30,9 +30,7 @@ public class PlayerMovement : MonoBehaviour
             rigidBody.AddForce(SIDE_FORCE * Time.deltaTime, 0, 0);
         }
 
-        if(Input.GetKey("space")) {
-            SceneManager.LoadScene( SceneManager.GetActiveScene().name );
-        }
+        
 
         if(rigidBody.velocity.magnitude > MAX_VELOCITY)
             rigidBody.velocity = rigidBody.velocity.normalized * MAX_VELOCITY;

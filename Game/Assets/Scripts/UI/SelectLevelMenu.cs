@@ -33,7 +33,7 @@ public class SelectLevelMenu : MonoBehaviour
         SceneManager.LoadScene(Scenes.LEVEL_4);
     }
 
-    // Load Level 5 - Interactable set to false
+    // Load Level 5
     public void LoadLevel5()
     {
         SceneManager.LoadScene(Scenes.LEVEL_5);
@@ -42,7 +42,7 @@ public class SelectLevelMenu : MonoBehaviour
     // Load Level 6
     public void LoadLevel6()
     {
-        SceneManager.LoadScene("Level 6");
+        SceneManager.LoadScene(Scenes.LEVEL_6);
     }
 
 }

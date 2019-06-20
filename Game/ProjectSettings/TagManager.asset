@@ -20,6 +20,12 @@ TagManager:
   - CompleteTime
   - TotalCoins
   - TotalFails
+  - Star1
+  - Star2
+  - Star3
+  - StarsTime
+  - NextLevelButton
+  - LevelCompleteText
   layers:
   - Default
   - TransparentFX

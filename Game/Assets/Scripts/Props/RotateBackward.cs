@@ -3,7 +3,7 @@
 public class RotateBackward : MonoBehaviour
 {
 
-    private float speed = 100f;
+    public float speed = 100f;
 
     void Update()
     {

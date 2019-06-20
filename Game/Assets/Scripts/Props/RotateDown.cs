@@ -3,7 +3,7 @@
 public class RotateDown : MonoBehaviour
 {
 
-    private float speed = 75f;
+    public float speed = 75f;
 
     void Update()
     {

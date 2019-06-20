@@ -3,7 +3,7 @@
 public class RotateForward : MonoBehaviour
 {
 
-    private float speed = 50f;
+    public float speed = 50f;
 
     void Update()
     {

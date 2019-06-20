@@ -18,6 +18,10 @@
     public static string STAR1 = "Star1";
     public static string STAR2 = "Star2";
     public static string STAR3 = "Star3";
+
+    // Props
+    public static string BALL = "Ball";
+    public static string DOOR = "Door";
     
 
 

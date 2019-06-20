@@ -3,7 +3,7 @@
 public class RotateRight: MonoBehaviour
 {
 
-    private float speed = 25f;
+    public float speed = 25f;
 
     void Update()
     {

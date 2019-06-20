@@ -26,6 +26,9 @@ TagManager:
   - StarsTime
   - NextLevelButton
   - LevelCompleteText
+  - TriggerLevel6
+  - Ball
+  - Door
   layers:
   - Default
   - TransparentFX

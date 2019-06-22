@@ -14,7 +14,7 @@ public class CameraMovement : MonoBehaviour
 
     private void Start()
     {
-        offset = new Vector3(0, 2, -8);
+        offset = new Vector3(0, 2, -10);
     }
 
     void FixedUpdate()

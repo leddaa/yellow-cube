@@ -29,6 +29,9 @@ TagManager:
   - TriggerLevel6
   - Ball
   - Door
+  - Bullet
+  - upforceTrigger
+  - Plank
   layers:
   - Default
   - TransparentFX

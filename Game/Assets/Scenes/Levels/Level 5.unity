@@ -17,7 +17,7 @@ RenderSettings:
   m_Fog: 1
   m_FogColor: {r: 0.8509804, g: 0.8509804, b: 0.8509804, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.01
+  m_FogDensity: 0.003
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
@@ -395,7 +395,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: d0223f77114284b47a0e8b317e71e4dc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -254.3
+      value: -130
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: d0223f77114284b47a0e8b317e71e4dc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -435,15 +435,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: d0223f77114284b47a0e8b317e71e4dc, type: 3}
       propertyPath: m_LocalScale.x
-      value: 7.7952
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: d0223f77114284b47a0e8b317e71e4dc, type: 3}
       propertyPath: m_LocalScale.y
-      value: 12
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: d0223f77114284b47a0e8b317e71e4dc, type: 3}
       propertyPath: m_LocalScale.z
-      value: 8.2716
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0223f77114284b47a0e8b317e71e4dc, type: 3}
@@ -479,6 +479,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2450d38b66c196d4c8dece36098479b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 75
 --- !u!136 &130842283
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1177,6 +1178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a8b15a75949f254a81dfbf6ff499af0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 25
 --- !u!65 &393205649
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1700,7 +1702,7 @@ PrefabInstance:
     - target: {fileID: 7308034043805319552, guid: aa10e9b8beb16ff4d92106958c6154d7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.73
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7308034043805319552, guid: aa10e9b8beb16ff4d92106958c6154d7,
         type: 3}
@@ -4841,6 +4843,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49ea074453eece048a2f2f159c3e7bf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 50
 --- !u!65 &1353208390
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5853,6 +5856,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62135812c14f4b94fa26cc70bb9590b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 100
 --- !u!65 &1544391552
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6169,7 +6173,7 @@ PrefabInstance:
     - target: {fileID: 4077295691705524882, guid: e22bebbb68be50d479ed7ad6ec892261,
         type: 3}
       propertyPath: nextLevel
-      value: MainMenu
+      value: Level 6
       objectReference: {fileID: 0}
     - target: {fileID: 4744126743089780627, guid: e22bebbb68be50d479ed7ad6ec892261,
         type: 3}
@@ -6216,6 +6220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49ea074453eece048a2f2f159c3e7bf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 50
 --- !u!65 &1661541410
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6852,6 +6857,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62135812c14f4b94fa26cc70bb9590b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 100
 --- !u!65 &1854492408
 BoxCollider:
   m_ObjectHideFlags: 0

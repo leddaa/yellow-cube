@@ -23,7 +23,7 @@ public class InputManager : MonoBehaviour
         // Restart level/nextlevel
         if (Input.GetKey("space"))
         {
-            if (SceneManager.GetActiveScene().name != Scenes.MAP_COMPLETE)
+            if (SceneManager.GetActiveScene().name != Scenes.LEVEL_COMPLETE)
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
                 PlayerPrefs.SetInt(Keys.FAIL_COUNTER, PlayerPrefs.GetInt(Keys.FAIL_COUNTER) + 1);

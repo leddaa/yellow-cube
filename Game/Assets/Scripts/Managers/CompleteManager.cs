@@ -27,7 +27,7 @@ public class CompleteManager : MonoBehaviour
 
         audioManager.Play(Audio.COMPLETE_SOUND);
         
-        SceneManager.LoadScene(Scenes.MAP_COMPLETE);
+        SceneManager.LoadScene(Scenes.LEVEL_COMPLETE);
 
         // Get stars time
 

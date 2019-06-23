@@ -1,7 +1,7 @@
 ﻿public class Scenes
 {
 
-    public static string MAP_COMPLETE = "MapCompleteMenu";
+    public static string LEVEL_COMPLETE = "LevelCompleteMenu";
     public static string LEVELS_MENU = "LevelsMenu";
     public static string MAIN_MENU = "MainMenu";
     public static string OPTIONS_MENU = "OptionsMenu";

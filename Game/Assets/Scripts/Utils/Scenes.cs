@@ -13,4 +13,5 @@
     public static string LEVEL_4 = "Level 4";
     public static string LEVEL_5 = "Level 5";
     public static string LEVEL_6 = "Level 6";
+    public static string LEVEL_7 = "Level 7";
 }

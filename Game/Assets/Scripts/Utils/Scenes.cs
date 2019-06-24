@@ -6,6 +6,7 @@
     public static string MAIN_MENU = "MainMenu";
     public static string OPTIONS_MENU = "OptionsMenu";
     public static string SHOP_MENU = "ShopMenu";
+    public static string SKINS_MENU = "SkinsMenu";
     public static string TUTORIAL = "Tutorial Level";
     public static string LEVEL_1 = "Level 1";
     public static string LEVEL_2 = "Level 2";

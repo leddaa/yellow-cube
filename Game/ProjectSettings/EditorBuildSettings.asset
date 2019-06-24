@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Other/ShopMenu.unity
     guid: 1681910daf7073e4c99208f21f679910
   - enabled: 1
+    path: Assets/Scenes/Other/SkinsMenu.unity
+    guid: f74332660ae74cf4bb4012a9b07068ec
+  - enabled: 1
     path: Assets/Scenes/Other/LevelsMenu.unity
     guid: 886160bcd031fb641bf85a02ba010d01
   - enabled: 1

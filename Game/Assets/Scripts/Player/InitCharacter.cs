@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class InitCharacter : MonoBehaviour
 {
@@ -12,4 +13,13 @@ public class InitCharacter : MonoBehaviour
         GetComponent<Renderer>().material = characters[index].material;
     }
 
+    private void Update()
+    {
+        if (SceneManager.GetActiveScene().name == Scenes.SKINS_MENU)
+        {
+            int index = PlayerPrefs.GetInt(Keys.CURRENT_CHARACTER);
+            GetComponent<MeshFilter>().mesh = characters[index].mesh;
+            GetComponent<Renderer>().material = characters[index].material;
+        }
+    }
 }

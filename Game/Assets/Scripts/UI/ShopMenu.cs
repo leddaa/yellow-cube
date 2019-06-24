@@ -46,4 +46,10 @@ public class ShopMenu : MonoBehaviour
     {
         SceneManager.LoadScene(Scenes.MAIN_MENU);
     }
+
+    // Skins Menu Button
+    public void LoadSkinsMenu()
+    {
+        SceneManager.LoadScene(Scenes.SKINS_MENU);
+    }
 }

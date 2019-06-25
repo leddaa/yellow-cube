@@ -22,7 +22,9 @@
     // Props
     public static string BALL = "Ball";
     public static string DOOR = "Door";
-    
+
+    //Player
+    public static string PLAYER_PARTICLESYSTEM = "PlayerParticleSystem";
 
 
 }

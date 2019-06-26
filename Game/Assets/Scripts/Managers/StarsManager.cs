@@ -46,7 +46,8 @@ public class StarsManager : MonoBehaviour
                 GameObject.FindGameObjectWithTag(Tags.STAR2).SetActive(false);
                 GameObject.FindGameObjectWithTag(Tags.STAR3).SetActive(false);
                 GameObject.FindGameObjectWithTag(Tags.NEXT_LEVEL_BUTTON).SetActive(false);
-                GameObject.FindGameObjectWithTag(Tags.LEVEL_COMPLETE_TEXT).GetComponent<Text>().text = "Level Failed!";
+                GameObject.FindGameObjectWithTag(Tags.LEVEL_COMPLETE_TITLE).SetActive(false);
+                GameObject.FindGameObjectWithTag(Tags.LEVEL_FAILED_TITLE).SetActive(true);
                 PlayerPrefs.SetInt(Keys.STAR_TIME_0, 0);
 
                 break;
@@ -56,6 +57,7 @@ public class StarsManager : MonoBehaviour
                 GameObject.FindGameObjectWithTag(Tags.STAR1).SetActive(true);
                 GameObject.FindGameObjectWithTag(Tags.STAR2).SetActive(false);
                 GameObject.FindGameObjectWithTag(Tags.STAR3).SetActive(false);
+                GameObject.FindGameObjectWithTag(Tags.LEVEL_FAILED_TITLE).SetActive(false);
                 PlayerPrefs.SetInt(Keys.STAR_TIME_0, 1);
 
                 break;
@@ -65,6 +67,7 @@ public class StarsManager : MonoBehaviour
                 GameObject.FindGameObjectWithTag(Tags.STAR1).SetActive(true);
                 GameObject.FindGameObjectWithTag(Tags.STAR2).SetActive(true);
                 GameObject.FindGameObjectWithTag(Tags.STAR3).SetActive(false);
+                GameObject.FindGameObjectWithTag(Tags.LEVEL_FAILED_TITLE).SetActive(false);
                 PlayerPrefs.SetInt(Keys.STAR_TIME_0, 1);
 
                 break;
@@ -74,6 +77,7 @@ public class StarsManager : MonoBehaviour
                 GameObject.FindGameObjectWithTag(Tags.STAR1).SetActive(true);
                 GameObject.FindGameObjectWithTag(Tags.STAR2).SetActive(true);
                 GameObject.FindGameObjectWithTag(Tags.STAR3).SetActive(true);
+                GameObject.FindGameObjectWithTag(Tags.LEVEL_FAILED_TITLE).SetActive(false);
                 PlayerPrefs.SetInt(Keys.STAR_TIME_0, 1);
 
                 break;

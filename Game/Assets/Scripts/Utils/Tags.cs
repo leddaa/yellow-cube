@@ -8,7 +8,8 @@
     public static string STARSTIME = "StarsTime";
 
     // UI
-    public static string LEVEL_COMPLETE_TEXT = "LevelCompleteText";
+    public static string LEVEL_COMPLETE_TITLE = "LevelCompleteTitle";
+    public static string LEVEL_FAILED_TITLE = "LevelFailedTitle";
     public static string CHEAT_TEXT = "CheatText";
     public static string COMPLETE_TIME = "CompleteTime";
     public static string FAIL_TEXT = "FailText";

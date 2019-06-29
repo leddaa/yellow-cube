@@ -23,9 +23,9 @@ MonoBehaviour:
   m_Clips:
   - m_Version: 1
     m_Start: 0
-    m_ClipIn: 13.416666666666666
+    m_ClipIn: 25.450000000000003
     m_Asset: {fileID: 4931910465705778701}
-    m_Duration: 106.46666666666667
+    m_Duration: 94.43333333333338
     m_TimeScale: 1
     m_ParentTrack: {fileID: -8588564730459839303}
     m_EaseInDuration: 0
@@ -575,9 +575,9 @@ MonoBehaviour:
   m_Clips:
   - m_Version: 1
     m_Start: 0
-    m_ClipIn: 13.616666666666708
+    m_ClipIn: 25.65000000000004
     m_Asset: {fileID: 8689181378006367368}
-    m_Duration: 106.66666666666664
+    m_Duration: 94.63333333333333
     m_TimeScale: 1
     m_ParentTrack: {fileID: -7829673332098493442}
     m_EaseInDuration: 0
@@ -879,9 +879,9 @@ MonoBehaviour:
   m_Clips:
   - m_Version: 1
     m_Start: 0
-    m_ClipIn: 13.416666666666687
+    m_ClipIn: 25.450000000000024
     m_Asset: {fileID: -5483901950003535338}
-    m_Duration: 106.66666666666664
+    m_Duration: 94.63333333333333
     m_TimeScale: 1
     m_ParentTrack: {fileID: -3925944741473915693}
     m_EaseInDuration: 0
@@ -983,14 +983,14 @@ MonoBehaviour:
   m_Muted: 0
   m_CustomPlayableFullTypename: 
   m_Curves: {fileID: 0}
-  m_Parent: {fileID: 11400000}
+  m_Parent: {fileID: 624322553926043381}
   m_Children: []
   m_Clips:
   - m_Version: 1
     m_Start: 0
-    m_ClipIn: 12.23333333333333
+    m_ClipIn: 24.266666666666666
     m_Asset: {fileID: 7268059029646861123}
-    m_Duration: 107.25
+    m_Duration: 95.21666666666671
     m_TimeScale: 1
     m_ParentTrack: {fileID: -2041119991088476243}
     m_EaseInDuration: 0
@@ -1367,8 +1367,7 @@ MonoBehaviour:
   - {fileID: -7226802926901177550}
   - {fileID: 3454533122658221454}
   - {fileID: 624322553926043381}
-  - {fileID: -2041119991088476243}
-  m_FixedDuration: 1517.6833333333334
+  m_FixedDuration: 94.16666666666667
   m_EditorSettings:
     m_Framerate: 60
   m_DurationMode: 1
@@ -1393,6 +1392,7 @@ MonoBehaviour:
   m_Curves: {fileID: 0}
   m_Parent: {fileID: 11400000}
   m_Children:
+  - {fileID: -2041119991088476243}
   - {fileID: -3925944741473915693}
   - {fileID: -8588564730459839303}
   - {fileID: -7829673332098493442}

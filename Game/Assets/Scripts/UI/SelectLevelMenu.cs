@@ -51,4 +51,21 @@ public class SelectLevelMenu : MonoBehaviour
         SceneManager.LoadScene(Scenes.LEVEL_7);
     }
 
+    // Load Level 8
+    public void LoadLevel8()
+    {
+        SceneManager.LoadScene(Scenes.LEVEL_8);
+    }
+
+    // Load Level 9
+    public void LoadLevel9()
+    {
+        SceneManager.LoadScene(Scenes.LEVEL_9);
+    }
+
+    // Load Level 10
+    public void LoadLevel10()
+    {
+        SceneManager.LoadScene(Scenes.LEVEL_10);
+    }
 }

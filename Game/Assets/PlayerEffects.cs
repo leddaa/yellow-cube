@@ -17,7 +17,6 @@ public class PlayerEffects : MonoBehaviour
    
     void Update()
     {
-        Debug.Log(rigidBody.velocity.magnitude);
         if (rigidBody.velocity.magnitude > TRAIL_EFFECT_TRIGGER_SPEED)
         {
             GameObject.FindGameObjectWithTag(Tags.PLAYER_PARTICLESYSTEM).GetComponent<ParticleSystem>().Play();

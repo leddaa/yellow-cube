@@ -35,6 +35,8 @@ TagManager:
   - PlayerParticleSystem
   - LevelCompleteTitle
   - LevelFailedTitle
+  - LeaderBoard
+  - LevelText
   layers:
   - Default
   - TransparentFX

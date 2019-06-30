@@ -17,7 +17,7 @@ public class Cheat : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey("r"))
+        if (Input.GetKey("f"))
         {
             body.AddForce(0, upForce * Time.deltaTime, 0 );
             timeTracker.timeSpent += 300 * Time.deltaTime;

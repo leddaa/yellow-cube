@@ -22,23 +22,22 @@ public class ShopMenu : MonoBehaviour
         PlayerPrefs.SetInt(Keys.CURRENT_CHARACTER, 2);
     }
 
-    // Upgrade Button 4 - Changes skin to "Matrix"
+    // Upgrade Button 4 - Changes skin to "Blah!"
     public void Upgrade4()
     {
         PlayerPrefs.SetInt(Keys.CURRENT_CHARACTER, 3);
     }
 
-    // Upgrade Button 5 - Changes skin to "Burger"
+    // Upgrade Button 5 - Changes skin to "Nigger"
     public void Upgrade5()
     {
         PlayerPrefs.SetInt(Keys.CURRENT_CHARACTER, 4);
     }
 
-    // Upgrade Button 5 - Changes skin to "Scetchy Blue"
+    // Upgrade Button 6 - Changes skin to "Skull"
     public void Upgrade6()
     {
         PlayerPrefs.SetInt(Keys.CURRENT_CHARACTER, 5);
-        Debug.Log("Model not set!");
     }
 
     // Main Menu Button

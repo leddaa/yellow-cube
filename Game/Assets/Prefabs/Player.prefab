@@ -164,8 +164,8 @@ MonoBehaviour:
   - mesh: {fileID: -9054758167434855311, guid: 1d379589c3581e5498979412561c67b1, type: 3}
     material: {fileID: -9005223747805884326, guid: 1d379589c3581e5498979412561c67b1,
       type: 3}
-  - mesh: {fileID: -4665519007480931937, guid: 36822b4bb7a75bf4fb0e9f3bcb701a3e, type: 3}
-    material: {fileID: -9005223747805884326, guid: 36822b4bb7a75bf4fb0e9f3bcb701a3e,
+  - mesh: {fileID: 3425170064966194262, guid: 629508fe451b22a46ba322fb7f9ca192, type: 3}
+    material: {fileID: -9005223747805884326, guid: 629508fe451b22a46ba322fb7f9ca192,
       type: 3}
 --- !u!114 &3582977040468234142
 MonoBehaviour:

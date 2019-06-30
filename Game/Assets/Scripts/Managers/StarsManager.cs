@@ -17,22 +17,18 @@ public class StarsManager : MonoBehaviour
         twoStars = PlayerPrefs.GetInt(Keys.STAR_TIME_2);
         oneStars = PlayerPrefs.GetInt(Keys.STAR_TIME_1);
 
-        Debug.Log("threeStars time on this map: " + threeStars);
-        Debug.Log("twoStars time on this map: " + twoStars);
-        Debug.Log("oneStars time on this map: " + oneStars);
-
         float completeTime = PlayerPrefs.GetFloat(Keys.COMPLETE_TIME);
         int caseSwitch = 0;
 
-        if (threeStars > completeTime)
+        if (threeStars * CompleteManager.SECONDS_TO_MICROSECONDS> completeTime)
         {
             caseSwitch = 3;
         } else if
-            (twoStars > completeTime)
+            (twoStars * CompleteManager.SECONDS_TO_MICROSECONDS > completeTime)
         {
             caseSwitch = 2;
         } else if
-            (oneStars > completeTime)
+            (oneStars * CompleteManager.SECONDS_TO_MICROSECONDS > completeTime)
         {
             caseSwitch = 1;
         }
@@ -41,7 +37,6 @@ public class StarsManager : MonoBehaviour
         switch (caseSwitch)
         {
             case 0:
-                Debug.Log("Case 0, Fail! (No stars)");
                 GameObject.FindGameObjectWithTag(Tags.STAR1).SetActive(false);
                 GameObject.FindGameObjectWithTag(Tags.STAR2).SetActive(false);
                 GameObject.FindGameObjectWithTag(Tags.STAR3).SetActive(false);
@@ -53,7 +48,6 @@ public class StarsManager : MonoBehaviour
                 break;
 
             case 1:
-                Debug.Log("Case 1, One star! Continue");
                 GameObject.FindGameObjectWithTag(Tags.STAR1).SetActive(true);
                 GameObject.FindGameObjectWithTag(Tags.STAR2).SetActive(false);
                 GameObject.FindGameObjectWithTag(Tags.STAR3).SetActive(false);
@@ -63,7 +57,6 @@ public class StarsManager : MonoBehaviour
                 break;
 
             case 2:
-                Debug.Log("case 2, Two Stars! Continue");
                 GameObject.FindGameObjectWithTag(Tags.STAR1).SetActive(true);
                 GameObject.FindGameObjectWithTag(Tags.STAR2).SetActive(true);
                 GameObject.FindGameObjectWithTag(Tags.STAR3).SetActive(false);
@@ -73,7 +66,6 @@ public class StarsManager : MonoBehaviour
                 break;
 
             case 3:
-                Debug.Log("case 3, Three stars! Perfect! Continue");
                 GameObject.FindGameObjectWithTag(Tags.STAR1).SetActive(true);
                 GameObject.FindGameObjectWithTag(Tags.STAR2).SetActive(true);
                 GameObject.FindGameObjectWithTag(Tags.STAR3).SetActive(true);

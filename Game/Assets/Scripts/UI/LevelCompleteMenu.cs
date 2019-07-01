@@ -9,13 +9,13 @@ public class LevelCompleteMenu : MonoBehaviour
 
     public void LoadNextLevel()
     {
-        SceneManager.LoadScene(PlayerPrefs.GetString(Keys.NEXT_LEVEL));
+        SceneManager.LoadScene(PlayerPrefs.GetString(PrefKeys.NEXT_LEVEL));
     }
 
     public void LoadPreviousLevel()
     {
-        SceneManager.LoadScene(PlayerPrefs.GetString(Keys.PREVIOUS_LEVEL));
-        Debug.Log(PlayerPrefs.GetString(Keys.PREVIOUS_LEVEL));
+        SceneManager.LoadScene(PlayerPrefs.GetString(PrefKeys.PREVIOUS_LEVEL));
+        Debug.Log(PlayerPrefs.GetString(PrefKeys.PREVIOUS_LEVEL));
     }
 
     public void LoadMainMenu()
@@ -32,10 +32,10 @@ public class LevelCompleteMenu : MonoBehaviour
     {
 
         // Level complete TIME
-        GameObject.FindGameObjectWithTag(Tags.COMPLETE_TIME).GetComponent<Text>().text = PlayerPrefs.GetFloat(Keys.COMPLETE_TIME).ToString(".0", System.Globalization.CultureInfo.InvariantCulture) + " Sec";
+        GameObject.FindGameObjectWithTag(Tags.COMPLETE_TIME).GetComponent<Text>().text = PlayerPrefs.GetFloat(PrefKeys.COMPLETE_TIME).ToString(".0", System.Globalization.CultureInfo.InvariantCulture) + " Sec";
 
         // Level complete FAILS
-        GameObject.FindGameObjectWithTag(Tags.TOTAL_FAILS).GetComponent<Text>().text = PlayerPrefs.GetInt(Keys.TOTAL_FAIL_COUNTER).ToString() + " fails";
+        GameObject.FindGameObjectWithTag(Tags.TOTAL_FAILS).GetComponent<Text>().text = PlayerPrefs.GetInt(PrefKeys.TOTAL_FAIL_COUNTER).ToString() + " fails";
 
     }
 }

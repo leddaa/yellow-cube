@@ -29,15 +29,15 @@ public class FailManager : MonoBehaviour
     void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode)
     {
             playerTransform = GameObject.FindGameObjectWithTag(Tags.PLAYER).transform;
-            GameObject.FindGameObjectWithTag(Tags.FAIL_TEXT).GetComponent<Text>().text = PlayerPrefs.GetInt(Keys.FAIL_COUNTER) + " fails";
+            GameObject.FindGameObjectWithTag(Tags.FAIL_TEXT).GetComponent<Text>().text = PlayerPrefs.GetInt(PrefKeys.FAIL_COUNTER) + " fails";
     }
 
     void Update()
     {
         if (playerTransform.position.y < DEPTH_OF_MAP)
         {
-            int failCounter = PlayerPrefs.GetInt(Keys.FAIL_COUNTER) + 1;
-            PlayerPrefs.SetInt(Keys.FAIL_COUNTER, failCounter);
+            int failCounter = PlayerPrefs.GetInt(PrefKeys.FAIL_COUNTER) + 1;
+            PlayerPrefs.SetInt(PrefKeys.FAIL_COUNTER, failCounter);
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }

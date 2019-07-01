@@ -6,6 +6,7 @@
     public static string MUSIC = "Music";
     public static string PLAYER = "Player";
     public static string STARSTIME = "StarsTime";
+    public static string PLAYER_MANAGER = "PlayerManager";
 
     // UI
     public static string LEVEL_COMPLETE_TITLE = "LevelCompleteTitle";
@@ -19,6 +20,12 @@
     public static string STAR1 = "Star1";
     public static string STAR2 = "Star2";
     public static string STAR3 = "Star3";
+    public static string COINS_TEXT = "CoinsText";
+    public static string DUMMY_PLAYER = "DummyPlayer";
+    public static string BUY_BUTTON_1 = "BuyButton1";
+    public static string BUY_BUTTON_2 = "BuyButton2";
+    public static string BUY_BUTTON_3 = "BuyButton3";
+    public static string BUY_BUTTON_4 = "BuyButton4";
 
     // Props
     public static string BALL = "Ball";

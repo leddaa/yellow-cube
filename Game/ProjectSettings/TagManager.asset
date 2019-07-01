@@ -35,6 +35,13 @@ TagManager:
   - PlayerParticleSystem
   - LevelCompleteTitle
   - LevelFailedTitle
+  - CoinsText
+  - DummyPlayer
+  - PlayerManager
+  - BuyButton1
+  - BuyButton2
+  - BuyButton3
+  - BuyButton4
   layers:
   - Default
   - TransparentFX

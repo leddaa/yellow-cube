@@ -13,15 +13,15 @@ public class StarsManager : MonoBehaviour
     void Start()
     {
 
-        threeStars = PlayerPrefs.GetInt(Keys.STAR_TIME_3);
-        twoStars = PlayerPrefs.GetInt(Keys.STAR_TIME_2);
-        oneStars = PlayerPrefs.GetInt(Keys.STAR_TIME_1);
+        threeStars = PlayerPrefs.GetInt(PrefKeys.STAR_TIME_3);
+        twoStars = PlayerPrefs.GetInt(PrefKeys.STAR_TIME_2);
+        oneStars = PlayerPrefs.GetInt(PrefKeys.STAR_TIME_1);
 
         Debug.Log("threeStars time on this map: " + threeStars);
         Debug.Log("twoStars time on this map: " + twoStars);
         Debug.Log("oneStars time on this map: " + oneStars);
 
-        float completeTime = PlayerPrefs.GetFloat(Keys.COMPLETE_TIME);
+        float completeTime = PlayerPrefs.GetFloat(PrefKeys.COMPLETE_TIME);
         int caseSwitch = 0;
 
         if (threeStars > completeTime)
@@ -48,7 +48,7 @@ public class StarsManager : MonoBehaviour
                 GameObject.FindGameObjectWithTag(Tags.NEXT_LEVEL_BUTTON).SetActive(false);
                 GameObject.FindGameObjectWithTag(Tags.LEVEL_COMPLETE_TITLE).SetActive(false);
                 GameObject.FindGameObjectWithTag(Tags.LEVEL_FAILED_TITLE).SetActive(true);
-                PlayerPrefs.SetInt(Keys.STAR_TIME_0, 0);
+                PlayerPrefs.SetInt(PrefKeys.STAR_TIME_0, 0);
 
                 break;
 
@@ -58,7 +58,7 @@ public class StarsManager : MonoBehaviour
                 GameObject.FindGameObjectWithTag(Tags.STAR2).SetActive(false);
                 GameObject.FindGameObjectWithTag(Tags.STAR3).SetActive(false);
                 GameObject.FindGameObjectWithTag(Tags.LEVEL_FAILED_TITLE).SetActive(false);
-                PlayerPrefs.SetInt(Keys.STAR_TIME_0, 1);
+                PlayerPrefs.SetInt(PrefKeys.STAR_TIME_0, 1);
 
                 break;
 
@@ -68,7 +68,7 @@ public class StarsManager : MonoBehaviour
                 GameObject.FindGameObjectWithTag(Tags.STAR2).SetActive(true);
                 GameObject.FindGameObjectWithTag(Tags.STAR3).SetActive(false);
                 GameObject.FindGameObjectWithTag(Tags.LEVEL_FAILED_TITLE).SetActive(false);
-                PlayerPrefs.SetInt(Keys.STAR_TIME_0, 1);
+                PlayerPrefs.SetInt(PrefKeys.STAR_TIME_0, 1);
 
                 break;
 
@@ -78,7 +78,7 @@ public class StarsManager : MonoBehaviour
                 GameObject.FindGameObjectWithTag(Tags.STAR2).SetActive(true);
                 GameObject.FindGameObjectWithTag(Tags.STAR3).SetActive(true);
                 GameObject.FindGameObjectWithTag(Tags.LEVEL_FAILED_TITLE).SetActive(false);
-                PlayerPrefs.SetInt(Keys.STAR_TIME_0, 1);
+                PlayerPrefs.SetInt(PrefKeys.STAR_TIME_0, 1);
 
                 break;
 

@@ -1,43 +1,131 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class ShopMenu : MonoBehaviour
 {
 
-    // Upgrade Button 1 - Changes skin to "Yellow Cube"
-    public void Upgrade1()  
+    // Prices
+    private int YELLOW_CUBE_PRICE = 500;
+    private int DARK_MEDIC_PRICE = 500;
+    private int HACKER_PRICE = 500;
+    private int BLAH_PRICE = 500;
+    private int SKULL_PRICE = 500;
+
+    
+
+    enum Character : int {YELLOWCUBE, DARKMEDIC, HACKER, BLAH, SKULL};
+
+    public bool MoneyCheck(int amount)
     {
-        PlayerPrefs.SetInt(Keys.CURRENT_CHARACTER, 0);
+        return amount <= PlayerPrefs.GetInt(PrefKeys.COINS_AMOUNT);
     }
 
-    // Upgrade Button 2 - Changes skin to "Black Medic"
-    public void Upgrade2()
+    // Standard skin - Yellow Cube
+    public void Skin0()  
     {
-        PlayerPrefs.SetInt(Keys.CURRENT_CHARACTER, 1);
+        PlayerPrefs.SetInt(PrefKeys.DUMMY_CHARACTER, (int)Character.YELLOWCUBE);
+        PlayerPrefs.SetInt(PrefKeys.CURRENT_CHARACTER, (int)Character.YELLOWCUBE); 
     }
 
-    // Upgrade Button 3 - Changes skin to "Hacker"
-    public void Upgrade3()
+   
+    // Purchase Skins
+   public void PurchaseSkin1() // Dark Medic
     {
-        PlayerPrefs.SetInt(Keys.CURRENT_CHARACTER, 2);
+        if (MoneyCheck(DARK_MEDIC_PRICE))
+        {
+            PlayerPrefs.SetInt(PrefKeys.DUMMY_CHARACTER, (int)Character.DARKMEDIC);
+            PlayerPrefs.SetInt(PrefKeys.CURRENT_CHARACTER, (int)Character.DARKMEDIC);
+            PlayerPrefs.SetInt(PrefKeys.COINS_AMOUNT, (PlayerPrefs.GetInt(PrefKeys.COINS_AMOUNT) - DARK_MEDIC_PRICE));
+            PlayerPrefs.SetInt(PrefKeys.DARK_MEDIC_PURCHASED, 1);
+            GameObject.FindGameObjectWithTag(Tags.BUY_BUTTON_1).SetActive(false);
+        }
     }
 
-    // Upgrade Button 4 - Changes skin to "Blah!"
-    public void Upgrade4()
+    public void PurchaseSkin2() // Hacker
     {
-        PlayerPrefs.SetInt(Keys.CURRENT_CHARACTER, 3);
+        if (MoneyCheck(HACKER_PRICE))
+        {
+            PlayerPrefs.SetInt(PrefKeys.DUMMY_CHARACTER, (int)Character.HACKER);
+            PlayerPrefs.SetInt(PrefKeys.CURRENT_CHARACTER, (int)Character.HACKER);
+            PlayerPrefs.SetInt(PrefKeys.COINS_AMOUNT, (PlayerPrefs.GetInt(PrefKeys.COINS_AMOUNT) - HACKER_PRICE));
+            PlayerPrefs.SetInt(PrefKeys.HACKER_PURCHASED, 1);
+            GameObject.FindGameObjectWithTag(Tags.BUY_BUTTON_2).SetActive(false);
+        }
     }
 
-    // Upgrade Button 5 - Changes skin to "Nigger"
-    public void Upgrade5()
+    public void PurchaseSkin3() // Blah
     {
-        PlayerPrefs.SetInt(Keys.CURRENT_CHARACTER, 4);
+        if (MoneyCheck(BLAH_PRICE))
+        {
+            PlayerPrefs.SetInt(PrefKeys.DUMMY_CHARACTER, (int)Character.BLAH);
+            PlayerPrefs.SetInt(PrefKeys.CURRENT_CHARACTER, (int)Character.BLAH);
+            PlayerPrefs.SetInt(PrefKeys.COINS_AMOUNT, (PlayerPrefs.GetInt(PrefKeys.COINS_AMOUNT) - BLAH_PRICE));
+            PlayerPrefs.SetInt(PrefKeys.BLAH_PURCHASED, 1);
+            GameObject.FindGameObjectWithTag(Tags.BUY_BUTTON_3).SetActive(false);
+        }
     }
 
-    // Upgrade Button 6 - Changes skin to "Skull"
-    public void Upgrade6()
+    public void PurchaseSkin4() // Skull
     {
-        PlayerPrefs.SetInt(Keys.CURRENT_CHARACTER, 5);
+        if (MoneyCheck(SKULL_PRICE))
+        {
+            PlayerPrefs.SetInt(PrefKeys.DUMMY_CHARACTER, (int)Character.SKULL);
+            PlayerPrefs.SetInt(PrefKeys.CURRENT_CHARACTER, (int)Character.SKULL);
+            PlayerPrefs.SetInt(PrefKeys.COINS_AMOUNT, (PlayerPrefs.GetInt(PrefKeys.COINS_AMOUNT) - SKULL_PRICE));
+            PlayerPrefs.SetInt(PrefKeys.SKULL_PURCHASED, 1);
+            GameObject.FindGameObjectWithTag(Tags.BUY_BUTTON_4).SetActive(false);
+        }
+    }
+
+
+    // Preview skins
+    public void Skin1() // Dark Medic
+    {
+        PlayerPrefs.SetInt(PrefKeys.DUMMY_CHARACTER, (int)Character.DARKMEDIC);
+        if (MoneyCheck(DARK_MEDIC_PRICE))
+        {
+            if (PlayerPrefs.GetInt(PrefKeys.DARK_MEDIC_PURCHASED) == 1)
+            {
+                PlayerPrefs.SetInt(PrefKeys.CURRENT_CHARACTER, (int)Character.DARKMEDIC);
+            }
+        } 
+    }
+
+    public void Skin2() // Hacker
+    {
+        PlayerPrefs.SetInt(PrefKeys.DUMMY_CHARACTER, (int)Character.HACKER);
+        if (MoneyCheck(HACKER_PRICE))
+        {
+            if (PlayerPrefs.GetInt(PrefKeys.HACKER_PURCHASED) == 1)
+            {
+                PlayerPrefs.SetInt(PrefKeys.CURRENT_CHARACTER, (int)Character.HACKER);
+            }
+        }
+    }
+
+    public void Skin3() // Blah
+    {
+        PlayerPrefs.SetInt(PrefKeys.DUMMY_CHARACTER, (int)Character.BLAH);
+        if (MoneyCheck(BLAH_PRICE))
+        {
+            if (PlayerPrefs.GetInt(PrefKeys.BLAH_PURCHASED) == 1)
+            {
+                PlayerPrefs.SetInt(PrefKeys.CURRENT_CHARACTER, (int)Character.BLAH);
+            }
+        }
+    }
+
+    public void Skin4() // Skull
+    {
+        PlayerPrefs.SetInt(PrefKeys.DUMMY_CHARACTER, (int)Character.SKULL);
+        if (MoneyCheck(SKULL_PRICE ))
+        {
+            if (PlayerPrefs.GetInt(PrefKeys.SKULL_PURCHASED) == 1)
+            {
+                PlayerPrefs.SetInt(PrefKeys.CURRENT_CHARACTER, (int)Character.SKULL);
+            }
+        }
     }
 
     // Main Menu Button
@@ -50,5 +138,54 @@ public class ShopMenu : MonoBehaviour
     public void LoadSkinsMenu()
     {
         SceneManager.LoadScene(Scenes.SKINS_MENU);
+    }
+
+    // Back Button
+    public void LoadSceneBack()
+    {
+        SceneManager.LoadScene(Scenes.SHOP_MENU);
+    }
+
+    public void Awake()
+    {
+        if (PlayerPrefs.GetInt(PrefKeys.DARK_MEDIC_PURCHASED) == 1)
+        {
+            GameObject.FindGameObjectWithTag(Tags.BUY_BUTTON_1).SetActive(false);
+        }
+
+        if (PlayerPrefs.GetInt(PrefKeys.HACKER_PURCHASED) == 1)
+        {
+            GameObject.FindGameObjectWithTag(Tags.BUY_BUTTON_2).SetActive(false);
+        }
+
+        if (PlayerPrefs.GetInt(PrefKeys.BLAH_PURCHASED) == 1)
+        {
+            GameObject.FindGameObjectWithTag(Tags.BUY_BUTTON_3).SetActive(false);
+        }
+
+        if (PlayerPrefs.GetInt(PrefKeys.SKULL_PURCHASED) == 1)
+        {
+            GameObject.FindGameObjectWithTag(Tags.BUY_BUTTON_4).SetActive(false);
+        } 
+
+    }
+
+    public void Update()
+    {
+
+        // Update coins amount
+        GameObject.FindGameObjectWithTag(Tags.COINS_TEXT).GetComponent<TextMeshProUGUI>().text = PlayerPrefs.GetInt(PrefKeys.COINS_AMOUNT).ToString() + " coins";
+    }
+
+    // RESET
+    public void HardReset()
+    {
+        PlayerPrefs.SetInt(PrefKeys.YELLOW_CUBE_PURCHASED, 0);
+        PlayerPrefs.SetInt(PrefKeys.DARK_MEDIC_PURCHASED, 0);
+        PlayerPrefs.SetInt(PrefKeys.HACKER_PURCHASED, 0);
+        PlayerPrefs.SetInt(PrefKeys.BLAH_PURCHASED, 0);
+        PlayerPrefs.SetInt(PrefKeys.SKULL_PURCHASED, 0);
+        Debug.Log(PlayerPrefs.GetInt(PrefKeys.YELLOW_CUBE_PURCHASED));
+        PlayerPrefs.SetInt(PrefKeys.COINS_AMOUNT, 1000);
     }
 }

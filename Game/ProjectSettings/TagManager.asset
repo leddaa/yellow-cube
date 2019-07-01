@@ -37,6 +37,7 @@ TagManager:
   - LevelFailedTitle
   - LeaderBoard
   - LevelText
+  - DataStore
   layers:
   - Default
   - TransparentFX

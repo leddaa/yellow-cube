@@ -5,8 +5,6 @@ using UnityEngine.SceneManagement;
 public class LevelCompleteMenu : MonoBehaviour
 {
 
-     
-
     public void LoadNextLevel()
     {
         SceneManager.LoadScene(PlayerPrefs.GetString(PrefKeys.NEXT_LEVEL));
@@ -30,7 +28,6 @@ public class LevelCompleteMenu : MonoBehaviour
 
     private void Awake()
     {
-
         // Level complete TIME
         GameObject.FindGameObjectWithTag(Tags.COMPLETE_TIME).GetComponent<Text>().text = PlayerPrefs.GetFloat(PrefKeys.COMPLETE_TIME).ToString(".0", System.Globalization.CultureInfo.InvariantCulture) + " Sec";
 

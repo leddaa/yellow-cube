@@ -42,6 +42,10 @@ TagManager:
   - BuyButton2
   - BuyButton3
   - BuyButton4
+  - LeaderBoard
+  - LevelText
+  - DataStore
+  - ServerManager
   layers:
   - Default
   - TransparentFX

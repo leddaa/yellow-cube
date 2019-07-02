@@ -3,6 +3,7 @@
 
     public static string AUDIO_MANAGER = "AudioManager";
     public static string GAME_MANAGER = "Manager";
+    public static string DATA_STORE = "DataStore";
     public static string MUSIC = "Music";
     public static string PLAYER = "Player";
     public static string STARSTIME = "StarsTime";
@@ -14,6 +15,7 @@
     public static string CHEAT_TEXT = "CheatText";
     public static string COMPLETE_TIME = "CompleteTime";
     public static string FAIL_TEXT = "FailText";
+    public static string LEVEL_TEXT = "LevelText";
     public static string TIME_TRACKER = "TimeTracker";
     public static string TOTAL_FAILS = "TotalFails";
     public static string NEXT_LEVEL_BUTTON = "NextLevelButton";
@@ -33,7 +35,6 @@
 
     //Player
     public static string PLAYER_PARTICLESYSTEM = "PlayerParticleSystem";
-
 
 }
 

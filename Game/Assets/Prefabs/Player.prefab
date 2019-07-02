@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 7308034043805319558}
   - component: {fileID: 7308034043805319559}
   - component: {fileID: 7308034043805319556}
-  - component: {fileID: 7126207998294842739}
   - component: {fileID: 3582977040468234142}
   m_Layer: 0
   m_Name: Player
@@ -140,33 +139,6 @@ MonoBehaviour:
   materialCheater: {fileID: 2100000, guid: 1688d5eed14f0db4a9beaf898ec912ea, type: 2}
   upForce: 1000
   body: {fileID: 7308034043805319558}
---- !u!114 &7126207998294842739
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7308034043805319564}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7422985d076629445ad0334b85883c62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characters:
-  - mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
-    material: {fileID: 2100000, guid: dc7f71fbc753818449d338b4dded7214, type: 2}
-  - mesh: {fileID: 9189712496547360266, guid: 29832c34ee39043419aae85d24046feb, type: 3}
-    material: {fileID: -9005223747805884326, guid: 29832c34ee39043419aae85d24046feb,
-      type: 3}
-  - mesh: {fileID: 5036783770805219575, guid: a55a0ba5869244d4ba204032af4d63a3, type: 3}
-    material: {fileID: -9005223747805884326, guid: a55a0ba5869244d4ba204032af4d63a3,
-      type: 3}
-  - mesh: {fileID: -9054758167434855311, guid: 1d379589c3581e5498979412561c67b1, type: 3}
-    material: {fileID: -9005223747805884326, guid: 1d379589c3581e5498979412561c67b1,
-      type: 3}
-  - mesh: {fileID: 3425170064966194262, guid: 629508fe451b22a46ba322fb7f9ca192, type: 3}
-    material: {fileID: -9005223747805884326, guid: 629508fe451b22a46ba322fb7f9ca192,
-      type: 3}
 --- !u!114 &3582977040468234142
 MonoBehaviour:
   m_ObjectHideFlags: 0

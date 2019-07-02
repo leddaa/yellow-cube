@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4001847485720911359}
   m_Layer: 0
   m_Name: PlayerManager
-  m_TagString: Untagged
+  m_TagString: PlayerManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45,12 +45,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characters:
   - mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
-    material: {fileID: 2100000, guid: 713f8d12f5dbfb640b7a4874212c2c08, type: 2}
-  - mesh: {fileID: 0}
-    material: {fileID: 0}
-  - mesh: {fileID: 0}
-    material: {fileID: 0}
-  - mesh: {fileID: 0}
-    material: {fileID: 0}
-  - mesh: {fileID: 0}
-    material: {fileID: 0}
+    material: {fileID: 2100000, guid: dc7f71fbc753818449d338b4dded7214, type: 2}
+    deathMaterial: {fileID: 2100000, guid: dc7f71fbc753818449d338b4dded7214, type: 2}
+  - mesh: {fileID: 9189712496547360266, guid: 29832c34ee39043419aae85d24046feb, type: 3}
+    material: {fileID: -9005223747805884326, guid: 29832c34ee39043419aae85d24046feb,
+      type: 3}
+    deathMaterial: {fileID: 2100000, guid: 4a4afab3dd1b0444bb8955c82943cc2c, type: 2}
+  - mesh: {fileID: 5036783770805219575, guid: a55a0ba5869244d4ba204032af4d63a3, type: 3}
+    material: {fileID: -9005223747805884326, guid: a55a0ba5869244d4ba204032af4d63a3,
+      type: 3}
+    deathMaterial: {fileID: 2100000, guid: 956cc836307cdf9488b179af66281ba1, type: 2}
+  - mesh: {fileID: -9054758167434855311, guid: 1d379589c3581e5498979412561c67b1, type: 3}
+    material: {fileID: -9005223747805884326, guid: 1d379589c3581e5498979412561c67b1,
+      type: 3}
+    deathMaterial: {fileID: 2100000, guid: 1fe5b049b41258f4a8e8eb1d8a417c60, type: 2}
+  - mesh: {fileID: 3425170064966194262, guid: 629508fe451b22a46ba322fb7f9ca192, type: 3}
+    material: {fileID: -9005223747805884326, guid: 629508fe451b22a46ba322fb7f9ca192,
+      type: 3}
+    deathMaterial: {fileID: 2100000, guid: 783c73892a1f5934e843f020c9cdf3ff, type: 2}

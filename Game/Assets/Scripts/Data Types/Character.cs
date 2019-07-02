@@ -6,5 +6,6 @@ public class Character
 
     public Mesh mesh;
     public Material material;
+    public Material deathMaterial;
 
 }

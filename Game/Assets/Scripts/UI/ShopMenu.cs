@@ -29,8 +29,8 @@ public class ShopMenu : MonoBehaviour
     }
 
    
-    // Purchase Skins
-   public void PurchaseSkin1() // Dark Medic
+    // Skins
+   public void PurchaseSkin1() // Dark Medic Purchase
     {
         if (MoneyCheck(DARK_MEDIC_PRICE))
         {
@@ -41,8 +41,18 @@ public class ShopMenu : MonoBehaviour
             GameObject.FindGameObjectWithTag(Tags.BUY_BUTTON_1).SetActive(false);
         }
     }
+    
+    public void Skin1() // Dark Medic Select/Preview
+    {
+        PlayerPrefs.SetInt(PrefKeys.DUMMY_CHARACTER, (int)Character.DARKMEDIC);
 
-    public void PurchaseSkin2() // Hacker
+            if (PlayerPrefs.GetInt(PrefKeys.DARK_MEDIC_PURCHASED) == 1)
+            {
+                PlayerPrefs.SetInt(PrefKeys.CURRENT_CHARACTER, (int)Character.DARKMEDIC);
+            }
+    }
+
+    public void PurchaseSkin2() // Hacker Purchase
     {
         if (MoneyCheck(HACKER_PRICE))
         {
@@ -54,7 +64,17 @@ public class ShopMenu : MonoBehaviour
         }
     }
 
-    public void PurchaseSkin3() // Blah
+    public void Skin2() // Hacker Select/Preview
+    {
+        PlayerPrefs.SetInt(PrefKeys.DUMMY_CHARACTER, (int)Character.HACKER);
+
+            if (PlayerPrefs.GetInt(PrefKeys.HACKER_PURCHASED) == 1)
+            {
+                PlayerPrefs.SetInt(PrefKeys.CURRENT_CHARACTER, (int)Character.HACKER);
+            }
+    }
+
+    public void PurchaseSkin3() // Blah Purchase
     {
         if (MoneyCheck(BLAH_PRICE))
         {
@@ -62,11 +82,21 @@ public class ShopMenu : MonoBehaviour
             PlayerPrefs.SetInt(PrefKeys.CURRENT_CHARACTER, (int)Character.BLAH);
             PlayerPrefs.SetInt(PrefKeys.COINS_AMOUNT, (PlayerPrefs.GetInt(PrefKeys.COINS_AMOUNT) - BLAH_PRICE));
             PlayerPrefs.SetInt(PrefKeys.BLAH_PURCHASED, 1);
-            GameObject.FindGameObjectWithTag(Tags.BUY_BUTTON_3).SetActive(false);
+            GameObject.FindGameObjectWithTag(Tags.BUY_BUTTON_3).SetActive(false); 
         }
     }
 
-    public void PurchaseSkin4() // Skull
+    public void Skin3() // Blah Select/Preview
+    {
+        PlayerPrefs.SetInt(PrefKeys.DUMMY_CHARACTER, (int)Character.BLAH);
+
+            if (PlayerPrefs.GetInt(PrefKeys.BLAH_PURCHASED) == 1)
+            {
+                PlayerPrefs.SetInt(PrefKeys.CURRENT_CHARACTER, (int)Character.BLAH);
+            }
+    }
+
+    public void PurchaseSkin4() // Skull Purchase
     {
         if (MoneyCheck(SKULL_PRICE))
         {
@@ -78,54 +108,14 @@ public class ShopMenu : MonoBehaviour
         }
     }
 
-
-    // Preview skins
-    public void Skin1() // Dark Medic
-    {
-        PlayerPrefs.SetInt(PrefKeys.DUMMY_CHARACTER, (int)Character.DARKMEDIC);
-        if (MoneyCheck(DARK_MEDIC_PRICE))
-        {
-            if (PlayerPrefs.GetInt(PrefKeys.DARK_MEDIC_PURCHASED) == 1)
-            {
-                PlayerPrefs.SetInt(PrefKeys.CURRENT_CHARACTER, (int)Character.DARKMEDIC);
-            }
-        } 
-    }
-
-    public void Skin2() // Hacker
-    {
-        PlayerPrefs.SetInt(PrefKeys.DUMMY_CHARACTER, (int)Character.HACKER);
-        if (MoneyCheck(HACKER_PRICE))
-        {
-            if (PlayerPrefs.GetInt(PrefKeys.HACKER_PURCHASED) == 1)
-            {
-                PlayerPrefs.SetInt(PrefKeys.CURRENT_CHARACTER, (int)Character.HACKER);
-            }
-        }
-    }
-
-    public void Skin3() // Blah
-    {
-        PlayerPrefs.SetInt(PrefKeys.DUMMY_CHARACTER, (int)Character.BLAH);
-        if (MoneyCheck(BLAH_PRICE))
-        {
-            if (PlayerPrefs.GetInt(PrefKeys.BLAH_PURCHASED) == 1)
-            {
-                PlayerPrefs.SetInt(PrefKeys.CURRENT_CHARACTER, (int)Character.BLAH);
-            }
-        }
-    }
-
-    public void Skin4() // Skull
+    public void Skin4() // Skull Select/Preview
     {
         PlayerPrefs.SetInt(PrefKeys.DUMMY_CHARACTER, (int)Character.SKULL);
-        if (MoneyCheck(SKULL_PRICE ))
-        {
+
             if (PlayerPrefs.GetInt(PrefKeys.SKULL_PURCHASED) == 1)
             {
                 PlayerPrefs.SetInt(PrefKeys.CURRENT_CHARACTER, (int)Character.SKULL);
             }
-        }
     }
 
     // Main Menu Button
@@ -187,5 +177,10 @@ public class ShopMenu : MonoBehaviour
         PlayerPrefs.SetInt(PrefKeys.SKULL_PURCHASED, 0);
         Debug.Log(PlayerPrefs.GetInt(PrefKeys.YELLOW_CUBE_PURCHASED));
         PlayerPrefs.SetInt(PrefKeys.COINS_AMOUNT, 1000);
+    }
+
+    public void LoadSandbox()
+    {
+        SceneManager.LoadScene("Level 1 SandBox");
     }
 }

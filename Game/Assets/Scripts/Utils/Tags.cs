@@ -3,6 +3,7 @@
 
     public static string AUDIO_MANAGER = "AudioManager";
     public static string GAME_MANAGER = "Manager";
+    public static string DATA_STORE = "DataStore";
     public static string MUSIC = "Music";
     public static string PLAYER = "Player";
     public static string STARSTIME = "StarsTime";

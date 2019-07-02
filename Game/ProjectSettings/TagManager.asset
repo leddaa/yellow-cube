@@ -38,6 +38,7 @@ TagManager:
   - LeaderBoard
   - LevelText
   - DataStore
+  - ServerManager
   layers:
   - Default
   - TransparentFX

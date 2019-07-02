@@ -20,21 +20,32 @@ public class MyClass
 public class ServerManager : MonoBehaviour
 {
 
+    private static ServerManager Instance = null;
+
     private readonly static string PUBLISH_CHANNEL = "my_channel";
     private readonly static string SUBSCRIBE_CHANNEL = "my_channel2";
 
     public static PubNub pubnub;
-    public DataStore dataStore;
+    private DataStore dataStore;
 
     private void Awake()
     {
+        Debug.Log("ServerManager Awake");
+
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else if (Instance != this)
+        {
+            Destroy(gameObject);
+        }
+
         dataStore = GameObject.FindGameObjectWithTag("DataStore").GetComponent<DataStore>();
     }
 
     void Start()
     {
-        Debug.Log("Server manager running");
-
         // Configuration
         PNConfiguration pnConfiguration = new PNConfiguration();
         pnConfiguration.PublishKey = "pub-c-909213ad-fe0b-4baf-84cb-11ce9fbd39d0";
@@ -76,17 +87,8 @@ public class ServerManager : MonoBehaviour
                     dataStoreObject.levels.Add(key, level);
                 }
 
-                //string[] users = levelData["usernames"] as string[];
-                //int[] scores = levelData["scores"] as int[];
-
-                //Level levelz = new Level();
-                //levelz.usernames = users;
-                //levelz.scores = scores;
-
-                ///////////
-                ///
-
-                dataStore.Save(dataStoreObject);
+                Debug.Log("callback doing save");
+                dataStore.SaveLeaderboards(dataStoreObject);
 
                 dataStore.bash();
             }
@@ -130,6 +132,8 @@ public class ServerManager : MonoBehaviour
                     Debug.Log("Error: " + status.Error);
                 }
             });
+
+        Debug.Log("finished fire()");
     }
 
 }

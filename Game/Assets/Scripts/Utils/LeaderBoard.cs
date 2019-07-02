@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -10,30 +9,26 @@ public class LeaderBoard : MonoBehaviour
     {
         GameObject.Find(Tags.LEVEL_TEXT).GetComponent<Text>().text = SceneManager.GetActiveScene().name;
 
-        // when we get message from datastore
+        Debug.Log("Leaderboard start with level " + SceneManager.GetActiveScene().name);
+
+        Debug.Log("LeaderBoard: trying to find level from store. Trying to get with level " + SceneManager.GetActiveScene().name);
+        Level level = GameObject.FindGameObjectWithTag(Tags.DATA_STORE).GetComponent<DataStore>().GetLevel(SceneManager.GetActiveScene().name);
+
+        Debug.Log("Leaderboard printing stuff:");
+        int usercounter = 1;
+        foreach (string user in level.usernames)
         {
-            Dictionary<string, object> msg = mea.MessageResult.Payload as Dictionary<string, object>;
+            string usernameobject = "User" + usercounter + "Text";
+            GameObject.Find(usernameobject).GetComponent<Text>().text = usercounter.ToString() + ". " + user;
+            usercounter++;
+        }
 
-            Dictionary<string, object> levelData = msg[SceneManager.GetActiveScene().name] as Dictionary<string, object>;
-
-            string[] users = levelData["usernames"] as string[];
-            int[] scores = levelData["scores"] as int[];
-
-            int usercounter = 1;
-            foreach (string user in users)
-            {
-                string usernameobject = "User" + usercounter + "Text";
-                GameObject.Find(usernameobject).GetComponent<Text>().text = usercounter.ToString() + ". " + user;
-                usercounter++;
-            }
-
-            int scorecounter = 1;
-            foreach (int score in scores)
-            {
-                string scoreobject = "Score" + scorecounter + "Text";
-                GameObject.Find(scoreobject).GetComponent<Text>().text = "Time: " + score.ToString();
-                scorecounter++;
-            }
+        int scorecounter = 1;
+        foreach (int score in level.scores)
+        {
+            string scoreobject = "Score" + scorecounter + "Text";
+            GameObject.Find(scoreobject).GetComponent<Text>().text = "Time: " + score.ToString();
+            scorecounter++;
         }
     }
 

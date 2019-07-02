@@ -89,7 +89,11 @@ public class CompleteManager : MonoBehaviour
         {
             PlayerPrefs.SetFloat(key, timeSpent);
             Debug.Log("New highscore set: " + timeSpent);
-            GameObject.FindGameObjectWithTag("LeaderBoard").GetComponent<LeaderBoard>().PublishScore("ledda", timeSpent, SceneManager.GetActiveScene().name);
+            //GameObject.FindGameObjectWithTag("LeaderBoard").GetComponent<LeaderBoard>().PublishScore("ledda", timeSpent, SceneManager.GetActiveScene().name);
+
+            //MyClass myFireObject = new MyClass("Ledda", timeSpent, SceneManager.GetActiveScene().name);
+            //GameObject.FindGameObjectWithTag("ServerManager").GetComponent<ServerManager>().Fire(myFireObject);
+            GameObject.FindGameObjectWithTag("ServerManager").GetComponent<ServerManager>().PublishScore("cactus", timeSpent, SceneManager.GetActiveScene().name);
         }
     }
 

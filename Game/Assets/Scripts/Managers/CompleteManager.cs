@@ -33,16 +33,16 @@ public class CompleteManager : MonoBehaviour
         // Get stars time
 
         // Get time for level failed
-        PlayerPrefs.SetInt(Keys.STAR_TIME_0, 0);
+        PlayerPrefs.SetInt(PrefKeys.STAR_TIME_0, 0);
 
         // Get time for Star 1
-        PlayerPrefs.SetInt(Keys.STAR_TIME_1, GameObject.FindGameObjectWithTag(Tags.STARSTIME).GetComponent<StarsTime>().oneStars);
+        PlayerPrefs.SetInt(PrefKeys.STAR_TIME_1, GameObject.FindGameObjectWithTag(Tags.STARSTIME).GetComponent<StarsTime>().oneStars);
 
         // Get time for Star 2
-        PlayerPrefs.SetInt(Keys.STAR_TIME_2, GameObject.FindGameObjectWithTag(Tags.STARSTIME).GetComponent<StarsTime>().twoStars);
+        PlayerPrefs.SetInt(PrefKeys.STAR_TIME_2, GameObject.FindGameObjectWithTag(Tags.STARSTIME).GetComponent<StarsTime>().twoStars);
 
         // Get time for Star 3
-        PlayerPrefs.SetInt(Keys.STAR_TIME_3, GameObject.FindGameObjectWithTag(Tags.STARSTIME).GetComponent<StarsTime>().threeStars);
+        PlayerPrefs.SetInt(PrefKeys.STAR_TIME_3, GameObject.FindGameObjectWithTag(Tags.STARSTIME).GetComponent<StarsTime>().threeStars);
     }
 
     private void checkHighscore(int timeSpent)
@@ -51,30 +51,30 @@ public class CompleteManager : MonoBehaviour
 
         if(SceneManager.GetActiveScene().name == Scenes.LEVEL_1)
         {
-            key = Keys.HIGHSCORE_LEVEL_1;
+            key = PrefKeys.HIGHSCORE_LEVEL_1;
         } else if(SceneManager.GetActiveScene().name == Scenes.LEVEL_2)
         {
-            key = Keys.HIGHSCORE_LEVEL_2;
+            key = PrefKeys.HIGHSCORE_LEVEL_2;
         }
         else if (SceneManager.GetActiveScene().name == Scenes.LEVEL_3)
         {
-            key = Keys.HIGHSCORE_LEVEL_3;
+            key = PrefKeys.HIGHSCORE_LEVEL_3;
         }
         else if (SceneManager.GetActiveScene().name == Scenes.LEVEL_4)
         {
-            key = Keys.HIGHSCORE_LEVEL_4;
+            key = PrefKeys.HIGHSCORE_LEVEL_4;
         }
         else if (SceneManager.GetActiveScene().name == Scenes.LEVEL_5)
         {
-            key = Keys.HIGHSCORE_LEVEL_5;
+            key = PrefKeys.HIGHSCORE_LEVEL_5;
         }
         else if (SceneManager.GetActiveScene().name == Scenes.LEVEL_6)
         {
-            key = Keys.HIGHSCORE_LEVEL_6;
+            key = PrefKeys.HIGHSCORE_LEVEL_6;
         }
         else if (SceneManager.GetActiveScene().name == Scenes.LEVEL_7)
         {
-            key = Keys.HIGHSCORE_LEVEL_7;
+            key = PrefKeys.HIGHSCORE_LEVEL_7;
         } else
         {
             throw new System.Exception();
@@ -93,7 +93,7 @@ public class CompleteManager : MonoBehaviour
 
             //MyClass myFireObject = new MyClass("Ledda", timeSpent, SceneManager.GetActiveScene().name);
             //GameObject.FindGameObjectWithTag("ServerManager").GetComponent<ServerManager>().Fire(myFireObject);
-            GameObject.FindGameObjectWithTag("ServerManager").GetComponent<ServerManager>().PublishScore("cactus", timeSpent, SceneManager.GetActiveScene().name);
+            GameObject.FindGameObjectWithTag("ServerManager").GetComponent<ServerManager>().PublishScore("firelol", timeSpent, SceneManager.GetActiveScene().name);
         }
     }
 

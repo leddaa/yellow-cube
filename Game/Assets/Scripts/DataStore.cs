@@ -87,7 +87,6 @@ public class DataStore : MonoBehaviour
     public Level GetLevel(string key)
     {
         Debug.Log("Active scene: " + key);
-        Debug.Log("Active scene according to DataStore: " + SceneManager.GetActiveScene().name);
 
         if(!dataStoreObject.levels.ContainsKey(key))
         {

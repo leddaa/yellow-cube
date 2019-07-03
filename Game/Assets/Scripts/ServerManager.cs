@@ -46,6 +46,8 @@ public class ServerManager : MonoBehaviour
 
     void Start()
     {
+        Debug.Log("Server manager start");
+
         // Configuration
         PNConfiguration pnConfiguration = new PNConfiguration();
         pnConfiguration.PublishKey = "pub-c-909213ad-fe0b-4baf-84cb-11ce9fbd39d0";
@@ -53,10 +55,6 @@ public class ServerManager : MonoBehaviour
         pnConfiguration.LogVerbosity = PNLogVerbosity.BODY;
 
         pubnub = new PubNub(pnConfiguration);
-
-        // Create object to send
-        MyClass myFireObject = new MyClass("Fake", 1000000000, SceneManager.GetActiveScene().name);
-        Fire(myFireObject);
 
         pubnub.SubscribeCallback += (sender, e) => {
             SubscribeEventEventArgs msgArgs = e as SubscribeEventEventArgs;
@@ -74,8 +72,6 @@ public class ServerManager : MonoBehaviour
 
                 foreach(string key in msg.Keys)
                 {
-                    Debug.Log("Key: " + key);
-
                     Dictionary<string, object> levelData = msg[key] as Dictionary<string, object>;
                     string[] usernames = levelData["usernames"] as string[];
                     int[] scores = levelData["scores"] as int[];
@@ -87,7 +83,7 @@ public class ServerManager : MonoBehaviour
                     dataStoreObject.levels.Add(key, level);
                 }
 
-                Debug.Log("callback doing save");
+                Debug.Log("Callback doing save");
                 dataStore.SaveLeaderboards(dataStoreObject);
 
                 dataStore.bash();
@@ -134,6 +130,21 @@ public class ServerManager : MonoBehaviour
             });
 
         Debug.Log("finished fire()");
+    }
+
+    public void hei()
+    {
+        Debug.Log("hei");
+        PlayerPrefs.SetInt(PrefKeys.HIGHSCORE_LEVEL_1, 100000000);
+        PlayerPrefs.SetInt(PrefKeys.HIGHSCORE_LEVEL_2, 100000000);
+        PlayerPrefs.SetInt(PrefKeys.HIGHSCORE_LEVEL_3, 100000000);
+        PlayerPrefs.SetInt(PrefKeys.HIGHSCORE_LEVEL_4, 100000000);
+        PlayerPrefs.SetInt(PrefKeys.HIGHSCORE_LEVEL_5, 100000000);
+        PlayerPrefs.SetInt(PrefKeys.HIGHSCORE_LEVEL_6, 100000000);
+        PlayerPrefs.SetInt(PrefKeys.HIGHSCORE_LEVEL_7, 100000000);
+        PlayerPrefs.SetInt(PrefKeys.HIGHSCORE_LEVEL_8, 100000000);
+        PlayerPrefs.SetInt(PrefKeys.HIGHSCORE_LEVEL_9, 100000000);
+        PlayerPrefs.SetInt(PrefKeys.HIGHSCORE_LEVEL_10, 100000000);
     }
 
 }

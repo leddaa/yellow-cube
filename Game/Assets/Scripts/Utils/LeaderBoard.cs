@@ -9,12 +9,8 @@ public class LeaderBoard : MonoBehaviour
     {
         GameObject.Find(Tags.LEVEL_TEXT).GetComponent<Text>().text = SceneManager.GetActiveScene().name;
 
-        Debug.Log("Leaderboard start with level " + SceneManager.GetActiveScene().name);
-
-        Debug.Log("LeaderBoard: trying to find level from store. Trying to get with level " + SceneManager.GetActiveScene().name);
         Level level = GameObject.FindGameObjectWithTag(Tags.DATA_STORE).GetComponent<DataStore>().GetLevel(SceneManager.GetActiveScene().name);
 
-        Debug.Log("Leaderboard printing stuff:");
         int usercounter = 1;
         foreach (string user in level.usernames)
         {

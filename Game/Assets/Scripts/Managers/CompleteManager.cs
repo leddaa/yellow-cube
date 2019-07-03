@@ -36,13 +36,13 @@ public class CompleteManager : MonoBehaviour
         PlayerPrefs.SetInt(PrefKeys.STAR_TIME_0, 0);
 
         // Get time for Star 1
-        PlayerPrefs.SetInt(PrefKeys.STAR_TIME_1, GameObject.FindGameObjectWithTag(Tags.STARSTIME).GetComponent<StarsTime>().oneStars);
+        PlayerPrefs.SetInt(PrefKeys.STAR_TIME_1, GameObject.FindGameObjectWithTag(Tags.LEVEL_DATA).GetComponent<LevelData>().oneStars);
 
         // Get time for Star 2
-        PlayerPrefs.SetInt(PrefKeys.STAR_TIME_2, GameObject.FindGameObjectWithTag(Tags.STARSTIME).GetComponent<StarsTime>().twoStars);
+        PlayerPrefs.SetInt(PrefKeys.STAR_TIME_2, GameObject.FindGameObjectWithTag(Tags.LEVEL_DATA).GetComponent<LevelData>().twoStars);
 
         // Get time for Star 3
-        PlayerPrefs.SetInt(PrefKeys.STAR_TIME_3, GameObject.FindGameObjectWithTag(Tags.STARSTIME).GetComponent<StarsTime>().threeStars);
+        PlayerPrefs.SetInt(PrefKeys.STAR_TIME_3, GameObject.FindGameObjectWithTag(Tags.LEVEL_DATA).GetComponent<LevelData>().threeStars);
     }
 
     private void checkHighscore(int timeSpent)
@@ -75,6 +75,18 @@ public class CompleteManager : MonoBehaviour
         else if (SceneManager.GetActiveScene().name == Scenes.LEVEL_7)
         {
             key = PrefKeys.HIGHSCORE_LEVEL_7;
+        }
+        else if (SceneManager.GetActiveScene().name == Scenes.LEVEL_8)
+        {
+            key = PrefKeys.HIGHSCORE_LEVEL_8;
+        }
+        else if (SceneManager.GetActiveScene().name == Scenes.LEVEL_9)
+        {
+            key = PrefKeys.HIGHSCORE_LEVEL_9;
+        }
+        else if (SceneManager.GetActiveScene().name == Scenes.LEVEL_10)
+        {
+            key = PrefKeys.HIGHSCORE_LEVEL_10;
         } else
         {
             throw new System.Exception();
@@ -91,9 +103,9 @@ public class CompleteManager : MonoBehaviour
             Debug.Log("New highscore set: " + timeSpent);
             //GameObject.FindGameObjectWithTag("LeaderBoard").GetComponent<LeaderBoard>().PublishScore("ledda", timeSpent, SceneManager.GetActiveScene().name);
 
-            //MyClass myFireObject = new MyClass("Ledda", timeSpent, SceneManager.GetActiveScene().name);
-            //GameObject.FindGameObjectWithTag("ServerManager").GetComponent<ServerManager>().Fire(myFireObject);
-            GameObject.FindGameObjectWithTag("ServerManager").GetComponent<ServerManager>().PublishScore("firelol", timeSpent, SceneManager.GetActiveScene().name);
+            MyClass myFireObject = new MyClass("ldld", timeSpent, SceneManager.GetActiveScene().name);
+            GameObject.FindGameObjectWithTag("ServerManager").GetComponent<ServerManager>().Fire(myFireObject);
+            //GameObject.FindGameObjectWithTag("ServerManager").GetComponent<ServerManager>().PublishScore("lol", timeSpent, SceneManager.GetActiveScene().name);
         }
     }
 

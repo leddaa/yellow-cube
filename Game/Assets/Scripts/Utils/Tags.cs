@@ -6,7 +6,7 @@
     public static string DATA_STORE = "DataStore";
     public static string MUSIC = "Music";
     public static string PLAYER = "Player";
-    public static string STARSTIME = "StarsTime";
+    public static string LEVEL_DATA = "LevelData";
     public static string PLAYER_MANAGER = "PlayerManager";
 
     // UI

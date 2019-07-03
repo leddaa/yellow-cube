@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 8590046535760526912}
   - component: {fileID: 8590046535760526913}
   m_Layer: 0
-  m_Name: StarsTime
-  m_TagString: StarsTime
+  m_Name: LevelData
+  m_TagString: LevelData
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

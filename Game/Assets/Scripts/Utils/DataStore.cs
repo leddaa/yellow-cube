@@ -190,12 +190,12 @@ public class DataStore : MonoBehaviour
 
         if (File.Exists(Application.persistentDataPath + fileName))
         {
-            file = File.Open(Application.persistentDataPath + fileName, FileMode.Open); // open existing file
+            file = File.Open(Application.persistentDataPath + fileName, FileMode.Open); // Open existing file
             Debug.Log("Opening existing file");
         }
         else
         {
-            file = File.Open(Application.persistentDataPath + fileName, FileMode.Create); // create new file
+            file = File.Open(Application.persistentDataPath + fileName, FileMode.Create); // Create new file
             Debug.Log("Oreated new file");
         }
 

@@ -4,34 +4,21 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Obstacle
-  - Goal
-  - JumpBoost
-  - JumpBoostMedium
-  - FailText
   - TimeTracker
-  - MapCompleteSound
   - Manager
   - GameManager
-  - NextScene
   - CheatText
-  - NextLevel
   - AudioManager
   - CompleteTime
   - TotalCoins
-  - TotalFails
   - Star1
   - Star2
   - Star3
-  - StarsTime
   - NextLevelButton
   - LevelCompleteText
-  - TriggerLevel6
   - Ball
   - Door
-  - Bullet
   - upforceTrigger
-  - Plank
   - PlayerParticleSystem
   - LevelCompleteTitle
   - LevelFailedTitle
@@ -46,6 +33,7 @@ TagManager:
   - LevelText
   - DataStore
   - ServerManager
+  - LevelData
   layers:
   - Default
   - TransparentFX

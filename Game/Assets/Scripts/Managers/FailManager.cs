@@ -29,7 +29,6 @@ public class FailManager : MonoBehaviour
     void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode)
     {
             playerTransform = GameObject.FindGameObjectWithTag(Tags.PLAYER).transform;
-            GameObject.FindGameObjectWithTag(Tags.FAIL_TEXT).GetComponent<Text>().text = PlayerPrefs.GetInt(PrefKeys.FAIL_COUNTER) + " fails";
     }
 
     void Update()

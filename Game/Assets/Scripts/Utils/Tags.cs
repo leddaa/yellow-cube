@@ -8,6 +8,8 @@
     public static string PLAYER = "Player";
     public static string LEVEL_DATA = "LevelData";
     public static string PLAYER_MANAGER = "PlayerManager";
+    public static string SERVER_MANAGER = "ServerManager";
+
 
     // UI
     public static string LEVEL_COMPLETE_TITLE = "LevelCompleteTitle";

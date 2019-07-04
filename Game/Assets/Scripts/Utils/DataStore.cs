@@ -39,8 +39,6 @@ public class DataStore : MonoBehaviour
 
     private void Awake()
     {
-        Debug.Log("DataStore awake");
-
         if(Instance == null)
         {
             Instance = this;
@@ -50,7 +48,6 @@ public class DataStore : MonoBehaviour
             Destroy(gameObject);
         }
 
-        Debug.Log("initing datastores reference to servermanager");
         serverManager = GameObject.FindGameObjectWithTag("ServerManager").GetComponent<ServerManager>();
     }
 
@@ -59,38 +56,33 @@ public class DataStore : MonoBehaviour
         dataStoreObject = LoadLeaderboards();
     }
 
-    public void bash()
+    public void PrintData()
     {
-        Debug.Log("bash: Received data:");
         DataStoreObject loadData = LoadLeaderboards();
 
         foreach(string key in loadData.levels.Keys)
         {
 
-            string jall = ""; //TODO remove
+            string usernames = "";
             foreach(string username in loadData.levels[key].usernames)
             {
-                jall += username + ", ";
+                usernames += username + ", ";
             }
 
-            string skrall = ""; //TODO remove
+            string scores = "";
             foreach (int score in loadData.levels[key].scores)
             {
-                skrall += score + ", ";
+                scores += score + ", ";
             }
 
-            Debug.Log("Key: " + key + " " + jall + " " + skrall);
-
+            Debug.Log("Key: " + key + " " + usernames + " " + scores);
         }
     }
 
     public Level GetLevel(string key)
     {
-        Debug.Log("Active scene: " + key);
-
         if(!dataStoreObject.levels.ContainsKey(key))
         {
-            Debug.Log("Key doesnt exist");
             MyClass myFireObject = new MyClass("Big bille", 999999999, SceneManager.GetActiveScene().name);
             serverManager.Fire(myFireObject);
         }
@@ -101,6 +93,7 @@ public class DataStore : MonoBehaviour
 
         return dataStoreObject.levels[key];
     }
+
 
     public void SaveLeaderboards(DataStoreObject data)
     {

@@ -22,8 +22,10 @@ public class LeaderBoard : MonoBehaviour
         int scorecounter = 1;
         foreach (int score in level.scores)
         {
+            float actualScore = (float)score / CompleteManager.SECONDS_TO_MICROSECONDS;
+            Debug.Log("actual: " + actualScore);
             string scoreobject = "Score" + scorecounter + "Text";
-            GameObject.Find(scoreobject).GetComponent<Text>().text = "Time: " + score.ToString();
+            GameObject.Find(scoreobject).GetComponent<Text>().text = "Time: " + actualScore;
             scorecounter++;
         }
     }

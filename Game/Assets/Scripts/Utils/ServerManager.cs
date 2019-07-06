@@ -52,6 +52,8 @@ public class ServerManager : MonoBehaviour
 
     public void Fire(MyClass myFireObject)
     {
+        Debug.Log("Fire");
+
         string fireobject = JsonUtility.ToJson(myFireObject);
         pubnub.Fire()
             .Channel(PUBLISH_CHANNEL)

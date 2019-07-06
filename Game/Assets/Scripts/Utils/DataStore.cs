@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -81,10 +82,16 @@ public class DataStore : MonoBehaviour
 
     public Level GetLevel(string key)
     {
-        if(!dataStoreObject.levels.ContainsKey(key))
+        if(!dataStoreObject.levels.ContainsKey(key)) // Key doesn't exist
         {
-            MyClass myFireObject = new MyClass("Big bille", 999999999, SceneManager.GetActiveScene().name);
-            serverManager.Fire(myFireObject);
+            Debug.Log("Key doesn't exist. Creating dummy data for level");
+            MyClass myFireObject = new MyClass("Dummy", 999999999, SceneManager.GetActiveScene().name);
+
+            Level level = new Level();
+            level.usernames = new string[]{"local_dummy", "local_dummy", "local_dummy", "local_dummy", "local_dummy"};
+            level.scores = new int[] { 88888888, 88888888, 88888888, 88888888, 88888888 };
+
+            dataStoreObject.levels.Add(key, level);
         }
         else
         {
@@ -101,7 +108,7 @@ public class DataStore : MonoBehaviour
 
         BinaryFormatter formatter = new BinaryFormatter();
 
-        FileStream file = InitFile(LEADERBOARDS_FILE_NAME);
+        FileStream file = GetFile(LEADERBOARDS_FILE_NAME);
 
         formatter.Serialize(file, data);
 
@@ -116,7 +123,7 @@ public class DataStore : MonoBehaviour
 
         BinaryFormatter formatter = new BinaryFormatter();
 
-        FileStream file = InitFile(LOCAL_HIGHSCORES_FILE_NAME);
+        FileStream file = GetFile(LOCAL_HIGHSCORES_FILE_NAME);
 
         formatter.Serialize(file, data);
 
@@ -177,7 +184,7 @@ public class DataStore : MonoBehaviour
         return -1;
     }
 
-    private FileStream InitFile(string fileName)
+    private FileStream GetFile(string fileName)
     {
         FileStream file;
 

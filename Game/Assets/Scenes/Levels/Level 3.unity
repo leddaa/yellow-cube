@@ -1908,7 +1908,7 @@ PrefabInstance:
         type: 3}
       propertyPath: characters.Array.data[4].material
       value: 
-      objectReference: {fileID: 2100000, guid: 713f8d12f5dbfb640b7a4874212c2c08, type: 2}
+      objectReference: {fileID: 2100000, guid: 66c42298899815f448c57649f8e0e155, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ac600502c7f274fa2ad7b75d7637e2, type: 3}
 --- !u!4 &1062569253 stripped

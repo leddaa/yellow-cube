@@ -779,7 +779,7 @@ GameObject:
   - component: {fileID: 258292639}
   m_Layer: 0
   m_Name: Rod (5)
-  m_TagString: Untagged
+  m_TagString: PlayerKill
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -821,7 +821,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 258292637}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -1001,7 +1001,7 @@ GameObject:
   - component: {fileID: 304511983}
   m_Layer: 0
   m_Name: Rod (4)
-  m_TagString: Untagged
+  m_TagString: PlayerKill
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1043,7 +1043,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 304511981}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -5945,7 +5945,7 @@ GameObject:
   - component: {fileID: 505590865}
   m_Layer: 0
   m_Name: Sphere (1)
-  m_TagString: Untagged
+  m_TagString: PlayerKill
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5973,7 +5973,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 505590863}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -6037,7 +6037,7 @@ GameObject:
   - component: {fileID: 526081411}
   m_Layer: 0
   m_Name: Sphere (1)
-  m_TagString: Untagged
+  m_TagString: PlayerKill
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6065,7 +6065,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 526081409}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -6260,7 +6260,7 @@ GameObject:
   - component: {fileID: 544942908}
   m_Layer: 0
   m_Name: Sphere
-  m_TagString: Untagged
+  m_TagString: PlayerKill
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6288,7 +6288,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 544942906}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -6512,7 +6512,7 @@ GameObject:
   - component: {fileID: 575803854}
   m_Layer: 0
   m_Name: Sphere
-  m_TagString: Untagged
+  m_TagString: PlayerKill
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6540,7 +6540,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 575803852}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -6695,7 +6695,7 @@ GameObject:
   - component: {fileID: 616374167}
   m_Layer: 0
   m_Name: Sphere (1)
-  m_TagString: Untagged
+  m_TagString: PlayerKill
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6723,7 +6723,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 616374165}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -11628,12 +11628,6 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!4 &799200968 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7308034043805319552, guid: aa10e9b8beb16ff4d92106958c6154d7,
-    type: 3}
-  m_PrefabInstance: {fileID: 1059685506}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &836176004
 GameObject:
   m_ObjectHideFlags: 0
@@ -16464,7 +16458,7 @@ GameObject:
   - component: {fileID: 955346033}
   m_Layer: 0
   m_Name: Rod (1)
-  m_TagString: Untagged
+  m_TagString: PlayerKill
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16506,7 +16500,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 955346031}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -16665,7 +16659,7 @@ GameObject:
   - component: {fileID: 1045107132}
   m_Layer: 0
   m_Name: Sphere
-  m_TagString: Untagged
+  m_TagString: PlayerKill
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16693,7 +16687,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1045107130}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -16748,7 +16742,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1807874124}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 7308034043805319564, guid: aa10e9b8beb16ff4d92106958c6154d7,
         type: 3}
@@ -16793,7 +16787,7 @@ PrefabInstance:
     - target: {fileID: 7308034043805319552, guid: aa10e9b8beb16ff4d92106958c6154d7,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7308034043805319552, guid: aa10e9b8beb16ff4d92106958c6154d7,
         type: 3}
@@ -16810,16 +16804,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7308034043805319556, guid: aa10e9b8beb16ff4d92106958c6154d7,
-        type: 3}
-      propertyPath: timeTracker
-      value: 
-      objectReference: {fileID: 289785727}
-    - target: {fileID: 7308034043805319556, guid: aa10e9b8beb16ff4d92106958c6154d7,
-        type: 3}
-      propertyPath: materialCheater
-      value: 
-      objectReference: {fileID: 2100000, guid: 1688d5eed14f0db4a9beaf898ec912ea, type: 2}
     - target: {fileID: 7126207998294842739, guid: aa10e9b8beb16ff4d92106958c6154d7,
         type: 3}
       propertyPath: characters.Array.size
@@ -16837,6 +16821,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -9005223747805884326, guid: d28e1d3fcadec624890ac1649f46ba31,
         type: 3}
+    - target: {fileID: 7308034043805319556, guid: aa10e9b8beb16ff4d92106958c6154d7,
+        type: 3}
+      propertyPath: timeTracker
+      value: 
+      objectReference: {fileID: 289785727}
+    - target: {fileID: 7308034043805319556, guid: aa10e9b8beb16ff4d92106958c6154d7,
+        type: 3}
+      propertyPath: materialCheater
+      value: 
+      objectReference: {fileID: 2100000, guid: 1688d5eed14f0db4a9beaf898ec912ea, type: 2}
     - target: {fileID: 7308034043805319557, guid: aa10e9b8beb16ff4d92106958c6154d7,
         type: 3}
       propertyPath: timeTracker
@@ -26817,7 +26811,7 @@ GameObject:
   - component: {fileID: 1559761505}
   m_Layer: 0
   m_Name: Sphere
-  m_TagString: Untagged
+  m_TagString: PlayerKill
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26845,7 +26839,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1559761503}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -31753,7 +31747,7 @@ GameObject:
   - component: {fileID: 1652644421}
   m_Layer: 0
   m_Name: Rod (3)
-  m_TagString: Untagged
+  m_TagString: PlayerKill
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31795,7 +31789,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1652644419}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -36707,8 +36701,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 799200968}
+  m_Children: []
   m_Father: {fileID: 121786971}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -41907,7 +41900,7 @@ PrefabInstance:
         type: 3}
       propertyPath: characters.Array.data[4].material
       value: 
-      objectReference: {fileID: 2100000, guid: 713f8d12f5dbfb640b7a4874212c2c08, type: 2}
+      objectReference: {fileID: 2100000, guid: 66c42298899815f448c57649f8e0e155, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ac600502c7f274fa2ad7b75d7637e2, type: 3}
 --- !u!4 &2041040081 stripped
@@ -41930,7 +41923,7 @@ GameObject:
   - component: {fileID: 2044608147}
   m_Layer: 0
   m_Name: Sphere (1)
-  m_TagString: Untagged
+  m_TagString: PlayerKill
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -41958,7 +41951,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2044608145}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5

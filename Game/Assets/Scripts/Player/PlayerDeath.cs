@@ -33,7 +33,8 @@ public class PlayerDeath : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.name == "Floor")
+        Debug.Log("Nigga");
+        if(other.gameObject.tag == Tags.PLAYER_KILL)
         {
             explode();
         }

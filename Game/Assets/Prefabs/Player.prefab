@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 7308034043805319559}
   - component: {fileID: 7308034043805319556}
   - component: {fileID: 3582977040468234142}
+  - component: {fileID: 569228641963639119}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -151,6 +152,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4aec02e605f9d7041a1d4691a1ca2ecd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &569228641963639119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7308034043805319564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f4aa840f5d98c498fe751ba91aeeb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cubeSize: 0.2
+  cubesInRow: 5
+  explosionForce: 100
+  explosionRadius: 4
+  explosionUpward: 0
+  deathEffect: {fileID: 1000011128802252, guid: 4ac49cb2ffe9eda46b710928ec43eba1,
+    type: 3}
 --- !u!1001 &4400968881800151345
 PrefabInstance:
   m_ObjectHideFlags: 0

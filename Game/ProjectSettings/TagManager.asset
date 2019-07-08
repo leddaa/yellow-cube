@@ -34,6 +34,7 @@ TagManager:
   - DataStore
   - ServerManager
   - LevelData
+  - PlayerKill
   layers:
   - Default
   - TransparentFX

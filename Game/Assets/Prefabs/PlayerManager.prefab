@@ -60,6 +60,5 @@ MonoBehaviour:
       type: 3}
     deathMaterial: {fileID: 2100000, guid: 1fe5b049b41258f4a8e8eb1d8a417c60, type: 2}
   - mesh: {fileID: 3425170064966194262, guid: 629508fe451b22a46ba322fb7f9ca192, type: 3}
-    material: {fileID: -9005223747805884326, guid: 629508fe451b22a46ba322fb7f9ca192,
-      type: 3}
+    material: {fileID: 2100000, guid: 783c73892a1f5934e843f020c9cdf3ff, type: 2}
     deathMaterial: {fileID: 2100000, guid: 783c73892a1f5934e843f020c9cdf3ff, type: 2}

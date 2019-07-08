@@ -838,7 +838,7 @@ PrefabInstance:
         type: 3}
       propertyPath: characters.Array.data[4].material
       value: 
-      objectReference: {fileID: 2100000, guid: 713f8d12f5dbfb640b7a4874212c2c08, type: 2}
+      objectReference: {fileID: 2100000, guid: 783c73892a1f5934e843f020c9cdf3ff, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ac600502c7f274fa2ad7b75d7637e2, type: 3}
 --- !u!4 &420182426 stripped
@@ -1307,16 +1307,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7308034043805319556, guid: aa10e9b8beb16ff4d92106958c6154d7,
-        type: 3}
-      propertyPath: timeTracker
-      value: 
-      objectReference: {fileID: 289785727}
-    - target: {fileID: 7308034043805319556, guid: aa10e9b8beb16ff4d92106958c6154d7,
-        type: 3}
-      propertyPath: materialCheater
-      value: 
-      objectReference: {fileID: 2100000, guid: 1688d5eed14f0db4a9beaf898ec912ea, type: 2}
     - target: {fileID: 7126207998294842739, guid: aa10e9b8beb16ff4d92106958c6154d7,
         type: 3}
       propertyPath: characters.Array.size
@@ -1334,6 +1324,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -9005223747805884326, guid: d28e1d3fcadec624890ac1649f46ba31,
         type: 3}
+    - target: {fileID: 7308034043805319556, guid: aa10e9b8beb16ff4d92106958c6154d7,
+        type: 3}
+      propertyPath: timeTracker
+      value: 
+      objectReference: {fileID: 289785727}
+    - target: {fileID: 7308034043805319556, guid: aa10e9b8beb16ff4d92106958c6154d7,
+        type: 3}
+      propertyPath: materialCheater
+      value: 
+      objectReference: {fileID: 2100000, guid: 1688d5eed14f0db4a9beaf898ec912ea, type: 2}
     - target: {fileID: 7308034043805319557, guid: aa10e9b8beb16ff4d92106958c6154d7,
         type: 3}
       propertyPath: timeTracker

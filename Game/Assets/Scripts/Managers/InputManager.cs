@@ -28,6 +28,9 @@ public class InputManager : MonoBehaviour
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
                 PlayerPrefs.SetInt(PrefKeys.FAIL_COUNTER, PlayerPrefs.GetInt(PrefKeys.FAIL_COUNTER) + 1);
+            } else if (SceneManager.GetActiveScene().name == Scenes.LEVEL_COMPLETE)
+            {
+                SceneManager.LoadScene(PlayerPrefs.GetString(PrefKeys.PREVIOUS_LEVEL));
             }
         }
         

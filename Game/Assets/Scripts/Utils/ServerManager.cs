@@ -31,6 +31,7 @@ public class ServerManager : MonoBehaviour
 
     private void Awake()
     {
+        ResetPrefs();
         if (Instance == null)
         {
             Instance = this;

@@ -31,8 +31,6 @@ public class ServerManager : MonoBehaviour
 
     private void Awake()
     {
-        Debug.Log("Server manager awake");
-
         if (Instance == null)
         {
             Instance = this;
@@ -63,8 +61,6 @@ public class ServerManager : MonoBehaviour
 
     public void Fire(MyClass myFireObject)
     {
-        Debug.Log("Fire");
-
         string fireobject = JsonUtility.ToJson(myFireObject);
         pubnub.Fire()
             .Channel(PUBLISH_CHANNEL)
@@ -82,7 +78,6 @@ public class ServerManager : MonoBehaviour
     private void SubscribeCallbackHandler(object sender, EventArgs e)
     {
         SubscribeEventEventArgs msgArgs = e as SubscribeEventEventArgs;
-        Debug.Log("ServerManager subscribe callback");
 
         if (msgArgs.MessageResult != null)
         {
@@ -103,8 +98,6 @@ public class ServerManager : MonoBehaviour
 
                 dataStoreObject.levels.Add(key, level);
             }
-
-            Debug.Log("Hello?");
 
             dataStore.SaveLeaderboards(dataStoreObject);
 

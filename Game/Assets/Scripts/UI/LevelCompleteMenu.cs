@@ -28,11 +28,8 @@ public class LevelCompleteMenu : MonoBehaviour
 
     private void Awake()
     {
-        // Level complete TIME
-        GameObject.FindGameObjectWithTag(Tags.COMPLETE_TIME).GetComponent<Text>().text = PlayerPrefs.GetFloat(PrefKeys.COMPLETE_TIME).ToString(".0", System.Globalization.CultureInfo.InvariantCulture) + " Sec";
-
-        // Level complete FAILS
-        GameObject.FindGameObjectWithTag(Tags.TOTAL_FAILS).GetComponent<Text>().text = PlayerPrefs.GetInt(PrefKeys.TOTAL_FAIL_COUNTER).ToString() + " fails";
-
+        // Level complete time
+        GameObject.FindGameObjectWithTag(Tags.COMPLETE_TIME).GetComponent<Text>().text = (PlayerPrefs.GetFloat(PrefKeys.COMPLETE_TIME) / CompleteManager.SECONDS_TO_MICROSECONDS).ToString(".0", System.Globalization.CultureInfo.InvariantCulture) + " Sec";
     }
+
 }

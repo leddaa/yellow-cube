@@ -31,6 +31,8 @@ public class ServerManager : MonoBehaviour
 
     private void Awake()
     {
+        Debug.Log("Server manager awake");
+
         if (Instance == null)
         {
             Instance = this;
@@ -48,6 +50,15 @@ public class ServerManager : MonoBehaviour
         pnConfiguration.LogVerbosity = PNLogVerbosity.BODY;
 
         pubnub = new PubNub(pnConfiguration);
+
+        pubnub.SubscribeCallback += SubscribeCallbackHandler;
+
+        pubnub.Subscribe()
+            .Channels(new List<string>() {
+                SUBSCRIBE_CHANNEL
+            })
+            .WithPresence()
+            .Execute();
     }
 
     public void Fire(MyClass myFireObject)
@@ -64,15 +75,6 @@ public class ServerManager : MonoBehaviour
                     Debug.Log("Error: " + status.Error);
                 }
             });
-
-        pubnub.SubscribeCallback += SubscribeCallbackHandler;
-
-        pubnub.Subscribe()
-            .Channels(new List<string>() {
-                SUBSCRIBE_CHANNEL
-            })
-            .WithPresence()
-            .Execute();
 
         Debug.Log("Fired data. " + "User: " + myFireObject.usr + ", Time: " + myFireObject.scr + ", Level: " + myFireObject.lvl);
     }

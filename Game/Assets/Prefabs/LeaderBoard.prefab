@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1833188447034861922}
   m_Layer: 5
   m_Name: User5Text
-  m_TagString: LevelText
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 1833188447144314649}
   m_Layer: 5
   m_Name: Score5Text
-  m_TagString: LevelText
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -171,7 +171,7 @@ GameObject:
   - component: {fileID: 1833188447601484280}
   m_Layer: 5
   m_Name: User2Text
-  m_TagString: LevelText
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -250,7 +250,7 @@ GameObject:
   - component: {fileID: 1833188447844919871}
   m_Layer: 5
   m_Name: Score2Text
-  m_TagString: LevelText
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -427,7 +427,7 @@ GameObject:
   - component: {fileID: 1833188448218897020}
   m_Layer: 5
   m_Name: User1Text
-  m_TagString: LevelText
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -585,7 +585,7 @@ GameObject:
   - component: {fileID: 1833188448351235728}
   m_Layer: 5
   m_Name: User3Text
-  m_TagString: LevelText
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -664,7 +664,7 @@ GameObject:
   - component: {fileID: 1833188448528751682}
   m_Layer: 5
   m_Name: User4Text
-  m_TagString: LevelText
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -743,7 +743,7 @@ GameObject:
   - component: {fileID: 1833188448710678252}
   m_Layer: 5
   m_Name: Score4Text
-  m_TagString: LevelText
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -822,7 +822,7 @@ GameObject:
   - component: {fileID: 1833188448716142109}
   m_Layer: 5
   m_Name: Score3Text
-  m_TagString: LevelText
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -901,7 +901,7 @@ GameObject:
   - component: {fileID: 1833188448892900167}
   m_Layer: 5
   m_Name: Score1Text
-  m_TagString: LevelText
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -31,20 +31,21 @@ public class InputManager : MonoBehaviour
             }
         }
         
-            
-
-            // Restart level/nextlevel
-            if (Input.GetKey("space"))
+        if (Input.GetKey("space"))
+        {
+            if (SceneManager.GetActiveScene().name == Scenes.LEVEL_COMPLETE && PlayerPrefs.GetInt(PrefKeys.STAR_TIME_0) != 0) // Restart level
             {
-                if (SceneManager.GetActiveScene().name == Scenes.LEVEL_COMPLETE && PlayerPrefs.GetInt(PrefKeys.STAR_TIME_0) != 0)
-                {
-                    SceneManager.LoadScene(PlayerPrefs.GetString(PrefKeys.NEXT_LEVEL));
-            } else if (SceneManager.GetActiveScene().name == Scenes.LEVEL_COMPLETE && PlayerPrefs.GetInt(PrefKeys.STAR_TIME_0) == 0)
-                {
-                    SceneManager.LoadScene(PlayerPrefs.GetString(PrefKeys.PREVIOUS_LEVEL));
-                }   
+                SceneManager.LoadScene(PlayerPrefs.GetString(PrefKeys.NEXT_LEVEL));
+            }
+            else if (SceneManager.GetActiveScene().name == Scenes.LEVEL_COMPLETE && PlayerPrefs.GetInt(PrefKeys.STAR_TIME_0) == 0) // Go to next level
+            {
+                SceneManager.LoadScene(PlayerPrefs.GetString(PrefKeys.PREVIOUS_LEVEL));
+            }
+        }
 
-
+        if(Input.GetKeyDown("l"))
+        {
+            GameObject.FindGameObjectWithTag(Tags.SERVER_MANAGER).GetComponent<ServerManager>().Fire(new MyClass("donut", 77777738, "Level 1"));
         }
 
         if(Input.GetKeyDown("tab"))

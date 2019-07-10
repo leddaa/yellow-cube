@@ -54,7 +54,7 @@ public class DataStore : MonoBehaviour
 
     private void Start()
     {
-        dataStoreObject = LoadLeaderboards();
+        
     }
 
     public void PrintData()
@@ -98,6 +98,21 @@ public class DataStore : MonoBehaviour
             Debug.Log("Key exists");
         }
 
+        string usernames = "";
+        string scores = "";
+
+        foreach (string usr in dataStoreObject.levels[key].usernames)
+        {
+            usernames += " " + usr;
+        }
+        foreach (int scr in dataStoreObject.levels[key].scores)
+        {
+            scores += " " + scr;
+        }
+
+        Debug.Log("GetLevel Usernames: " + usernames);
+        Debug.Log("GetLevel Scores: " + scores);
+
         return dataStoreObject.levels[key];
     }
 
@@ -113,6 +128,8 @@ public class DataStore : MonoBehaviour
         formatter.Serialize(file, data);
 
         file.Close();
+
+        dataStoreObject = data;
 
         Debug.Log("Save leaderboards success");
     }

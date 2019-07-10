@@ -5,6 +5,19 @@ using UnityEngine.SceneManagement;
 public class LevelCompleteMenu : MonoBehaviour
 {
 
+    private static string HIGH_SCORE_KEY_PREFIX = "highscore_";
+
+    private void Awake()
+    {
+        // Set complete time text
+        GameObject.FindGameObjectWithTag(Tags.COMPLETE_TIME).GetComponent<Text>().text = (PlayerPrefs.GetInt(PrefKeys.COMPLETE_TIME) / CompleteManager.SECONDS_TO_MICROSECONDS).ToString(".0", System.Globalization.CultureInfo.InvariantCulture) + " Sec";
+    }
+
+    private void Start()
+    {
+        checkHighscore();
+    }
+
     public void LoadNextLevel()
     {
         SceneManager.LoadScene(PlayerPrefs.GetString(PrefKeys.NEXT_LEVEL));
@@ -26,10 +39,25 @@ public class LevelCompleteMenu : MonoBehaviour
         SceneManager.LoadScene(Scenes.SHOP_MENU);
     }
 
-    private void Awake()
+    private void checkHighscore()
     {
-        // Level complete time
-        GameObject.FindGameObjectWithTag(Tags.COMPLETE_TIME).GetComponent<Text>().text = (PlayerPrefs.GetFloat(PrefKeys.COMPLETE_TIME) / CompleteManager.SECONDS_TO_MICROSECONDS).ToString(".0", System.Globalization.CultureInfo.InvariantCulture) + " Sec";
+        string key = HIGH_SCORE_KEY_PREFIX + PlayerPrefs.GetString(PrefKeys.PREVIOUS_LEVEL);
+
+        int timeSpent = PlayerPrefs.GetInt(PrefKeys.COMPLETE_TIME);
+
+        Debug.Log(SceneManager.GetActiveScene().name + ": You spent " + (float)timeSpent / CompleteManager.SECONDS_TO_MICROSECONDS + " seconds (" + timeSpent + ")");
+
+        float highscore = PlayerPrefs.GetInt(key);
+        Debug.Log(SceneManager.GetActiveScene().name + ": Stored highscore pref: " + highscore / CompleteManager.SECONDS_TO_MICROSECONDS + " seconds (" + highscore + ")");
+
+        if (highscore == 0 || timeSpent < highscore) // Highscore doesnt exist or new score is better
+        {
+            PlayerPrefs.SetInt(key, timeSpent);
+            Debug.Log("New highscore set: " + timeSpent);
+
+            MyClass myFireObject = new MyClass("Kent", timeSpent, PlayerPrefs.GetString(PrefKeys.PREVIOUS_LEVEL));
+            GameObject.FindGameObjectWithTag("ServerManager").GetComponent<ServerManager>().Publish(myFireObject);
+        }
     }
 
 }

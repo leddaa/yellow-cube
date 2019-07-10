@@ -31,6 +31,8 @@ public class ServerManager : MonoBehaviour
 
     private void Awake()
     {
+        Debug.Log("Server manager awake");
+
         if (Instance == null)
         {
             Instance = this;
@@ -75,8 +77,26 @@ public class ServerManager : MonoBehaviour
         Debug.Log("Fired data. " + "User: " + myFireObject.usr + ", Time: " + myFireObject.scr + ", Level: " + myFireObject.lvl);
     }
 
+    public void Publish(MyClass myFireObject)
+    {
+        string fireobject = JsonUtility.ToJson(myFireObject);
+        pubnub.Publish()
+            .Channel(PUBLISH_CHANNEL)
+            .Message(fireobject)
+            .Async((result, status) => {
+                if (status.Error)
+                {
+                    Debug.Log("Error: " + status.Error);
+                }
+            });
+
+        Debug.Log("Published data. " + "User: " + myFireObject.usr + ", Time: " + myFireObject.scr + ", Level: " + myFireObject.lvl);
+    }
+
     private void SubscribeCallbackHandler(object sender, EventArgs e)
     {
+        Debug.Log("Subscribe callback");
+
         SubscribeEventEventArgs msgArgs = e as SubscribeEventEventArgs;
 
         if (msgArgs.MessageResult != null)

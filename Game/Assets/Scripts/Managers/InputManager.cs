@@ -7,7 +7,8 @@ public class InputManager : MonoBehaviour
 
     private bool musicisplaying;
     private bool leaderBoardEnabled = false;
-    void Update()
+
+    private void Update()
     {
         // Exit to Main menu
         if (Input.GetKey("escape"))
@@ -43,12 +44,20 @@ public class InputManager : MonoBehaviour
             }
         }
 
+        // Publish and receive data
         if(Input.GetKeyDown("l"))
         {
             GameObject.FindGameObjectWithTag(Tags.SERVER_MANAGER).GetComponent<ServerManager>().Fire(new MyClass("donut", 77777738, "Level 1"));
         }
 
-        if(Input.GetKeyDown("tab"))
+        // Reset player prefs
+        if (Input.GetKeyDown("m"))
+        {
+            GameObject.FindGameObjectWithTag(Tags.SERVER_MANAGER).GetComponent<ServerManager>().ResetPrefs();
+        }
+
+        // Toggle leaderboard
+        if (Input.GetKeyDown("tab"))
         {
             if(SceneManager.GetActiveScene().name != Scenes.MAIN_MENU &&
                 SceneManager.GetActiveScene().name != Scenes.OPTIONS_MENU &&

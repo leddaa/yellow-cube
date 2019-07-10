@@ -99,8 +99,6 @@ public class CompleteManager : MonoBehaviour
 
     }
 
-<<<<<<< HEAD
-
     
 
     private void checkHighscore(int timeSpent)
@@ -166,6 +164,4 @@ public class CompleteManager : MonoBehaviour
     }
 
 }
-=======
-}
->>>>>>> da80934e8e99da393d3246a01b5e0844669ce121
+

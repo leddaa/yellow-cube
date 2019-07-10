@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class CompleteManager : MonoBehaviour
 {
 
-    public static int SECONDS_TO_MICROSECONDS = 1000000;    
+    public static int SECONDS_TO_MICROSECONDS = 1000000;
 
     private AudioManager audioManager;
 
@@ -17,8 +17,8 @@ public class CompleteManager : MonoBehaviour
     {
         PlayerPrefs.SetString(PrefKeys.PREVIOUS_LEVEL, SceneManager.GetActiveScene().name);
 
-        float timeSpent = (GameObject.FindGameObjectWithTag(Tags.TIME_TRACKER).GetComponent<TimeTracker>().timeSpent * SECONDS_TO_MICROSECONDS);
-        PlayerPrefs.SetFloat(PrefKeys.COMPLETE_TIME, timeSpent);
+        int timeSpent = (int)(GameObject.FindGameObjectWithTag(Tags.TIME_TRACKER).GetComponent<TimeTracker>().timeSpent * SECONDS_TO_MICROSECONDS);
+        PlayerPrefs.SetInt(PrefKeys.COMPLETE_TIME, timeSpent);
         GameObject.FindGameObjectWithTag(Tags.TIME_TRACKER).GetComponent<TimeTracker>().mapCompleted = true;
 
         PlayerPrefs.SetInt(PrefKeys.TOTAL_FAIL_COUNTER, PlayerPrefs.GetInt(PrefKeys.FAIL_COUNTER));
@@ -26,8 +26,6 @@ public class CompleteManager : MonoBehaviour
 
         audioManager.Play(Audio.COMPLETE_SOUND);
 
-        checkHighscore((int)timeSpent);
-        
         SceneManager.LoadScene(Scenes.LEVEL_COMPLETE);
 
         // Get stars time
@@ -101,6 +99,7 @@ public class CompleteManager : MonoBehaviour
 
     }
 
+<<<<<<< HEAD
 
     
 
@@ -167,3 +166,6 @@ public class CompleteManager : MonoBehaviour
     }
 
 }
+=======
+}
+>>>>>>> da80934e8e99da393d3246a01b5e0844669ce121

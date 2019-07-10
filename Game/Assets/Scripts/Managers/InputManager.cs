@@ -7,7 +7,8 @@ public class InputManager : MonoBehaviour
 
     private bool musicisplaying;
     private bool leaderBoardEnabled = false;
-    void Update()
+
+    private void Update()
     {
         // Exit to Main menu
         if (Input.GetKey("escape"))
@@ -28,12 +29,9 @@ public class InputManager : MonoBehaviour
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
                 PlayerPrefs.SetInt(PrefKeys.FAIL_COUNTER, PlayerPrefs.GetInt(PrefKeys.FAIL_COUNTER) + 1);
-            } else if (SceneManager.GetActiveScene().name == Scenes.LEVEL_COMPLETE)
-            {
-                SceneManager.LoadScene(PlayerPrefs.GetString(PrefKeys.PREVIOUS_LEVEL));
             }
         }
-        
+
         if (Input.GetKey("space"))
         {
             if (SceneManager.GetActiveScene().name == Scenes.LEVEL_COMPLETE && PlayerPrefs.GetInt(PrefKeys.STAR_TIME_0) != 0) // Restart level
@@ -46,14 +44,22 @@ public class InputManager : MonoBehaviour
             }
         }
 
-        if(Input.GetKeyDown("l"))
+        // Publish and receive data
+        if (Input.GetKeyDown("l"))
         {
             GameObject.FindGameObjectWithTag(Tags.SERVER_MANAGER).GetComponent<ServerManager>().Fire(new MyClass("donut", 77777738, "Level 1"));
         }
 
-        if(Input.GetKeyDown("tab"))
+        // Reset player prefs
+        if (Input.GetKeyDown("m"))
         {
-            if(SceneManager.GetActiveScene().name != Scenes.MAIN_MENU &&
+            GameObject.FindGameObjectWithTag(Tags.SERVER_MANAGER).GetComponent<ServerManager>().ResetPrefs();
+        }
+
+        // Toggle leaderboard
+        if (Input.GetKeyDown("tab"))
+        {
+            if (SceneManager.GetActiveScene().name != Scenes.MAIN_MENU &&
                 SceneManager.GetActiveScene().name != Scenes.OPTIONS_MENU &&
                 SceneManager.GetActiveScene().name != Scenes.SHOP_MENU &&
                 SceneManager.GetActiveScene().name != Scenes.SKINS_MENU &&
@@ -64,7 +70,7 @@ public class InputManager : MonoBehaviour
                 if (leaderBoardEnabled)
                 {
                     Text[] texts = GameObject.FindGameObjectWithTag("LeaderBoard").GetComponent<Image>().GetComponentsInChildren<Text>();
-                    foreach(Text t in texts)
+                    foreach (Text t in texts)
                     {
                         t.enabled = false;
                     }
@@ -87,4 +93,4 @@ public class InputManager : MonoBehaviour
         }
     }
 
-    }
+}

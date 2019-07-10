@@ -1,6 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class PlayerDeath : MonoBehaviour
 {
@@ -33,10 +33,10 @@ public class PlayerDeath : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Nigga");
         if(other.gameObject.tag == Tags.PLAYER_KILL)
         {
             explode();
+            Invoke("restartLevel", 1.7f);
         }
         
     }
@@ -78,6 +78,13 @@ public class PlayerDeath : MonoBehaviour
             }
         }
 
+    }
+
+    public void restartLevel()
+    {
+        Debug.Log("Restart Level");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Debug.Log(SceneManager.GetActiveScene().name);
     }
 
     void createPiece(int x, int y, int z)

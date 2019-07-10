@@ -31,7 +31,8 @@ public class ServerManager : MonoBehaviour
 
     private void Awake()
     {
-        ResetPrefs();
+        Debug.Log("Server manager awake");
+
         if (Instance == null)
         {
             Instance = this;

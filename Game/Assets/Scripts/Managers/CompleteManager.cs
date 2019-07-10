@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class CompleteManager : MonoBehaviour
 {
 
-    public static int SECONDS_TO_MICROSECONDS = 1000000;    
+    public static int SECONDS_TO_MICROSECONDS = 1000000;
 
     private AudioManager audioManager;
 
@@ -25,7 +25,7 @@ public class CompleteManager : MonoBehaviour
         PlayerPrefs.SetInt(PrefKeys.FAIL_COUNTER, 0);
 
         audioManager.Play(Audio.COMPLETE_SOUND);
-        
+
         SceneManager.LoadScene(Scenes.LEVEL_COMPLETE);
 
         // Get stars time

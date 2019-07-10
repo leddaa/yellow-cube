@@ -40,11 +40,11 @@ public class DataStore : MonoBehaviour
 
     private void Awake()
     {
-        if(Instance == null)
+        if (Instance == null)
         {
             Instance = this;
         }
-        else if(Instance != this)
+        else if (Instance != this)
         {
             Destroy(gameObject);
         }
@@ -54,18 +54,18 @@ public class DataStore : MonoBehaviour
 
     private void Start()
     {
-        
+
     }
 
     public void PrintData()
     {
         DataStoreObject loadData = LoadLeaderboards();
 
-        foreach(string key in loadData.levels.Keys)
+        foreach (string key in loadData.levels.Keys)
         {
 
             string usernames = "";
-            foreach(string username in loadData.levels[key].usernames)
+            foreach (string username in loadData.levels[key].usernames)
             {
                 usernames += username + ", ";
             }
@@ -82,13 +82,13 @@ public class DataStore : MonoBehaviour
 
     public Level GetLevel(string key)
     {
-        if(!dataStoreObject.levels.ContainsKey(key)) // Key doesn't exist
+        if (!dataStoreObject.levels.ContainsKey(key)) // Key doesn't exist
         {
             Debug.Log("Key doesn't exist. Creating dummy data for level");
             MyClass myFireObject = new MyClass("Dummy", 999999999, SceneManager.GetActiveScene().name);
 
             Level level = new Level();
-            level.usernames = new string[]{"local_dummy", "local_dummy", "local_dummy", "local_dummy", "local_dummy"};
+            level.usernames = new string[] { "local_dummy", "local_dummy", "local_dummy", "local_dummy", "local_dummy" };
             level.scores = new int[] { 88888888, 88888888, 88888888, 88888888, 88888888 };
 
             dataStoreObject.levels.Add(key, level);
@@ -153,7 +153,7 @@ public class DataStore : MonoBehaviour
     {
         Debug.Log("Load leaderboards()");
 
-        if(File.Exists(Application.persistentDataPath + LEADERBOARDS_FILE_NAME))
+        if (File.Exists(Application.persistentDataPath + LEADERBOARDS_FILE_NAME))
         {
             BinaryFormatter formatter = new BinaryFormatter();
             FileStream file = File.Open(Application.persistentDataPath + LEADERBOARDS_FILE_NAME, FileMode.Open);
@@ -192,8 +192,8 @@ public class DataStore : MonoBehaviour
     public int GetLocalHighscore(string key)
     {
         LocalHighscores localHighscores = LoadLocalHighscores();
-        
-        if(localHighscores.highscores.ContainsKey(key))
+
+        if (localHighscores.highscores.ContainsKey(key))
         {
             return localHighscores.highscores[key];
         }

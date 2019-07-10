@@ -43,7 +43,66 @@ public class CompleteManager : MonoBehaviour
 
         // Get time for Star 3
         PlayerPrefs.SetInt(PrefKeys.STAR_TIME_3, GameObject.FindGameObjectWithTag(Tags.LEVEL_DATA).GetComponent<LevelData>().threeStars);
+
+
+        // Unlock next level
+        if (PlayerPrefs.GetString(PrefKeys.PREVIOUS_LEVEL) == Scenes.LEVEL_1)
+        {
+            PlayerPrefs.SetInt(PrefKeys.LEVEL_2_UNLOCKED, 1);
+        }
+        else if 
+        (PlayerPrefs.GetString(PrefKeys.PREVIOUS_LEVEL) == Scenes.LEVEL_2)
+        {
+            PlayerPrefs.SetInt(PrefKeys.LEVEL_3_UNLOCKED, 1);
+        }
+        else if 
+        (PlayerPrefs.GetString(PrefKeys.PREVIOUS_LEVEL) == Scenes.LEVEL_3)
+        {
+            PlayerPrefs.SetInt(PrefKeys.LEVEL_4_UNLOCKED, 1);
+        }
+        else if 
+        (PlayerPrefs.GetString(PrefKeys.PREVIOUS_LEVEL) == Scenes.LEVEL_4)
+        {
+            PlayerPrefs.SetInt(PrefKeys.LEVEL_5_UNLOCKED, 1);
+        }
+        else if 
+        (PlayerPrefs.GetString(PrefKeys.PREVIOUS_LEVEL) == Scenes.LEVEL_5)
+        {
+            PlayerPrefs.SetInt(PrefKeys.LEVEL_6_UNLOCKED, 1);
+        }
+        else if 
+        (PlayerPrefs.GetString(PrefKeys.PREVIOUS_LEVEL) == Scenes.LEVEL_6)
+        {
+            PlayerPrefs.SetInt(PrefKeys.LEVEL_7_UNLOCKED, 1);
+        }
+        else if
+        (PlayerPrefs.GetString(PrefKeys.PREVIOUS_LEVEL) == Scenes.LEVEL_7)
+        {
+            PlayerPrefs.SetInt(PrefKeys.LEVEL_8_UNLOCKED, 1);
+        }
+        else if
+        (PlayerPrefs.GetString(PrefKeys.PREVIOUS_LEVEL) == Scenes.LEVEL_8)
+        {
+            PlayerPrefs.SetInt(PrefKeys.LEVEL_9_UNLOCKED, 1);
+        }
+        else if
+        (PlayerPrefs.GetString(PrefKeys.PREVIOUS_LEVEL) == Scenes.LEVEL_9)
+        {
+            PlayerPrefs.SetInt(PrefKeys.LEVEL_10_UNLOCKED, 1);
+        }
+        else if
+        (PlayerPrefs.GetString(PrefKeys.PREVIOUS_LEVEL) == Scenes.LEVEL_10)
+        {
+            PlayerPrefs.SetInt(PrefKeys.LEVEL_10_UNLOCKED, 1); // Kevek 11 when that time comes
+        }
+
+
+
+
     }
+
+
+    
 
     private void checkHighscore(int timeSpent)
     {
@@ -102,7 +161,7 @@ public class CompleteManager : MonoBehaviour
             PlayerPrefs.SetFloat(key, timeSpent);
             Debug.Log("New highscore set: " + timeSpent);
 
-            MyClass myFireObject = new MyClass("Fudgehog", timeSpent, SceneManager.GetActiveScene().name);
+            MyClass myFireObject = new MyClass("Robert", timeSpent, SceneManager.GetActiveScene().name);
             GameObject.FindGameObjectWithTag("ServerManager").GetComponent<ServerManager>().Fire(myFireObject);
         }
     }

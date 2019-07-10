@@ -22,6 +22,18 @@
     public static string HIGHSCORE_LEVEL_9 = "highscore_level_9";
     public static string HIGHSCORE_LEVEL_10 = "highscore_level_10";
 
+    // Level Unlocked
+    public static string LEVEL_1_UNLOCKED = "Level1Unlocked";
+    public static string LEVEL_2_UNLOCKED = "Level2Unlocked";
+    public static string LEVEL_3_UNLOCKED = "Level3Unlocked";
+    public static string LEVEL_4_UNLOCKED = "Level4Unlocked";
+    public static string LEVEL_5_UNLOCKED = "Level5Unlocked";
+    public static string LEVEL_6_UNLOCKED = "Level6Unlocked";
+    public static string LEVEL_7_UNLOCKED = "Level7Unlocked";
+    public static string LEVEL_8_UNLOCKED = "Level8Unlocked";
+    public static string LEVEL_9_UNLOCKED = "Level9Unlocked";
+    public static string LEVEL_10_UNLOCKED = "Level10Unlocked";
+
     // Stars
     public static string STAR_TIME_0 = "StarTime0";
     public static string STAR_TIME_1 = "StarTime1";

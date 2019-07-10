@@ -161,7 +161,12 @@ PrefabInstance:
     - target: {fileID: 5556646305109193740, guid: 340d11c167b5a9a4cb735a585fa3dc07,
         type: 3}
       propertyPath: m_Name
-      value: UIButton (7)
+      value: ButtonLevel8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5556646305109193740, guid: 340d11c167b5a9a4cb735a585fa3dc07,
+        type: 3}
+      propertyPath: m_TagString
+      value: ButtonLevel8
       objectReference: {fileID: 0}
     - target: {fileID: 5556646305109193743, guid: 340d11c167b5a9a4cb735a585fa3dc07,
         type: 3}
@@ -683,7 +688,12 @@ PrefabInstance:
     - target: {fileID: 5556646305109193740, guid: 340d11c167b5a9a4cb735a585fa3dc07,
         type: 3}
       propertyPath: m_Name
-      value: UIButton (9)
+      value: ButtonLevel10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5556646305109193740, guid: 340d11c167b5a9a4cb735a585fa3dc07,
+        type: 3}
+      propertyPath: m_TagString
+      value: ButtonLevel10
       objectReference: {fileID: 0}
     - target: {fileID: 5556646305109193743, guid: 340d11c167b5a9a4cb735a585fa3dc07,
         type: 3}
@@ -1052,6 +1062,49 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &632413456
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 632413458}
+  - component: {fileID: 632413457}
+  m_Layer: 0
+  m_Name: LevelsMenuManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &632413457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 632413456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be4f2d6bcc0feb24c9f336d7bb76fbd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &632413458
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 632413456}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1638.4216, y: 1486.7299, z: -558.80774}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &681289018
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1062,7 +1115,12 @@ PrefabInstance:
     - target: {fileID: 5556646305109193740, guid: 340d11c167b5a9a4cb735a585fa3dc07,
         type: 3}
       propertyPath: m_Name
-      value: UIButton
+      value: ButtonLevel1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5556646305109193740, guid: 340d11c167b5a9a4cb735a585fa3dc07,
+        type: 3}
+      propertyPath: m_TagString
+      value: ButtonLevel1
       objectReference: {fileID: 0}
     - target: {fileID: 5556646305109193743, guid: 340d11c167b5a9a4cb735a585fa3dc07,
         type: 3}
@@ -1219,7 +1277,12 @@ PrefabInstance:
     - target: {fileID: 5556646305109193740, guid: 340d11c167b5a9a4cb735a585fa3dc07,
         type: 3}
       propertyPath: m_Name
-      value: UIButton (3)
+      value: ButtonLevel4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5556646305109193740, guid: 340d11c167b5a9a4cb735a585fa3dc07,
+        type: 3}
+      propertyPath: m_TagString
+      value: ButtonLevel4
       objectReference: {fileID: 0}
     - target: {fileID: 5556646305109193743, guid: 340d11c167b5a9a4cb735a585fa3dc07,
         type: 3}
@@ -1382,7 +1445,12 @@ PrefabInstance:
     - target: {fileID: 5556646305109193740, guid: 340d11c167b5a9a4cb735a585fa3dc07,
         type: 3}
       propertyPath: m_Name
-      value: UIButton (4)
+      value: ButtonLevel5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5556646305109193740, guid: 340d11c167b5a9a4cb735a585fa3dc07,
+        type: 3}
+      propertyPath: m_TagString
+      value: ButtonLevel5
       objectReference: {fileID: 0}
     - target: {fileID: 5556646305109193743, guid: 340d11c167b5a9a4cb735a585fa3dc07,
         type: 3}
@@ -1582,7 +1650,12 @@ PrefabInstance:
     - target: {fileID: 5556646305109193740, guid: 340d11c167b5a9a4cb735a585fa3dc07,
         type: 3}
       propertyPath: m_Name
-      value: UIButton (8)
+      value: ButtonLevel9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5556646305109193740, guid: 340d11c167b5a9a4cb735a585fa3dc07,
+        type: 3}
+      propertyPath: m_TagString
+      value: ButtonLevel9
       objectReference: {fileID: 0}
     - target: {fileID: 5556646305109193743, guid: 340d11c167b5a9a4cb735a585fa3dc07,
         type: 3}
@@ -1770,7 +1843,12 @@ PrefabInstance:
     - target: {fileID: 5556646305109193740, guid: 340d11c167b5a9a4cb735a585fa3dc07,
         type: 3}
       propertyPath: m_Name
-      value: UIButton (5)
+      value: ButtonLevel6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5556646305109193740, guid: 340d11c167b5a9a4cb735a585fa3dc07,
+        type: 3}
+      propertyPath: m_TagString
+      value: ButtonLevel6
       objectReference: {fileID: 0}
     - target: {fileID: 5556646305109193743, guid: 340d11c167b5a9a4cb735a585fa3dc07,
         type: 3}
@@ -1927,7 +2005,12 @@ PrefabInstance:
     - target: {fileID: 5556646305109193740, guid: 340d11c167b5a9a4cb735a585fa3dc07,
         type: 3}
       propertyPath: m_Name
-      value: UIButton (1)
+      value: ButtonLevel2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5556646305109193740, guid: 340d11c167b5a9a4cb735a585fa3dc07,
+        type: 3}
+      propertyPath: m_TagString
+      value: ButtonLevel2
       objectReference: {fileID: 0}
     - target: {fileID: 5556646305109193743, guid: 340d11c167b5a9a4cb735a585fa3dc07,
         type: 3}
@@ -2177,7 +2260,12 @@ PrefabInstance:
     - target: {fileID: 5556646305109193740, guid: 340d11c167b5a9a4cb735a585fa3dc07,
         type: 3}
       propertyPath: m_Name
-      value: UIButton (2)
+      value: ButtonLevel3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5556646305109193740, guid: 340d11c167b5a9a4cb735a585fa3dc07,
+        type: 3}
+      propertyPath: m_TagString
+      value: ButtonLevel3
       objectReference: {fileID: 0}
     - target: {fileID: 5556646305109193743, guid: 340d11c167b5a9a4cb735a585fa3dc07,
         type: 3}
@@ -2489,7 +2577,12 @@ PrefabInstance:
     - target: {fileID: 5556646305109193740, guid: 340d11c167b5a9a4cb735a585fa3dc07,
         type: 3}
       propertyPath: m_Name
-      value: UIButton (6)
+      value: ButtonLevel7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5556646305109193740, guid: 340d11c167b5a9a4cb735a585fa3dc07,
+        type: 3}
+      propertyPath: m_TagString
+      value: ButtonLevel7
       objectReference: {fileID: 0}
     - target: {fileID: 5556646305109193743, guid: 340d11c167b5a9a4cb735a585fa3dc07,
         type: 3}

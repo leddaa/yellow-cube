@@ -31,6 +31,19 @@
     public static string BUY_BUTTON_3 = "BuyButton3";
     public static string BUY_BUTTON_4 = "BuyButton4";
 
+    // Select Level Menu
+    public static string BUTTON_LEVEL_1 = "ButtonLevel1";
+    public static string BUTTON_LEVEL_2 = "ButtonLevel2";
+    public static string BUTTON_LEVEL_3 = "ButtonLevel3";
+    public static string BUTTON_LEVEL_4 = "ButtonLevel4";
+    public static string BUTTON_LEVEL_5 = "ButtonLevel5";
+    public static string BUTTON_LEVEL_6 = "ButtonLevel6";
+    public static string BUTTON_LEVEL_7 = "ButtonLevel7";
+    public static string BUTTON_LEVEL_8 = "ButtonLevel8";
+    public static string BUTTON_LEVEL_9 = "ButtonLevel9";
+    public static string BUTTON_LEVEL_10 = "ButtonLevel10";
+
+
     // Props
     public static string BALL = "Ball";
     public static string DOOR = "Door";

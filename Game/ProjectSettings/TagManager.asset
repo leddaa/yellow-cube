@@ -35,6 +35,18 @@ TagManager:
   - ServerManager
   - LevelData
   - PlayerKill
+  - TriggerLevel6
+  - Plank
+  - ButtonLevel1
+  - ButtonLevel2
+  - ButtonLevel3
+  - ButtonLevel4
+  - ButtonLevel5
+  - ButtonLevel6
+  - ButtonLevel7
+  - ButtonLevel8
+  - ButtonLevel9
+  - ButtonLevel10
   layers:
   - Default
   - TransparentFX

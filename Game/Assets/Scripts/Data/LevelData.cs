@@ -4,7 +4,7 @@ public class LevelData : MonoBehaviour
 {
 
     [Header("Stars Time")]
-    public int oneStars;
+    public int oneStars; 
     public int twoStars;
     public int threeStars;
 

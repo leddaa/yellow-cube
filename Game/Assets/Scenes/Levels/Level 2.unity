@@ -2463,23 +2463,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7126207998294842739, guid: aa10e9b8beb16ff4d92106958c6154d7,
-        type: 3}
-      propertyPath: characters.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7126207998294842739, guid: aa10e9b8beb16ff4d92106958c6154d7,
-        type: 3}
-      propertyPath: characters.Array.data[5].mesh
-      value: 
-      objectReference: {fileID: -3724242731433456866, guid: 26e83a06885e4dc449545a212769bb91,
-        type: 3}
-    - target: {fileID: 7126207998294842739, guid: aa10e9b8beb16ff4d92106958c6154d7,
-        type: 3}
-      propertyPath: characters.Array.data[5].material
-      value: 
-      objectReference: {fileID: -9005223747805884326, guid: d28e1d3fcadec624890ac1649f46ba31,
-        type: 3}
     - target: {fileID: 7308034043805319556, guid: aa10e9b8beb16ff4d92106958c6154d7,
         type: 3}
       propertyPath: timeTracker
@@ -2500,6 +2483,23 @@ PrefabInstance:
       propertyPath: sceneName
       value: Level 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7126207998294842739, guid: aa10e9b8beb16ff4d92106958c6154d7,
+        type: 3}
+      propertyPath: characters.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7126207998294842739, guid: aa10e9b8beb16ff4d92106958c6154d7,
+        type: 3}
+      propertyPath: characters.Array.data[5].mesh
+      value: 
+      objectReference: {fileID: -3724242731433456866, guid: 26e83a06885e4dc449545a212769bb91,
+        type: 3}
+    - target: {fileID: 7126207998294842739, guid: aa10e9b8beb16ff4d92106958c6154d7,
+        type: 3}
+      propertyPath: characters.Array.data[5].material
+      value: 
+      objectReference: {fileID: -9005223747805884326, guid: d28e1d3fcadec624890ac1649f46ba31,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa10e9b8beb16ff4d92106958c6154d7, type: 3}
 --- !u!1001 &1099106512
@@ -3243,6 +3243,36 @@ PrefabInstance:
         type: 3}
       propertyPath: nextLevel
       value: Level 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8590046535760526913, guid: 7c3669c64f16f204cb6f6e3bd9344bf9,
+        type: 3}
+      propertyPath: oneStarsTime
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8590046535760526913, guid: 7c3669c64f16f204cb6f6e3bd9344bf9,
+        type: 3}
+      propertyPath: twoStarsTime
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 8590046535760526913, guid: 7c3669c64f16f204cb6f6e3bd9344bf9,
+        type: 3}
+      propertyPath: threeStarsTime
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8590046535760526913, guid: 7c3669c64f16f204cb6f6e3bd9344bf9,
+        type: 3}
+      propertyPath: oneStarsCoinsAmount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8590046535760526913, guid: 7c3669c64f16f204cb6f6e3bd9344bf9,
+        type: 3}
+      propertyPath: twoStarsCoinsAmount
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8590046535760526913, guid: 7c3669c64f16f204cb6f6e3bd9344bf9,
+        type: 3}
+      propertyPath: threeStarsCoinsAmount
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c3669c64f16f204cb6f6e3bd9344bf9, type: 3}

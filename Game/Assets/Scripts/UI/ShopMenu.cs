@@ -18,7 +18,7 @@ public class ShopMenu : MonoBehaviour
 
     public bool MoneyCheck(int amount)
     {
-        return amount <= PlayerPrefs.GetInt(PrefKeys.COINS_AMOUNT);
+        return amount <= PlayerPrefs.GetInt(PrefKeys.TOTAL_COINS);
     }
 
     // Standard skin - Yellow Cube
@@ -36,7 +36,7 @@ public class ShopMenu : MonoBehaviour
         {
             PlayerPrefs.SetInt(PrefKeys.DUMMY_CHARACTER, (int)Character.DARKMEDIC);
             PlayerPrefs.SetInt(PrefKeys.CURRENT_CHARACTER, (int)Character.DARKMEDIC);
-            PlayerPrefs.SetInt(PrefKeys.COINS_AMOUNT, (PlayerPrefs.GetInt(PrefKeys.COINS_AMOUNT) - DARK_MEDIC_PRICE));
+            PlayerPrefs.SetInt(PrefKeys.TOTAL_COINS, (PlayerPrefs.GetInt(PrefKeys.TOTAL_COINS) - DARK_MEDIC_PRICE));
             PlayerPrefs.SetInt(PrefKeys.DARK_MEDIC_PURCHASED, 1);
             GameObject.FindGameObjectWithTag(Tags.BUY_BUTTON_1).SetActive(false);
         }
@@ -58,7 +58,7 @@ public class ShopMenu : MonoBehaviour
         {
             PlayerPrefs.SetInt(PrefKeys.DUMMY_CHARACTER, (int)Character.HACKER);
             PlayerPrefs.SetInt(PrefKeys.CURRENT_CHARACTER, (int)Character.HACKER);
-            PlayerPrefs.SetInt(PrefKeys.COINS_AMOUNT, (PlayerPrefs.GetInt(PrefKeys.COINS_AMOUNT) - HACKER_PRICE));
+            PlayerPrefs.SetInt(PrefKeys.TOTAL_COINS, (PlayerPrefs.GetInt(PrefKeys.TOTAL_COINS) - HACKER_PRICE));
             PlayerPrefs.SetInt(PrefKeys.HACKER_PURCHASED, 1);
             GameObject.FindGameObjectWithTag(Tags.BUY_BUTTON_2).SetActive(false);
         }
@@ -80,7 +80,7 @@ public class ShopMenu : MonoBehaviour
         {
             PlayerPrefs.SetInt(PrefKeys.DUMMY_CHARACTER, (int)Character.BLAH);
             PlayerPrefs.SetInt(PrefKeys.CURRENT_CHARACTER, (int)Character.BLAH);
-            PlayerPrefs.SetInt(PrefKeys.COINS_AMOUNT, (PlayerPrefs.GetInt(PrefKeys.COINS_AMOUNT) - BLAH_PRICE));
+            PlayerPrefs.SetInt(PrefKeys.TOTAL_COINS, (PlayerPrefs.GetInt(PrefKeys.TOTAL_COINS) - BLAH_PRICE));
             PlayerPrefs.SetInt(PrefKeys.BLAH_PURCHASED, 1);
             GameObject.FindGameObjectWithTag(Tags.BUY_BUTTON_3).SetActive(false); 
         }
@@ -102,7 +102,7 @@ public class ShopMenu : MonoBehaviour
         {
             PlayerPrefs.SetInt(PrefKeys.DUMMY_CHARACTER, (int)Character.SKULL);
             PlayerPrefs.SetInt(PrefKeys.CURRENT_CHARACTER, (int)Character.SKULL);
-            PlayerPrefs.SetInt(PrefKeys.COINS_AMOUNT, (PlayerPrefs.GetInt(PrefKeys.COINS_AMOUNT) - SKULL_PRICE));
+            PlayerPrefs.SetInt(PrefKeys.TOTAL_COINS, (PlayerPrefs.GetInt(PrefKeys.TOTAL_COINS) - SKULL_PRICE));
             PlayerPrefs.SetInt(PrefKeys.SKULL_PURCHASED, 1);
             GameObject.FindGameObjectWithTag(Tags.BUY_BUTTON_4).SetActive(false);
         }
@@ -164,7 +164,7 @@ public class ShopMenu : MonoBehaviour
     {
 
         // Update coins amount
-        GameObject.FindGameObjectWithTag(Tags.COINS_TEXT).GetComponent<TextMeshProUGUI>().text = PlayerPrefs.GetInt(PrefKeys.COINS_AMOUNT).ToString() + " coins";
+        GameObject.FindGameObjectWithTag(Tags.COINS_TEXT).GetComponent<TextMeshProUGUI>().text = PlayerPrefs.GetInt(PrefKeys.TOTAL_COINS).ToString() + " coins";
     }
 
     // RESET
@@ -176,7 +176,7 @@ public class ShopMenu : MonoBehaviour
         PlayerPrefs.SetInt(PrefKeys.BLAH_PURCHASED, 0);
         PlayerPrefs.SetInt(PrefKeys.SKULL_PURCHASED, 0);
         Debug.Log(PlayerPrefs.GetInt(PrefKeys.YELLOW_CUBE_PURCHASED));
-        PlayerPrefs.SetInt(PrefKeys.COINS_AMOUNT, 1000);
+        PlayerPrefs.SetInt(PrefKeys.TOTAL_COINS, 1000);
     }
 
     public void LoadSandbox()

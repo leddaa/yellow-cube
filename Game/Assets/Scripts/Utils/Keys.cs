@@ -10,6 +10,7 @@
     public static string DUMMY_CHARACTER = "DummyCharacter";
 
 
+
     // Local player highscores
     public static string HIGHSCORE_LEVEL_1 = "highscore_level_1";
     public static string HIGHSCORE_LEVEL_2 = "highscore_level_2";
@@ -41,7 +42,10 @@
     public static string STAR_TIME_3 = "StarTime3";
 
     // Coins
-    public static string COINS_AMOUNT = "CoinsAmount";
+    public static string TOTAL_COINS = "TotalCoins";
+    public static string oneStarCoinsAmount = "OneStarsCoinsAmount";
+    public static string twoStarCoinsAmount = "twoStarsCoinsAmount";
+    public static string threeStarCoinsAmount = "threeStarsCoinsAmount";
 
     // Shop unlocked/not unlocked
     // Player Skins

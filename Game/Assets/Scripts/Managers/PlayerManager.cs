@@ -1,14 +1,22 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+
+[System.Serializable]
+public class Character
+{
+
+    public Mesh mesh;
+    public Material material;
+    public Material deathMaterial;
+
+}
 
 public class PlayerManager : MonoBehaviour
 {
+
     public Character[] characters;
     private MeshFilter meshFilter;
     private new Renderer renderer;
-    
 
     private void Awake()
     {
@@ -28,4 +36,5 @@ public class PlayerManager : MonoBehaviour
             renderer.material = characters[index].material;
         }
     }
+
 }

@@ -1,6 +1,18 @@
 ﻿using UnityEngine;
 using System;
 
+[Serializable]
+public class Sound
+{
+
+    public AudioClip clip;
+    public string name;
+
+    [HideInInspector]
+    public AudioSource source;
+
+}
+
 public class AudioManager : MonoBehaviour
 {
 
@@ -65,5 +77,6 @@ public class AudioManager : MonoBehaviour
             musicSource.Play();
         }
     }
+
 }
  

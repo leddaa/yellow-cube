@@ -15,11 +15,14 @@ public class CompleteManager : MonoBehaviour
 
     public void CompleteMap()
     {
+       
         PlayerPrefs.SetString(PrefKeys.PREVIOUS_LEVEL, SceneManager.GetActiveScene().name);
 
         int timeSpent = (int)(GameObject.FindGameObjectWithTag(Tags.TIME_TRACKER).GetComponent<TimeTracker>().timeSpent * SECONDS_TO_MICROSECONDS);
         PlayerPrefs.SetInt(PrefKeys.COMPLETE_TIME, timeSpent);
         GameObject.FindGameObjectWithTag(Tags.TIME_TRACKER).GetComponent<TimeTracker>().mapCompleted = true;
+
+        Debug.Log("timespent: " + timeSpent);
 
         PlayerPrefs.SetInt(PrefKeys.TOTAL_FAIL_COUNTER, PlayerPrefs.GetInt(PrefKeys.FAIL_COUNTER));
         PlayerPrefs.SetInt(PrefKeys.FAIL_COUNTER, 0);
@@ -33,15 +36,20 @@ public class CompleteManager : MonoBehaviour
         // Get time for level failed
         PlayerPrefs.SetInt(PrefKeys.STAR_TIME_0, 0);
 
-        // Get time for Star 1
-        PlayerPrefs.SetInt(PrefKeys.STAR_TIME_1, GameObject.FindGameObjectWithTag(Tags.LEVEL_DATA).GetComponent<LevelData>().oneStars);
+        // Set time and reward for Star 1
+        PlayerPrefs.SetInt(PrefKeys.STAR_TIME_1, GameObject.FindGameObjectWithTag(Tags.LEVEL_DATA).GetComponent<LevelData>().oneStarsTime);
+        PlayerPrefs.SetInt(PrefKeys.oneStarCoinsAmount, GameObject.FindGameObjectWithTag(Tags.LEVEL_DATA).GetComponent<LevelData>().oneStarsCoinsAmount);
 
-        // Get time for Star 2
-        PlayerPrefs.SetInt(PrefKeys.STAR_TIME_2, GameObject.FindGameObjectWithTag(Tags.LEVEL_DATA).GetComponent<LevelData>().twoStars);
+        // Set time and reward for Star 2
+        PlayerPrefs.SetInt(PrefKeys.STAR_TIME_2, GameObject.FindGameObjectWithTag(Tags.LEVEL_DATA).GetComponent<LevelData>().twoStarsTime);
+        PlayerPrefs.SetInt(PrefKeys.twoStarCoinsAmount, GameObject.FindGameObjectWithTag(Tags.LEVEL_DATA).GetComponent<LevelData>().twoStarsCoinsAmount);
 
-        // Get time for Star 3
-        PlayerPrefs.SetInt(PrefKeys.STAR_TIME_3, GameObject.FindGameObjectWithTag(Tags.LEVEL_DATA).GetComponent<LevelData>().threeStars);
+        // Set time and reward for Star 3
+        PlayerPrefs.SetInt(PrefKeys.STAR_TIME_3, GameObject.FindGameObjectWithTag(Tags.LEVEL_DATA).GetComponent<LevelData>().threeStarsTime);
+        PlayerPrefs.SetInt(PrefKeys.threeStarCoinsAmount, GameObject.FindGameObjectWithTag(Tags.LEVEL_DATA).GetComponent<LevelData>().threeStarsCoinsAmount);
 
+
+        
 
         // Unlock next level
         if (PlayerPrefs.GetString(PrefKeys.PREVIOUS_LEVEL) == Scenes.LEVEL_1)
@@ -91,7 +99,7 @@ public class CompleteManager : MonoBehaviour
         else if
         (PlayerPrefs.GetString(PrefKeys.PREVIOUS_LEVEL) == Scenes.LEVEL_10)
         {
-            PlayerPrefs.SetInt(PrefKeys.LEVEL_10_UNLOCKED, 1); // Kevek 11 when that time comes
+            PlayerPrefs.SetInt(PrefKeys.LEVEL_10_UNLOCKED, 1); // Level 11 when that time comes
         }
 
 
@@ -158,7 +166,7 @@ public class CompleteManager : MonoBehaviour
             PlayerPrefs.SetFloat(key, timeSpent);
             Debug.Log("New highscore set: " + timeSpent);
 
-            MyClass myFireObject = new MyClass("Robert", timeSpent, SceneManager.GetActiveScene().name);
+            MyClass myFireObject = new MyClass("Ledda", timeSpent, SceneManager.GetActiveScene().name);
             GameObject.FindGameObjectWithTag("ServerManager").GetComponent<ServerManager>().Fire(myFireObject);
         }
     }

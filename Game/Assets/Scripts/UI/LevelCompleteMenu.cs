@@ -45,18 +45,18 @@ public class LevelCompleteMenu : MonoBehaviour
 
         int timeSpent = PlayerPrefs.GetInt(PrefKeys.COMPLETE_TIME);
 
-        Debug.Log(SceneManager.GetActiveScene().name + ": You spent " + (float)timeSpent / CompleteManager.SECONDS_TO_MICROSECONDS + " seconds (" + timeSpent + ")");
+        Debug.Log("You spent " + (float)timeSpent / CompleteManager.SECONDS_TO_MICROSECONDS + " seconds (" + timeSpent + ")");
 
         float highscore = PlayerPrefs.GetInt(key);
-        Debug.Log(SceneManager.GetActiveScene().name + ": Stored highscore pref: " + highscore / CompleteManager.SECONDS_TO_MICROSECONDS + " seconds (" + highscore + ")");
+        Debug.Log("Stored highscore pref: " + highscore / CompleteManager.SECONDS_TO_MICROSECONDS + " seconds (" + highscore + ")");
 
         if (highscore == 0 || timeSpent < highscore) // Highscore doesnt exist or new score is better
         {
             PlayerPrefs.SetInt(key, timeSpent);
             Debug.Log("New highscore set: " + timeSpent);
 
-            MyClass myFireObject = new MyClass("Kent", timeSpent, PlayerPrefs.GetString(PrefKeys.PREVIOUS_LEVEL));
-            GameObject.FindGameObjectWithTag("ServerManager").GetComponent<ServerManager>().Publish(myFireObject);
+            MyClass myFireObject = new MyClass("your_username", timeSpent, PlayerPrefs.GetString(PrefKeys.PREVIOUS_LEVEL));
+            GameObject.FindGameObjectWithTag(Tags.SERVER_MANAGER).GetComponent<ServerManager>().Publish(myFireObject);
         }
     }
 

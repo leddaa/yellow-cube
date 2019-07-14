@@ -45,7 +45,6 @@ namespace PubNubAPI
 
         readonly SafeDictionary<string, UnityWebRequestWrapper> currentWebRequests = new SafeDictionary<string, UnityWebRequestWrapper> ();
 
-        public event EventHandler<EventArgs> CompleteOrTimeoutEvent; 
         internal CurrentRequestTypeEventArgs CreateCurrentRequestTypeEventArgs(UnityWebRequestWrapper unityWebRequestWrapper, bool isTimeout){
             CurrentRequestTypeEventArgs crtEa = new CurrentRequestTypeEventArgs();
             crtEa.WebRequestWrapper = unityWebRequestWrapper;
@@ -206,10 +205,14 @@ namespace PubNubAPI
                         #endif
                     }
                 }
-            } catch (Exception ex) {
-                #if (ENABLE_PUBNUB_LOGGING)
+            }
+            #pragma warning disable CS0168
+            catch (Exception ex)
+            #pragma warning restore CS0168
+            {
+            #if (ENABLE_PUBNUB_LOGGING)
                 this.PNLog.WriteToLog (string.Format ("BounceRequest: Exception: {0}",  ex.ToString ()), PNLoggingMethod.LevelError);
-                #endif
+            #endif
             }
         }
 
@@ -376,16 +379,24 @@ namespace PubNubAPI
                     this.PNLog.WriteToLog ("BEFORE FireEvent", PNLoggingMethod.LevelInfo);                        
                     #endif
                     FireEvent (message, isError, false, unityWebRequestWrapper.CurrentRequestState, unityWebRequestWrapper.CurrentRequestType, key);
-                } 
-            } catch (PubNubUserException ex) {
-                #if (ENABLE_PUBNUB_LOGGING)
+                }
+            }
+            #pragma warning disable CS0168
+            catch (PubNubUserException ex)
+            #pragma warning restore CS0168
+            {
+            #if (ENABLE_PUBNUB_LOGGING)
                 this.PNLog.WriteToLog (string.Format ("ProcessResponse: PubNubUserException: Exception={0}", ex.ToString ()), PNLoggingMethod.LevelError);
-                #endif
-                throw;                
-            } catch (Exception ex) {
-                #if (ENABLE_PUBNUB_LOGGING)
+            #endif
+                throw;
+            }
+            #pragma warning disable CS0168
+            catch (Exception ex)
+            #pragma warning restore CS0168
+            {
+            #if (ENABLE_PUBNUB_LOGGING)
                 this.PNLog.WriteToLog (string.Format ("ProcessResponse: RunWebRequestSub {0}, Exception: {1}",  unityWebRequestWrapper.CurrentRequestType.ToString (), ex.ToString ()), PNLoggingMethod.LevelError);
-                #endif
+            #endif
             }
         }
 
@@ -407,7 +418,11 @@ namespace PubNubAPI
                 this.PNLog.WriteToLog (string.Format ("ProcessTimeout: WWW Error: {0} sec timeout",  unityWebRequestWrapper.Timeout.ToString ()), PNLoggingMethod.LevelInfo);
                 #endif
 
-            } catch (Exception ex) {
+            }
+            #pragma warning disable CS0168
+            catch (Exception ex)
+            #pragma warning restore CS0168
+            {
                 #if (ENABLE_PUBNUB_LOGGING)
                 this.PNLog.WriteToLog (string.Format ("ProcessTimeout: {0} {1}",  ex.ToString (), unityWebRequestWrapper.CurrentRequestType.ToString ()), PNLoggingMethod.LevelError);
                 #endif

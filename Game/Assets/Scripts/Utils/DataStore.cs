@@ -50,6 +50,8 @@ public class DataStore : MonoBehaviour
         }
 
         serverManager = GameObject.FindGameObjectWithTag("ServerManager").GetComponent<ServerManager>();
+
+        dataStoreObject = LoadLeaderboards();
     }
 
     private void Start()
@@ -85,17 +87,13 @@ public class DataStore : MonoBehaviour
         if (!dataStoreObject.levels.ContainsKey(key)) // Key doesn't exist
         {
             Debug.Log("Key doesn't exist. Creating dummy data for level");
-            MyClass myFireObject = new MyClass("Dummy", 999999999, SceneManager.GetActiveScene().name);
+            MyClass myFireObject = new MyClass("Dummy", 100000000, SceneManager.GetActiveScene().name);
 
             Level level = new Level();
             level.usernames = new string[] { "local_dummy", "local_dummy", "local_dummy", "local_dummy", "local_dummy" };
-            level.scores = new int[] { 88888888, 88888888, 88888888, 88888888, 88888888 };
+            level.scores = new int[] { 100000000, 100000000, 100000000, 100000000, 100000000 };
 
             dataStoreObject.levels.Add(key, level);
-        }
-        else
-        {
-            Debug.Log("Key exists");
         }
 
         string usernames = "";
@@ -165,6 +163,7 @@ public class DataStore : MonoBehaviour
         }
         else
         {
+            Debug.Log("Error: DataStoreObject is null");
             return null;
         }
     }

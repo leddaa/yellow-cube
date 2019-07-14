@@ -54,11 +54,15 @@ namespace PubNubAPI
                     
                     PresenceHeartbeatHandler (cea);
 
-                }                
-            } catch (Exception ex) {
-                #if (ENABLE_PUBNUB_LOGGING)
+                }
+            }
+            #pragma warning disable CS0168
+            catch (Exception ex)
+            #pragma warning restore CS0168
+            {
+#if (ENABLE_PUBNUB_LOGGING)
                 this.PubNubInstance.PNLog.WriteToLog (string.Format ("WebRequestCompleteHandler: Exception={0}", ex.ToString ()), PNLoggingMethod.LevelError);
-                #endif
+#endif
             }
         }
 
@@ -156,7 +160,10 @@ namespace PubNubAPI
                 }
                 #endif
             }
-            catch (Exception ex) {
+            #pragma warning disable CS0168
+            catch (Exception ex)
+            #pragma warning restore CS0168
+            {
                 #if (ENABLE_PUBNUB_LOGGING)
                 this.PubNubInstance.PNLog.WriteToLog (string.Format ("StartPresenceHeartbeat: PresenceHeartbeat exception {0}", ex.ToString ()), PNLoggingMethod.LevelError);
                 #endif

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class InputManager : MonoBehaviour
 {
 
-    private bool musicisplaying;
+    private readonly bool musicisplaying;
     private bool leaderBoardEnabled = false;
 
     private void Update()
@@ -47,13 +47,14 @@ public class InputManager : MonoBehaviour
         // Publish and receive data
         if (Input.GetKeyDown("l"))
         {
-            GameObject.FindGameObjectWithTag(Tags.SERVER_MANAGER).GetComponent<ServerManager>().Fire(new MyClass("donut", 77777738, "Level 1"));
+            GameObject.FindGameObjectWithTag(Tags.SERVER_MANAGER).GetComponent<ServerManager>().Fire(new MyClass("Input_fetch", 100000000, "Level 1"));
         }
 
         // Reset player prefs
         if (Input.GetKeyDown("m"))
         {
-            GameObject.FindGameObjectWithTag(Tags.SERVER_MANAGER).GetComponent<ServerManager>().ResetPrefs();
+            Debug.Log("Resetting PlayerPrefs");
+            PlayerPrefs.DeleteAll();
         }
 
         // Toggle leaderboard

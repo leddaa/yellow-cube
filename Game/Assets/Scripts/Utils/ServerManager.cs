@@ -125,19 +125,4 @@ public class ServerManager : MonoBehaviour
         }
     }
 
-    public void ResetPrefs()
-    {
-        Debug.Log("Resetting player prefs");
-        PlayerPrefs.SetInt(PrefKeys.HIGHSCORE_LEVEL_1, 100000000);
-        PlayerPrefs.SetInt(PrefKeys.HIGHSCORE_LEVEL_2, 100000000);
-        PlayerPrefs.SetInt(PrefKeys.HIGHSCORE_LEVEL_3, 100000000);
-        PlayerPrefs.SetInt(PrefKeys.HIGHSCORE_LEVEL_4, 100000000);
-        PlayerPrefs.SetInt(PrefKeys.HIGHSCORE_LEVEL_5, 100000000);
-        PlayerPrefs.SetInt(PrefKeys.HIGHSCORE_LEVEL_6, 100000000);
-        PlayerPrefs.SetInt(PrefKeys.HIGHSCORE_LEVEL_7, 100000000);
-        PlayerPrefs.SetInt(PrefKeys.HIGHSCORE_LEVEL_8, 100000000);
-        PlayerPrefs.SetInt(PrefKeys.HIGHSCORE_LEVEL_9, 100000000);
-        PlayerPrefs.SetInt(PrefKeys.HIGHSCORE_LEVEL_10, 100000000);
-    }
-
 }

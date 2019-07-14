@@ -18,4 +18,5 @@ public class OptionsMenu : MonoBehaviour
     {
         SceneManager.LoadScene(Scenes.MAIN_MENU);
     }
+
 }

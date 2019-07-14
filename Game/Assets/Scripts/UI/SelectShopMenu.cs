@@ -1,10 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SelectShopMenu : MonoBehaviour
 {
+
     // Change scene to Skins Shop
     public void SkinsButton()
     {

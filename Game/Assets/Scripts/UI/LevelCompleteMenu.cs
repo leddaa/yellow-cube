@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class LevelCompleteMenu : MonoBehaviour
 {
 
-    private static string HIGH_SCORE_KEY_PREFIX = "highscore_";
+    private static readonly string HIGH_SCORE_KEY_PREFIX = "highscore_";
 
     private void Awake()
     {
@@ -15,7 +15,7 @@ public class LevelCompleteMenu : MonoBehaviour
 
     private void Start()
     {
-        checkHighscore();
+        CheckHighscore();
     }
 
     public void LoadNextLevel()
@@ -39,7 +39,7 @@ public class LevelCompleteMenu : MonoBehaviour
         SceneManager.LoadScene(Scenes.SHOP_MENU);
     }
 
-    private void checkHighscore()
+    private void CheckHighscore()
     {
         string key = HIGH_SCORE_KEY_PREFIX + PlayerPrefs.GetString(PrefKeys.PREVIOUS_LEVEL);
 

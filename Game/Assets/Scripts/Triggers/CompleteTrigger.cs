@@ -10,7 +10,7 @@ public class CompleteTrigger : MonoBehaviour
         completeManager = GameObject.FindGameObjectWithTag(Tags.GAME_MANAGER).GetComponent<CompleteManager>();
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter()
     {
         completeManager.CompleteMap();
     }

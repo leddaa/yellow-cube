@@ -1,6 +1,6 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 using UnityEngine.SceneManagement;
-using TMPro;
 
 public class ShopMenu : MonoBehaviour
 {
@@ -24,7 +24,6 @@ public class ShopMenu : MonoBehaviour
         PlayerPrefs.SetInt(PrefKeys.DUMMY_CHARACTER, (int)Character.YELLOWCUBE);
         PlayerPrefs.SetInt(PrefKeys.CURRENT_CHARACTER, (int)Character.YELLOWCUBE); 
     }
-
    
     // Skins
    public void PurchaseSkin1() // Dark Medic Purchase
@@ -36,6 +35,8 @@ public class ShopMenu : MonoBehaviour
             PlayerPrefs.SetInt(PrefKeys.TOTAL_COINS, (PlayerPrefs.GetInt(PrefKeys.TOTAL_COINS) - DARK_MEDIC_PRICE));
             PlayerPrefs.SetInt(PrefKeys.DARK_MEDIC_PURCHASED, 1);
             GameObject.FindGameObjectWithTag(Tags.BUY_BUTTON_1).SetActive(false);
+
+            UpdateCoinsText();
         }
     }
     
@@ -58,6 +59,8 @@ public class ShopMenu : MonoBehaviour
             PlayerPrefs.SetInt(PrefKeys.TOTAL_COINS, (PlayerPrefs.GetInt(PrefKeys.TOTAL_COINS) - HACKER_PRICE));
             PlayerPrefs.SetInt(PrefKeys.HACKER_PURCHASED, 1);
             GameObject.FindGameObjectWithTag(Tags.BUY_BUTTON_2).SetActive(false);
+
+            UpdateCoinsText();
         }
     }
 
@@ -79,7 +82,9 @@ public class ShopMenu : MonoBehaviour
             PlayerPrefs.SetInt(PrefKeys.CURRENT_CHARACTER, (int)Character.BLAH);
             PlayerPrefs.SetInt(PrefKeys.TOTAL_COINS, (PlayerPrefs.GetInt(PrefKeys.TOTAL_COINS) - BLAH_PRICE));
             PlayerPrefs.SetInt(PrefKeys.BLAH_PURCHASED, 1);
-            GameObject.FindGameObjectWithTag(Tags.BUY_BUTTON_3).SetActive(false); 
+            GameObject.FindGameObjectWithTag(Tags.BUY_BUTTON_3).SetActive(false);
+
+            UpdateCoinsText();
         }
     }
 
@@ -102,6 +107,8 @@ public class ShopMenu : MonoBehaviour
             PlayerPrefs.SetInt(PrefKeys.TOTAL_COINS, (PlayerPrefs.GetInt(PrefKeys.TOTAL_COINS) - SKULL_PRICE));
             PlayerPrefs.SetInt(PrefKeys.SKULL_PURCHASED, 1);
             GameObject.FindGameObjectWithTag(Tags.BUY_BUTTON_4).SetActive(false);
+
+            UpdateCoinsText();
         }
     }
 
@@ -157,14 +164,13 @@ public class ShopMenu : MonoBehaviour
 
     }
 
-    public void Update()
+    public void UpdateCoinsText()
     {
-
         // Update coins amount
         GameObject.FindGameObjectWithTag(Tags.COINS_TEXT).GetComponent<TextMeshProUGUI>().text = PlayerPrefs.GetInt(PrefKeys.TOTAL_COINS).ToString() + " coins";
     }
 
-    // RESET
+    // Reset
     public void HardReset()
     {
         PlayerPrefs.SetInt(PrefKeys.YELLOW_CUBE_PURCHASED, 0);
@@ -180,4 +186,5 @@ public class ShopMenu : MonoBehaviour
     {
         SceneManager.LoadScene("Level 1 SandBox");
     }
+
 }

@@ -1,9 +1,9 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PowerUpScale : MonoBehaviour
 {
+
     public GameObject pickupEffect;
     public float multiplier = 1.5f;
     public float duration = 5f;
@@ -32,8 +32,6 @@ public class PowerUpScale : MonoBehaviour
         yield return new WaitForSeconds(duration);
         // Reverse effect
         player.transform.localScale /= multiplier;
-
-
 
         Destroy(gameObject);
     }

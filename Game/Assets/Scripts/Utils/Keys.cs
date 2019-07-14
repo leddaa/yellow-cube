@@ -9,8 +9,6 @@
     public static string PREVIOUS_LEVEL = "PreviousLevel";
     public static string DUMMY_CHARACTER = "DummyCharacter";
 
-
-
     // Local player highscores
     public static string HIGHSCORE_LEVEL_1 = "highscore_level_1";
     public static string HIGHSCORE_LEVEL_2 = "highscore_level_2";
@@ -56,12 +54,4 @@
     public static string BLAH_PURCHASED = "BlahPurchased";
     public static string SKULL_PURCHASED = "SkullPurchased";
 
-    //Player Trails
-
-    // Music
-}
-
-public class DataStoreKeys
-{
-    
 }

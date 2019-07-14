@@ -1,11 +1,11 @@
-﻿using UnityEngine;
-using PubNubAPI;
-using UnityEngine.SceneManagement;
-using System.Collections.Generic;
+﻿using PubNubAPI;
 using System;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class MyClass
 {
+
     public string usr;
     public int scr;
     public string lvl;
@@ -16,6 +16,7 @@ public class MyClass
         this.scr = score;
         this.lvl = level;
     }
+
 }
 
 public class ServerManager : MonoBehaviour

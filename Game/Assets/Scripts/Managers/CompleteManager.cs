@@ -48,9 +48,6 @@ public class CompleteManager : MonoBehaviour
         PlayerPrefs.SetInt(PrefKeys.STAR_TIME_3, GameObject.FindGameObjectWithTag(Tags.LEVEL_DATA).GetComponent<LevelData>().threeStarsTime);
         PlayerPrefs.SetInt(PrefKeys.threeStarCoinsAmount, GameObject.FindGameObjectWithTag(Tags.LEVEL_DATA).GetComponent<LevelData>().threeStarsCoinsAmount);
 
-
-        
-
         // Unlock next level
         if (PlayerPrefs.GetString(PrefKeys.PREVIOUS_LEVEL) == Scenes.LEVEL_1)
         {

@@ -1,9 +1,9 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PowerUpGravity : MonoBehaviour
 {
+
     public GameObject pickupEffect;
     public float gravity;
     public float duration = 5f;
@@ -33,8 +33,7 @@ public class PowerUpGravity : MonoBehaviour
         // Reverse effect
         Physics.gravity = new Vector3(0, -9.81f, 0);
 
-
-
         Destroy(gameObject);
     }
+
 }

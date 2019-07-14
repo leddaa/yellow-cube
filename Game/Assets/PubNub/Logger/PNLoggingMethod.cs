@@ -64,7 +64,7 @@ namespace PubNubAPI
         public void WriteToLog (string logText, bool write)
         {
             if (PNLogVerb.Equals(PNLogVerbosity.BODY)) {
-                UnityEngine.Debug.Log (string.Format("\n{0} {1}, {2}: {3}\n", DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString(), TimeZone.CurrentTimeZone.StandardName, logText));
+                //UnityEngine.Debug.Log (string.Format("\n{0} {1}, {2}: {3}\n", DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString(), TimeZone.CurrentTimeZone.StandardName, logText));
             }
         }
     }

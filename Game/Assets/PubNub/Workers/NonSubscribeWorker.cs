@@ -43,11 +43,15 @@ namespace PubNubAPI
             try{
                 PNBuilder = pnBuilder;
 
-                webRequestId = webRequest.Run(requestState); 
-            } catch (Exception ex) {
-                #if (ENABLE_PUBNUB_LOGGING)
+                webRequestId = webRequest.Run(requestState);
+            }
+            #pragma warning disable CS0168
+            catch (Exception ex)
+            #pragma warning restore CS0168
+            {
+            #if (ENABLE_PUBNUB_LOGGING)
                 this.queueManager.PubNubInstance.PNLog.WriteToLog (string.Format ("ex.ToString() {0}", ex.ToString()), PNLoggingMethod.LevelInfo);
-                #endif
+            #endif
             }
         }
             

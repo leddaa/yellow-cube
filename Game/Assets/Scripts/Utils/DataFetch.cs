@@ -10,7 +10,7 @@ public class DataFetch : MonoBehaviour
         if(!hasFetched)
         {
             Debug.Log("Data fetch");
-            GameObject.FindGameObjectWithTag(Tags.SERVER_MANAGER).GetComponent<ServerManager>().Fire(new MyClass("bolle", 77777738, "Level 1"));
+            GameObject.FindGameObjectWithTag(Tags.SERVER_MANAGER).GetComponent<ServerManager>().Fire(new MyClass("Data_fetch", 100000000, "Level 1"));
         }
         
         hasFetched = true;

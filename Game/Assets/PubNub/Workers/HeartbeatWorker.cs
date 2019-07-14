@@ -17,11 +17,8 @@ namespace PubNubAPI
 
         private bool internetStatus = true;
         private bool retriesExceeded;
-        private int heartbeatInterval = 10;
-        public int HeartbeatInterval{
-            get {return heartbeatInterval;}
-            set {heartbeatInterval = value;}
-        }
+        public int HeartbeatInterval { get; set; } = 10;
+        public bool RetriesExceeded1 { get => retriesExceeded; set => retriesExceeded = value; }
 
         private const int MINEXPONENTIALBACKOFF = 1;
         private const int MAXEXPONENTIALBACKOFF = 32;
@@ -70,10 +67,14 @@ namespace PubNubAPI
                 if ((cea != null) && (cea.CurrRequestType.Equals(PNCurrentRequestType.Heartbeat))) {
                     HeartbeatHandler (cea);
                 }
-            } catch (Exception ex) {
-                #if (ENABLE_PUBNUB_LOGGING)
+            }
+            #pragma warning disable CS0168
+            catch (Exception ex)
+            #pragma warning restore CS0168
+            {
+            #if (ENABLE_PUBNUB_LOGGING)
                 this.PubNubInstance.PNLog.WriteToLog (string.Format ("WebRequestCompleteHandler: Exception={0}", ex.ToString ()), PNLoggingMethod.LevelError);
-                #endif
+            #endif
             }
         }
 
@@ -98,7 +99,7 @@ namespace PubNubAPI
         {
             retryCount = 0;
             internetStatus = true;
-            retriesExceeded = false;
+            RetriesExceeded1 = false;
         }
 
         void StartHeartbeat (bool pause, int pauseTime)
@@ -130,10 +131,13 @@ namespace PubNubAPI
                     #endif
                 } 
             }
-            catch (Exception ex) {
-                #if (ENABLE_PUBNUB_LOGGING)
+            #pragma warning disable CS0168
+            catch (Exception ex)
+            #pragma warning restore CS0168
+            {
+            #if (ENABLE_PUBNUB_LOGGING)
                 this.PubNubInstance.PNLog.WriteToLog (string.Format ("StartHeartbeat: Heartbeat exception {0}", ex.ToString ()), PNLoggingMethod.LevelError);
-                #endif
+            #endif
             }
         }
 
@@ -221,7 +225,7 @@ namespace PubNubAPI
 
             } else {
                 RetriesExceeded.Raise(this, null);
-                retriesExceeded = true;
+                RetriesExceeded1 = true;
                 
                 #if (ENABLE_PUBNUB_LOGGING)
                 string cbMessage = string.Format ("Internet Disconnected. Retries exceeded {0}. Unsubscribing connected channels.", PubNubInstance.PNConfig.MaximumReconnectionRetries);
@@ -237,7 +241,7 @@ namespace PubNubAPI
 
         private void InternetConnectionAvailableHandler(CustomEventArgs cea){    
             internetStatus = true;
-            retriesExceeded = false;
+            RetriesExceeded1 = false;
             
             if (retryCount > 0) {
                 InternetAvailable.Raise(this, null);

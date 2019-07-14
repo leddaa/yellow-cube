@@ -236,8 +236,12 @@ namespace PubNubAPI
                     AbortPreviousRequest (existingChannels);
                     RunSubscribeRequest (0, false);
                 }
-                
-            }catch (Exception ex){
+
+            }
+            #pragma warning disable CS0168
+            catch (Exception ex)
+            #pragma warning restore CS0168
+            {
                 #if (ENABLE_PUBNUB_LOGGING)
                 this.PubNubInstance.PNLog.WriteToLog (string.Format ("ex.ToString(): {0}", ex.ToString()), PNLoggingMethod.LevelError);
                 #endif                                
@@ -371,9 +375,10 @@ namespace PubNubAPI
                 //http://ps.pndsn.com/v2/presence/sub-key/sub-c-5c4fdcc6-c040-11e5-a316-0619f8945a4f/uuid/UUID_WhereNow?pnsdk=PubNub-Go%2F3.14.0&uuid=UUID_WhereNow
                 webRequestId = webRequest.Run(requestState);
 
-            } catch (Exception ex) {
+            } catch (Exception)
+            {
                 #if (ENABLE_PUBNUB_LOGGING)
-                this.PubNubInstance.PNLog.WriteToLog (string.Format ("MultiChannelSubscribeRequest: method:_subscribe \n channel={0} \n timetoken={1} \n Exception Details={2}", Helpers.GetAllNamesFromChannelEntities(channelEntities, true), timetoken.ToString (), ex.ToString ()), PNLoggingMethod.LevelError);
+                //this.PubNubInstance.PNLog.WriteToLog (string.Format ("MultiChannelSubscribeRequest: method:_subscribe \n channel={0} \n timetoken={1} \n Exception Details={2}", Helpers.GetAllNamesFromChannelEntities(channelEntities, true), timetoken.ToString (), ex.ToString ()), PNLoggingMethod.LevelError);
                 #endif
                 this.RunSubscribeRequest (timetoken, false);
             }
@@ -709,12 +714,20 @@ namespace PubNubAPI
                     }
 
                 }
-            } catch (PubNubUserException ex) {
+            }
+            #pragma warning disable CS0168
+            catch (PubNubUserException ex)
+            #pragma warning restore CS0168
+            {
                 #if (ENABLE_PUBNUB_LOGGING)
                 this.PubNubInstance.PNLog.WriteToLog (string.Format ("WebRequestCompleteHandler: PubNubUserException: Exception={0}", ex.ToString ()), PNLoggingMethod.LevelError);
                 #endif
                 throw;
-            } catch (Exception ex) {
+            }
+            #pragma warning disable CS0168
+            catch (Exception ex)
+            #pragma warning restore CS0168
+            {
                 #if (ENABLE_PUBNUB_LOGGING)
                 this.PubNubInstance.PNLog.WriteToLog (string.Format ("WebRequestCompleteHandler: Exception={0}", ex.ToString ()), PNLoggingMethod.LevelError);
                 #endif

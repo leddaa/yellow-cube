@@ -6,13 +6,10 @@ public class ShopMenu : MonoBehaviour
 {
 
     // Prices
-    private int YELLOW_CUBE_PRICE = 500;
-    private int DARK_MEDIC_PRICE = 500;
-    private int HACKER_PRICE = 500;
-    private int BLAH_PRICE = 500;
-    private int SKULL_PRICE = 500;
-
-    
+    private readonly int DARK_MEDIC_PRICE = 500;
+    private readonly int HACKER_PRICE = 500;
+    private readonly int BLAH_PRICE = 500;
+    private readonly int SKULL_PRICE = 500;
 
     enum Character : int {YELLOWCUBE, DARKMEDIC, HACKER, BLAH, SKULL};
 

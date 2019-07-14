@@ -5,8 +5,12 @@ namespace PubNubAPI
 {
     internal class ExceptionHandlerEventArgs : EventArgs
     {
-        internal List<ChannelEntity> channelEntities;
-        internal bool reconnectMaxTried;
-        internal PNOperationType responseType;
+        private List<ChannelEntity> channelEntities;
+        private bool reconnectMaxTried;
+        private PNOperationType responseType;
+
+        internal PNOperationType ResponseType { get => responseType; set => responseType = value; }
+        internal bool ReconnectMaxTried { get => reconnectMaxTried; set => reconnectMaxTried = value; }
+        internal List<ChannelEntity> ChannelEntities { get => channelEntities; set => channelEntities = value; }
     }
 }

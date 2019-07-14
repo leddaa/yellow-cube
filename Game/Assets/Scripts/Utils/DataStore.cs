@@ -19,23 +19,21 @@ public class Level
 }
 
 [Serializable]
-public class LocalHighscores
+public class DataStoreLocalObjects
 {
-    public Dictionary<string, int> highscores = new Dictionary<string, int>();
+    public Dictionary<string, object> localObjects = new Dictionary<string, object>();
 }
-
-// TODO ? class
 
 public class DataStore : MonoBehaviour
 {
 
     private static DataStore Instance = null;
-    private static string LEADERBOARDS_FILE_NAME = "leaderboards.yc";
-    private static string LOCAL_HIGHSCORES_FILE_NAME = "local_highscores.yc";
-
-    private ServerManager serverManager;
+    private static readonly string LEADERBOARDS_FILE_NAME = "leaderboards.yc";
+    private static readonly string OBJECTS_FILE_NAME = "objects.yc";
 
     private static DataStoreObject dataStoreObject;
+
+    private static DataStoreLocalObjects dataStoreLocalObjects;
 
     private void Awake()
     {
@@ -48,14 +46,9 @@ public class DataStore : MonoBehaviour
             Destroy(gameObject);
         }
 
-        serverManager = GameObject.FindGameObjectWithTag("ServerManager").GetComponent<ServerManager>();
-
         dataStoreObject = LoadLeaderboards();
-    }
 
-    private void Start()
-    {
-
+        dataStoreLocalObjects = LoadLocalObjects();
     }
 
     public void PrintData()
@@ -113,6 +106,28 @@ public class DataStore : MonoBehaviour
         return dataStoreObject.levels[key];
     }
 
+    public void SetBool(string key, bool value)
+    {
+        if(dataStoreLocalObjects.localObjects.ContainsKey(key))
+        {
+            dataStoreLocalObjects.localObjects[key] = value;
+        } else
+        {
+            dataStoreLocalObjects.localObjects.Add(key, value);
+        }
+
+        SaveLocalObjects(dataStoreLocalObjects);
+    }
+
+    public bool GetBool(string key)
+    {
+        if(!dataStoreLocalObjects.localObjects.ContainsKey(key))
+        {
+            throw new UnityException("Bool with key " + key + " doesn't exist");
+        }
+
+        return (bool)dataStoreLocalObjects.localObjects[key];
+    }
 
     public void SaveLeaderboards(DataStoreObject data)
     {
@@ -131,19 +146,21 @@ public class DataStore : MonoBehaviour
         Debug.Log("Save leaderboards success");
     }
 
-    public void SaveLocalHighscores(LocalHighscores data)
+    public void SaveLocalObjects(DataStoreLocalObjects data)
     {
-        Debug.Log("Save local highscores");
+        Debug.Log("Save local objects");
 
         BinaryFormatter formatter = new BinaryFormatter();
 
-        FileStream file = GetFile(LOCAL_HIGHSCORES_FILE_NAME);
+        FileStream file = GetFile(OBJECTS_FILE_NAME);
 
         formatter.Serialize(file, data);
 
         file.Close();
 
-        Debug.Log("Save local highscores success");
+        dataStoreLocalObjects = data;
+
+        Debug.Log("Save local objects success");
     }
 
     private DataStoreObject LoadLeaderboards()
@@ -167,36 +184,30 @@ public class DataStore : MonoBehaviour
         }
     }
 
-    private LocalHighscores LoadLocalHighscores()
+    private DataStoreLocalObjects LoadLocalObjects()
     {
-        Debug.Log("Load local highscores");
+        Debug.Log("Load local objects");
 
-        if (File.Exists(Application.persistentDataPath + LOCAL_HIGHSCORES_FILE_NAME))
+        if (File.Exists(Application.persistentDataPath + OBJECTS_FILE_NAME))
         {
             BinaryFormatter formatter = new BinaryFormatter();
-            FileStream file = File.Open(Application.persistentDataPath + LOCAL_HIGHSCORES_FILE_NAME, FileMode.Open);
+            FileStream file = File.Open(Application.persistentDataPath + OBJECTS_FILE_NAME, FileMode.Open);
 
-            LocalHighscores data = (LocalHighscores)formatter.Deserialize(file);
+            DataStoreLocalObjects data = (DataStoreLocalObjects)formatter.Deserialize(file);
             file.Close();
 
             return data;
         }
         else
         {
-            return null;
+            Debug.Log("Error: DataStoreLocalObjects file doesnt exist. creating");
+
+            DataStoreLocalObjects obj = new DataStoreLocalObjects();
+
+            SaveLocalObjects(obj);
+
+            return obj;
         }
-    }
-
-    public int GetLocalHighscore(string key)
-    {
-        LocalHighscores localHighscores = LoadLocalHighscores();
-
-        if (localHighscores.highscores.ContainsKey(key))
-        {
-            return localHighscores.highscores[key];
-        }
-
-        return -1;
     }
 
     private FileStream GetFile(string fileName)

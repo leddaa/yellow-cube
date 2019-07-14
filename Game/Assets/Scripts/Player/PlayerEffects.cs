@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerEffects : MonoBehaviour
 {
 
-    private float TRAIL_EFFECT_TRIGGER_SPEED = 42f;
+    private float TRAIL_EFFECT_TRIGGER_SPEED = 32f;
     private Rigidbody rigidBody;
 
 

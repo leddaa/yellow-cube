@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5179548335540263401}
   - component: {fileID: 5179548335540263402}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: MaxSpeed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2622,7 +2622,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
   NoiseModule:
-    enabled: 1
+    enabled: 0
     strength:
       serializedVersion: 2
       minMaxState: 0

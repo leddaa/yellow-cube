@@ -10,7 +10,7 @@ public class LevelCompleteMenu : MonoBehaviour
     private void Awake()
     {
         // Set complete time text
-        GameObject.FindGameObjectWithTag(Tags.COMPLETE_TIME).GetComponent<Text>().text = (PlayerPrefs.GetInt(PrefKeys.COMPLETE_TIME) / CompleteManager.SECONDS_TO_MICROSECONDS).ToString(".0", System.Globalization.CultureInfo.InvariantCulture) + " Sec";
+        GameObject.FindGameObjectWithTag(Tags.COMPLETE_TIME).GetComponent<Text>().text = ((float)PlayerPrefs.GetInt(PrefKeys.COMPLETE_TIME) / CompleteManager.SECONDS_TO_MICROSECONDS).ToString("0.000", System.Globalization.CultureInfo.InvariantCulture) + " Sec";
     }
 
     private void Start()
@@ -55,7 +55,7 @@ public class LevelCompleteMenu : MonoBehaviour
             PlayerPrefs.SetInt(key, timeSpent);
             Debug.Log("New highscore set: " + timeSpent);
 
-            MyClass myFireObject = new MyClass("your_username", timeSpent, PlayerPrefs.GetString(PrefKeys.PREVIOUS_LEVEL));
+            MyClass myFireObject = new MyClass("ledda", timeSpent, PlayerPrefs.GetString(PrefKeys.PREVIOUS_LEVEL));
             GameObject.FindGameObjectWithTag(Tags.SERVER_MANAGER).GetComponent<ServerManager>().Publish(myFireObject);
         }
     }

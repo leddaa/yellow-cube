@@ -43,7 +43,6 @@
     public static string BUTTON_LEVEL_9 = "ButtonLevel9";
     public static string BUTTON_LEVEL_10 = "ButtonLevel10";
 
-
     // Props
     public static string BALL = "Ball";
     public static string DOOR = "Door";

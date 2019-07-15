@@ -26,4 +26,15 @@ public class PlayerEffects : MonoBehaviour
             GameObject.FindGameObjectWithTag(Tags.PLAYER_PARTICLESYSTEM).GetComponent<ParticleSystem>().Stop();
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == Tags.PLAYER_COIN)
+        {
+            // Destroy(GameObject.FindGameObjectWithTag(Tags.PLAYER_COIN));
+            GameObject.FindGameObjectWithTag(Tags.PLAYER_COIN).SetActive(false);
+            Debug.Log("Ding ding! Coin picked up!");
+        }
+
+    }
 }

@@ -47,6 +47,7 @@ TagManager:
   - ButtonLevel8
   - ButtonLevel9
   - ButtonLevel10
+  - Coin
   layers:
   - Default
   - TransparentFX

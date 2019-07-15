@@ -51,6 +51,7 @@
     //Player
     public static string PLAYER_PARTICLESYSTEM = "PlayerParticleSystem";
     public static string PLAYER_KILL = "PlayerKill";
+    public static string PLAYER_COIN = "Coin";
 
 }
 

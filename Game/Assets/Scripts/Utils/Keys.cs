@@ -1,5 +1,6 @@
 ﻿public class PrefKeys
 {
+    public static readonly string USERNAME = "username";
 
     public static string COMPLETE_TIME = "completeTime";
     public static string CURRENT_CHARACTER = "currentCharacter";
@@ -44,6 +45,10 @@
     public static string oneStarCoinsAmount = "OneStarsCoinsAmount";
     public static string twoStarCoinsAmount = "twoStarsCoinsAmount";
     public static string threeStarCoinsAmount = "threeStarsCoinsAmount";
+
+    // Audio
+    public static string MUSIC_VOLUME_LEVEL = "music_volume_level";
+    public static string SFX_VOLUME_LEVEL = "sfx_volume_level";
 
     // Shop unlocked/not unlocked
     // Player Skins

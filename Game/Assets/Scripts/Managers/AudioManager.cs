@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.Audio;
 
 [Serializable]
 public class Sound
@@ -16,6 +17,9 @@ public class Sound
 public class AudioManager : MonoBehaviour
 {
 
+    public AudioMixerGroup musicAudioMixerGroup;
+    public AudioMixerGroup sfxAudioMixerGroup;
+
     private static AudioManager Instance = null;
 
     [HideInInspector]
@@ -24,8 +28,7 @@ public class AudioManager : MonoBehaviour
     public Sound[] sounds;
     private bool musicisplaying;
 
-
-    void Awake()
+    private void Awake()
     {
         // If there is not already an instance of SoundManager, set it to this.
         if (Instance == null)
@@ -44,19 +47,27 @@ public class AudioManager : MonoBehaviour
         // Set AudioManager to DontDestroyOnLoad so that it won't be destroyed when reloading the scene.
         DontDestroyOnLoad(gameObject);
 
+        // Init music
         musicSource = gameObject.AddComponent<AudioSource>();
         musicSource.clip = musicClip;
         musicSource.loop = true;
+        musicSource.outputAudioMixerGroup = musicAudioMixerGroup;
+        musicSource.Play();
 
+        // Init sounds
         foreach (Sound s in sounds)
         {
             s.source = gameObject.AddComponent<AudioSource>();
             s.source.clip = s.clip;
+            s.source.outputAudioMixerGroup = sfxAudioMixerGroup;
         }
-
-        musicSource.Play();
     }
 
+    private void Start()
+    {
+        SetMusicVolume(PlayerPrefs.GetFloat(PrefKeys.MUSIC_VOLUME_LEVEL));
+        SetSFXVolume(PlayerPrefs.GetFloat(PrefKeys.SFX_VOLUME_LEVEL));
+    }
 
     public void Play(string name)
     {
@@ -76,6 +87,16 @@ public class AudioManager : MonoBehaviour
             musicisplaying = true;
             musicSource.Play();
         }
+    }
+
+    public void SetMusicVolume(float level)
+    {
+        musicAudioMixerGroup.audioMixer.SetFloat("MusicVolume", Mathf.Log(level) * 20);
+    }
+
+    public void SetSFXVolume(float level)
+    {
+        musicAudioMixerGroup.audioMixer.SetFloat("SFXVolume", Mathf.Log(level) * 20);
     }
 
 }

@@ -1,18 +1,18 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
-
 public class PlayerDeath : MonoBehaviour
 {
+
     public float cubeSize = 0.2f;
     public int cubesInRow = 5;
     public int explosionForce;
     public int explosionRadius;
     public int explosionUpward;
     public GameObject deathEffect;
+
     private Material material;
     
-
     float cubesPivotDistance;
     Vector3 cubesPivot;
 
@@ -20,7 +20,6 @@ public class PlayerDeath : MonoBehaviour
     {
         int index = PlayerPrefs.GetInt(PrefKeys.CURRENT_CHARACTER);
         material = GameObject.FindGameObjectWithTag(Tags.PLAYER_MANAGER).GetComponent<PlayerManager>().characters[index].deathMaterial;
-        Debug.Log("Index: "+ index);
     }
 
     private void Start()
@@ -35,16 +34,14 @@ public class PlayerDeath : MonoBehaviour
     {
         if(other.gameObject.tag == Tags.PLAYER_KILL)
         {
-            explode();
-            Invoke("restartLevel", 1.7f);
+            Explode();
+            Invoke("RestartLevel", 1.7f);
         }
         
     }
 
-    
-    public void explode()
+    public void Explode()
     {
-
         // Death Particles
         Instantiate(deathEffect, transform.position, transform.rotation);
 
@@ -58,11 +55,10 @@ public class PlayerDeath : MonoBehaviour
             {
                 for (int z = 0; z < cubesInRow; z++)
                 {
-                    createPiece(x, y, z);
+                    CreatePiece(x, y, z);
                 }
             }
         }
-        Debug.Log("Material Index:" + material.ToString());
 
         // Get explotion position
         Vector3 explosionPos = transform.position;
@@ -77,17 +73,15 @@ public class PlayerDeath : MonoBehaviour
                 rb.AddExplosionForce(explosionForce, transform.position, explosionRadius, explosionUpward);
             }
         }
-
     }
 
-    public void restartLevel()
+    public void RestartLevel()
     {
-        Debug.Log("Restart Level");
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         Debug.Log(SceneManager.GetActiveScene().name);
     }
 
-    void createPiece(int x, int y, int z)
+    void CreatePiece(int x, int y, int z)
     {
         // Create piece
         GameObject piece;
@@ -102,6 +96,6 @@ public class PlayerDeath : MonoBehaviour
 
         piece.AddComponent<Rigidbody>();
         piece.GetComponent<Rigidbody>().mass = cubeSize;
-
     }
+
 }

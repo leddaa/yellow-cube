@@ -78,7 +78,6 @@ public class DataStore : MonoBehaviour
     {
         if (!dataStoreObject.levels.ContainsKey(key)) // Key doesn't exist
         {
-            Debug.Log("Key doesn't exist. Creating dummy data for level");
             MyClass myFireObject = new MyClass("Dummy", 100000000, SceneManager.GetActiveScene().name);
 
             Level level = new Level();
@@ -131,8 +130,6 @@ public class DataStore : MonoBehaviour
 
     public void SaveLeaderboards(DataStoreObject data)
     {
-        Debug.Log("Save leaderboards()");
-
         BinaryFormatter formatter = new BinaryFormatter();
 
         FileStream file = GetFile(LEADERBOARDS_FILE_NAME);
@@ -142,14 +139,10 @@ public class DataStore : MonoBehaviour
         file.Close();
 
         dataStoreObject = data;
-
-        Debug.Log("Save leaderboards success");
     }
 
     public void SaveLocalObjects(DataStoreLocalObjects data)
     {
-        Debug.Log("Save local objects");
-
         BinaryFormatter formatter = new BinaryFormatter();
 
         FileStream file = GetFile(OBJECTS_FILE_NAME);
@@ -159,14 +152,10 @@ public class DataStore : MonoBehaviour
         file.Close();
 
         dataStoreLocalObjects = data;
-
-        Debug.Log("Save local objects success");
     }
 
     private DataStoreObject LoadLeaderboards()
     {
-        Debug.Log("Load leaderboards()");
-
         if (File.Exists(Application.persistentDataPath + LEADERBOARDS_FILE_NAME))
         {
             BinaryFormatter formatter = new BinaryFormatter();
@@ -186,8 +175,6 @@ public class DataStore : MonoBehaviour
 
     private DataStoreLocalObjects LoadLocalObjects()
     {
-        Debug.Log("Load local objects");
-
         if (File.Exists(Application.persistentDataPath + OBJECTS_FILE_NAME))
         {
             BinaryFormatter formatter = new BinaryFormatter();
@@ -217,12 +204,10 @@ public class DataStore : MonoBehaviour
         if (File.Exists(Application.persistentDataPath + fileName))
         {
             file = File.Open(Application.persistentDataPath + fileName, FileMode.Open); // Open existing file
-            Debug.Log("Opening existing file");
         }
         else
         {
             file = File.Open(Application.persistentDataPath + fileName, FileMode.Create); // Create new file
-            Debug.Log("Oreated new file");
         }
 
         return file;

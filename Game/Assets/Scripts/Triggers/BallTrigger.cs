@@ -3,10 +3,14 @@
 public class BallTrigger : MonoBehaviour
 {
 
-    // Start is called before the first frame update
     private void OnTriggerEnter(Collider other)
     {
-        GameObject.FindGameObjectWithTag(Tags.DOOR).SetActive(false);
+        GameObject.FindGameObjectWithTag(Tags.PLAYER_CLIP).SetActive(false);
+        Rigidbody[] rigidBodies = GameObject.FindGameObjectWithTag(Tags.DOOR).GetComponentsInChildren<Rigidbody>();
+        foreach (Rigidbody rigidBody in rigidBodies)
+        {
+            rigidBody.isKinematic = false;
+        }
     }
 
 }

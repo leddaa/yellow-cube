@@ -48,6 +48,7 @@ TagManager:
   - ButtonLevel9
   - ButtonLevel10
   - Coin
+  - PlayerClip
   layers:
   - Default
   - TransparentFX

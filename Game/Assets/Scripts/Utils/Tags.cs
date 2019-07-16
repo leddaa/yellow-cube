@@ -46,6 +46,7 @@
     // Props
     public static string BALL = "Ball";
     public static string DOOR = "Door";
+    public static string PLAYER_CLIP = "PlayerClip";
 
     //Player
     public static string PLAYER_PARTICLESYSTEM = "PlayerParticleSystem";

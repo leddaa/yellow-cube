@@ -32,8 +32,6 @@ public class ServerManager : MonoBehaviour
 
     private void Awake()
     {
-        Debug.Log("Server manager awake");
-
         if (Instance == null)
         {
             Instance = this;
@@ -96,8 +94,6 @@ public class ServerManager : MonoBehaviour
 
     private void SubscribeCallbackHandler(object sender, EventArgs e)
     {
-        Debug.Log("Subscribe callback");
-
         SubscribeEventEventArgs msgArgs = e as SubscribeEventEventArgs;
 
         if (msgArgs.MessageResult != null)
@@ -121,8 +117,6 @@ public class ServerManager : MonoBehaviour
             }
 
             dataStore.SaveLeaderboards(dataStoreObject);
-
-            dataStore.PrintData();
         }
     }
 

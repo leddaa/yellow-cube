@@ -55,7 +55,7 @@ public class LevelCompleteMenu : MonoBehaviour
             PlayerPrefs.SetInt(key, timeSpent);
             Debug.Log("New highscore set: " + timeSpent);
 
-            MyClass myFireObject = new MyClass("ledda", timeSpent, PlayerPrefs.GetString(PrefKeys.PREVIOUS_LEVEL));
+            MyClass myFireObject = new MyClass(PlayerPrefs.GetString(PrefKeys.USERNAME), timeSpent, PlayerPrefs.GetString(PrefKeys.PREVIOUS_LEVEL));
             GameObject.FindGameObjectWithTag(Tags.SERVER_MANAGER).GetComponent<ServerManager>().Publish(myFireObject);
         }
     }

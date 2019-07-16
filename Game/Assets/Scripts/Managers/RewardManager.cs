@@ -1,10 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 
 public class RewardManager : MonoBehaviour
 {
+
     private int totalCoins;
     private int threeStarsTime;
     private int twoStarsTime;
@@ -12,8 +10,6 @@ public class RewardManager : MonoBehaviour
     private int oneStarsCoinsAmount;
     private int twoStarsCoinsAmount;
     private int threeStarsCoinsAmount;
-
-
 
     void Start()
     {
@@ -23,25 +19,13 @@ public class RewardManager : MonoBehaviour
         twoStarsCoinsAmount = PlayerPrefs.GetInt(PrefKeys.twoStarCoinsAmount);
         threeStarsCoinsAmount = PlayerPrefs.GetInt(PrefKeys.threeStarCoinsAmount);
 
-        Debug.Log("Total Coins: " + PlayerPrefs.GetInt(PrefKeys.TOTAL_COINS));
-
-        Debug.Log("1 star time: " + PlayerPrefs.GetInt(PrefKeys.STAR_TIME_1));
-        Debug.Log("2 star time: " + PlayerPrefs.GetInt(PrefKeys.STAR_TIME_2));
-        Debug.Log("3 star time: " + PlayerPrefs.GetInt(PrefKeys.STAR_TIME_3));
-
-        
-
         // Stars
         threeStarsTime = PlayerPrefs.GetInt(PrefKeys.STAR_TIME_3);
         twoStarsTime = PlayerPrefs.GetInt(PrefKeys.STAR_TIME_2);
         oneStarsTime = PlayerPrefs.GetInt(PrefKeys.STAR_TIME_1);
 
-        
-
         float completeTime = PlayerPrefs.GetInt(PrefKeys.COMPLETE_TIME);
 
-        Debug.Log("completeTime: " + completeTime);
-        Debug.Log("threeStarsTime " + threeStarsTime);
         int caseSwitch = 1;
 
         if (threeStarsTime * CompleteManager.SECONDS_TO_MICROSECONDS> completeTime)
@@ -56,7 +40,6 @@ public class RewardManager : MonoBehaviour
         {
             caseSwitch = 1;
         }
-
 
         switch (caseSwitch)
         {
@@ -107,16 +90,7 @@ public class RewardManager : MonoBehaviour
                 Debug.Log("Total Coins after: " + PlayerPrefs.GetInt(PrefKeys.TOTAL_COINS));
 
                 break;
-
         }
-
-
-
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

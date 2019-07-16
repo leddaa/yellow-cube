@@ -15,6 +15,8 @@ public class PlayerManager : MonoBehaviour
 {
 
     public Character[] characters;
+    public GameObject crown;
+
     private MeshFilter meshFilter;
     private new Renderer renderer;
 
@@ -35,6 +37,14 @@ public class PlayerManager : MonoBehaviour
             meshFilter.mesh = characters[index].mesh;
             renderer.material = characters[index].material;
         }
+
+        Level level = GameObject.FindGameObjectWithTag(Tags.DATA_STORE).GetComponent<DataStore>().GetLevel(SceneManager.GetActiveScene().name);
+        if(PlayerPrefs.GetString(PrefKeys.USERNAME).Equals(level.usernames[0]))
+        {
+            Debug.Log("Equals");
+            Instantiate(crown);
+        }
+
     }
 
 }

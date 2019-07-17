@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class LevelCompleteMenu : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class LevelCompleteMenu : MonoBehaviour
     {
         // Set complete time text
         GameObject.FindGameObjectWithTag(Tags.COMPLETE_TIME).GetComponent<Text>().text = ((float)PlayerPrefs.GetInt(PrefKeys.COMPLETE_TIME) / CompleteManager.SECONDS_TO_MICROSECONDS).ToString("0.000", System.Globalization.CultureInfo.InvariantCulture) + " Sec";
+        GameObject.FindGameObjectWithTag(Tags.COINS_TEXT).GetComponent<TextMeshProUGUI>().text = PlayerPrefs.GetInt(PrefKeys.TOTAL_COINS).ToString() + " Coins";
     }
 
     private void Start()

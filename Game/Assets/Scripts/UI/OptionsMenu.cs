@@ -10,8 +10,8 @@ public class OptionsMenu : MonoBehaviour
 
     private void Start()
     {
-        musicSlider.SetValueWithoutNotify(PlayerPrefs.GetFloat(PrefKeys.MUSIC_VOLUME_LEVEL));
-        sfxSlider.SetValueWithoutNotify(PlayerPrefs.GetFloat(PrefKeys.SFX_VOLUME_LEVEL));
+        musicSlider.SetValueWithoutNotify(PlayerPrefs.GetFloat(PrefKeys.MUSIC_VOLUME_LEVEL, 0.5f));
+        sfxSlider.SetValueWithoutNotify(PlayerPrefs.GetFloat(PrefKeys.SFX_VOLUME_LEVEL, 0.5f));
     }
 
     public void OnMusicSliderValueChanged()

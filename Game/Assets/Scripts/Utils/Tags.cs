@@ -21,6 +21,7 @@
     public static string TIME_TRACKER = "TimeTracker";
     public static string TOTAL_FAILS = "TotalFails";
     public static string NEXT_LEVEL_BUTTON = "NextLevelButton";
+    public static string LEADERBOARD = "LeaderBoard";
     public static string STAR1 = "Star1";
     public static string STAR2 = "Star2";
     public static string STAR3 = "Star3";

@@ -11,57 +11,60 @@ public class InputManager : MonoBehaviour
     private void Update()
     {
         // Exit to Main menu
-        if (Input.GetKey("escape"))
+        if (Input.GetKey(KeyCode.Escape))
         {
             SceneManager.LoadScene(Scenes.MAIN_MENU);
         }
 
         // Toggle music on/off
-        if (Input.GetKeyDown("p"))
+        if (Input.GetKeyDown(KeyCode.P))
         {
-            GameObject.FindGameObjectWithTag(Tags.AUDIO_MANAGER).GetComponent<AudioManager>().ToggleMusic();
+            if(SceneManager.GetActiveScene().name != Scenes.MAIN_MENU)
+            {
+                GameObject.FindGameObjectWithTag(Tags.AUDIO_MANAGER).GetComponent<AudioManager>().ToggleMusic();
+            }
         }
 
         // Restart/retry
-        if (Input.GetKeyDown("r"))
+        if (Input.GetKeyDown(KeyCode.R))
         {
-            if (SceneManager.GetActiveScene().name != Scenes.LEVEL_COMPLETE)
+            if (SceneManager.GetActiveScene().name != Scenes.MAIN_MENU)
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-                PlayerPrefs.SetInt(PrefKeys.FAIL_COUNTER, PlayerPrefs.GetInt(PrefKeys.FAIL_COUNTER) + 1);
-            } else if (SceneManager.GetActiveScene().name == Scenes.LEVEL_COMPLETE)
-            {
-                SceneManager.LoadScene(PlayerPrefs.GetString(PrefKeys.PREVIOUS_LEVEL));
+                if (SceneManager.GetActiveScene().name != Scenes.LEVEL_COMPLETE)
+                {
+                    PlayerPrefs.SetInt(PrefKeys.FAIL_COUNTER, PlayerPrefs.GetInt(PrefKeys.FAIL_COUNTER) + 1);
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                }
+                else
+                {
+                    SceneManager.LoadScene(PlayerPrefs.GetString(PrefKeys.PREVIOUS_LEVEL));
+                }
             }
         }
 
-        if (Input.GetKey("space"))
+        if (Input.GetKey(KeyCode.Space))
         {
-            if (SceneManager.GetActiveScene().name == Scenes.LEVEL_COMPLETE && PlayerPrefs.GetInt(PrefKeys.STAR_TIME_0) != 0) // Restart level
+            if (SceneManager.GetActiveScene().name == Scenes.LEVEL_COMPLETE) // Restart level
             {
                 SceneManager.LoadScene(PlayerPrefs.GetString(PrefKeys.NEXT_LEVEL));
-            }
-            else if (SceneManager.GetActiveScene().name == Scenes.LEVEL_COMPLETE && PlayerPrefs.GetInt(PrefKeys.STAR_TIME_0) == 0) // Go to next level
-            {
-                SceneManager.LoadScene(PlayerPrefs.GetString(PrefKeys.PREVIOUS_LEVEL));
             }
         }
 
         // Publish and receive data
-        if (Input.GetKeyDown("l"))
+        if (Input.GetKeyDown(KeyCode.L))
         {
             GameObject.FindGameObjectWithTag(Tags.SERVER_MANAGER).GetComponent<ServerManager>().Fire(new MyClass("Input_fetch", 100000000, "Level 1"));
         }
 
         // Reset player prefs
-        if (Input.GetKeyDown("m"))
+        if (Input.GetKeyDown(KeyCode.M) && Input.GetKey(KeyCode.LeftControl))
         {
             Debug.Log("Resetting PlayerPrefs");
             PlayerPrefs.DeleteAll();
         }
 
         // Toggle leaderboard
-        if (Input.GetKeyDown("tab"))
+        if (Input.GetKeyDown(KeyCode.Tab))
         {
             if (SceneManager.GetActiveScene().name != Scenes.MAIN_MENU &&
                 SceneManager.GetActiveScene().name != Scenes.OPTIONS_MENU &&
@@ -73,24 +76,24 @@ public class InputManager : MonoBehaviour
 
                 if (leaderBoardEnabled)
                 {
-                    Text[] texts = GameObject.FindGameObjectWithTag("LeaderBoard").GetComponent<Image>().GetComponentsInChildren<Text>();
+                    Text[] texts = GameObject.FindGameObjectWithTag(Tags.LEADERBOARD).GetComponent<Image>().GetComponentsInChildren<Text>();
                     foreach (Text t in texts)
                     {
                         t.enabled = false;
                     }
 
-                    GameObject.FindGameObjectWithTag("LeaderBoard").GetComponent<Image>().enabled = false;
+                    GameObject.FindGameObjectWithTag(Tags.LEADERBOARD).GetComponent<Image>().enabled = false;
                     leaderBoardEnabled = false;
                 }
                 else
                 {
-                    Text[] texts = GameObject.FindGameObjectWithTag("LeaderBoard").GetComponent<Image>().GetComponentsInChildren<Text>();
+                    Text[] texts = GameObject.FindGameObjectWithTag(Tags.LEADERBOARD).GetComponent<Image>().GetComponentsInChildren<Text>();
                     foreach (Text t in texts)
                     {
                         t.enabled = true;
                     }
 
-                    GameObject.FindGameObjectWithTag("LeaderBoard").GetComponent<Image>().enabled = true;
+                    GameObject.FindGameObjectWithTag(Tags.LEADERBOARD).GetComponent<Image>().enabled = true;
                     leaderBoardEnabled = true;
                 }
             }

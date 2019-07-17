@@ -51,35 +51,10 @@ public class DataStore : MonoBehaviour
         dataStoreLocalObjects = LoadLocalObjects();
     }
 
-    public void PrintData()
-    {
-        DataStoreObject loadData = LoadLeaderboards();
-
-        foreach (string key in loadData.levels.Keys)
-        {
-
-            string usernames = "";
-            foreach (string username in loadData.levels[key].usernames)
-            {
-                usernames += username + ", ";
-            }
-
-            string scores = "";
-            foreach (int score in loadData.levels[key].scores)
-            {
-                scores += score + ", ";
-            }
-
-            Debug.Log("Key: " + key + " " + usernames + " " + scores);
-        }
-    }
-
     public Level GetLevel(string key)
     {
         if (!dataStoreObject.levels.ContainsKey(key)) // Key doesn't exist
         {
-            MyClass myFireObject = new MyClass("Dummy", 100000000, SceneManager.GetActiveScene().name);
-
             Level level = new Level();
             level.usernames = new string[] { "local_dummy", "local_dummy", "local_dummy", "local_dummy", "local_dummy" };
             level.scores = new int[] { 100000000, 100000000, 100000000, 100000000, 100000000 };
@@ -87,20 +62,7 @@ public class DataStore : MonoBehaviour
             dataStoreObject.levels.Add(key, level);
         }
 
-        string usernames = "";
-        string scores = "";
-
-        foreach (string usr in dataStoreObject.levels[key].usernames)
-        {
-            usernames += " " + usr;
-        }
-        foreach (int scr in dataStoreObject.levels[key].scores)
-        {
-            scores += " " + scr;
-        }
-
-        Debug.Log("GetLevel Usernames: " + usernames);
-        Debug.Log("GetLevel Scores: " + scores);
+        PrintLevel(key);
 
         return dataStoreObject.levels[key];
     }
@@ -211,6 +173,32 @@ public class DataStore : MonoBehaviour
         }
 
         return file;
+    }
+
+    public void PrintLevels()
+    {
+        foreach (string key in dataStoreObject.levels.Keys)
+        {
+            PrintLevel(key);
+        }
+    }
+
+    private void PrintLevel(string key)
+    {
+        string usernames = "";
+        string scores = "";
+
+        foreach (string usr in dataStoreObject.levels[key].usernames)
+        {
+            usernames += " " + usr;
+        }
+        foreach (int scr in dataStoreObject.levels[key].scores)
+        {
+            scores += " " + scr;
+        }
+
+        Debug.Log("Level Usernames: " + usernames);
+        Debug.Log("Level Scores: " + scores);
     }
 
 }

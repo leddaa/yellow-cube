@@ -5,7 +5,7 @@ public class SkinPreview : MonoBehaviour
 
     private MeshFilter meshFilter;
     private new Renderer renderer;
-    private MeshFilter newMeshFilter;
+    private readonly MeshFilter newMeshFilter;
     private PlayerManager playerManager;
 
     private void Awake()

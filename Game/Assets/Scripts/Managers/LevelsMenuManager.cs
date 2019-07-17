@@ -12,13 +12,6 @@ public class LevelsMenuManager : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("Level 1 unlocked: " + PlayerPrefs.GetInt(PrefKeys.LEVEL_1_UNLOCKED));
-        Debug.Log("Level 2 unlocked: " + PlayerPrefs.GetInt(PrefKeys.LEVEL_2_UNLOCKED));
-        Debug.Log("Level 3 unlocked: " + PlayerPrefs.GetInt(PrefKeys.LEVEL_3_UNLOCKED));
-        Debug.Log("Level 4 unlocked: " + PlayerPrefs.GetInt(PrefKeys.LEVEL_4_UNLOCKED));
-        Debug.Log("Level 5 unlocked: " + PlayerPrefs.GetInt(PrefKeys.LEVEL_5_UNLOCKED));
-        Debug.Log("Level 6 unlocked: " + PlayerPrefs.GetInt(PrefKeys.LEVEL_6_UNLOCKED));
-
         // Level 1 is always unlocked
         // Level 2 unlocked/locked
         if (PlayerPrefs.GetInt(PrefKeys.LEVEL_2_UNLOCKED) == 0)

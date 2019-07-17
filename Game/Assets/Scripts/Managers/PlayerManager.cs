@@ -41,7 +41,6 @@ public class PlayerManager : MonoBehaviour
         Level level = GameObject.FindGameObjectWithTag(Tags.DATA_STORE).GetComponent<DataStore>().GetLevel(SceneManager.GetActiveScene().name);
         if(PlayerPrefs.GetString(PrefKeys.USERNAME).Equals(level.usernames[0]))
         {
-            Debug.Log("Equals");
             Instantiate(crown);
         }
 

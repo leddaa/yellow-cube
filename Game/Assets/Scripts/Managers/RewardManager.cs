@@ -51,7 +51,6 @@ public class RewardManager : MonoBehaviour
                 GameObject.FindGameObjectWithTag(Tags.LEVEL_COMPLETE_TITLE).SetActive(false);
                 GameObject.FindGameObjectWithTag(Tags.LEVEL_FAILED_TITLE).SetActive(true);
                 PlayerPrefs.SetInt(PrefKeys.STAR_TIME_0, 0);
-                Debug.Log("Case 0");
 
                 break;
 
@@ -61,7 +60,6 @@ public class RewardManager : MonoBehaviour
                 GameObject.FindGameObjectWithTag(Tags.STAR3).SetActive(false);
                 GameObject.FindGameObjectWithTag(Tags.LEVEL_FAILED_TITLE).SetActive(false);
                 PlayerPrefs.SetInt(PrefKeys.STAR_TIME_0, 1);
-                Debug.Log("Case 1");
                 PlayerPrefs.SetInt(PrefKeys.TOTAL_COINS, totalCoins + oneStarsCoinsAmount);
                 Debug.Log("Total Coins after: " + PlayerPrefs.GetInt(PrefKeys.TOTAL_COINS));
 
@@ -73,7 +71,6 @@ public class RewardManager : MonoBehaviour
                 GameObject.FindGameObjectWithTag(Tags.STAR3).SetActive(false);
                 GameObject.FindGameObjectWithTag(Tags.LEVEL_FAILED_TITLE).SetActive(false);
                 PlayerPrefs.SetInt(PrefKeys.STAR_TIME_0, 1);
-                Debug.Log("Case 2");
                 PlayerPrefs.SetInt(PrefKeys.TOTAL_COINS, totalCoins + twoStarsCoinsAmount);
                 Debug.Log("Total Coins after: " + PlayerPrefs.GetInt(PrefKeys.TOTAL_COINS));
 
@@ -85,7 +82,6 @@ public class RewardManager : MonoBehaviour
                 GameObject.FindGameObjectWithTag(Tags.STAR3).SetActive(true);
                 GameObject.FindGameObjectWithTag(Tags.LEVEL_FAILED_TITLE).SetActive(false);
                 PlayerPrefs.SetInt(PrefKeys.STAR_TIME_0, 1);
-                Debug.Log("Case 3");
                 PlayerPrefs.SetInt(PrefKeys.TOTAL_COINS, totalCoins + threeStarsCoinsAmount);
                 Debug.Log("Total Coins after: " + PlayerPrefs.GetInt(PrefKeys.TOTAL_COINS));
 

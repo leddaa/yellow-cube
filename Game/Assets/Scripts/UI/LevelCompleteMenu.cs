@@ -28,7 +28,6 @@ public class LevelCompleteMenu : MonoBehaviour
     public void LoadPreviousLevel()
     {
         SceneManager.LoadScene(PlayerPrefs.GetString(PrefKeys.PREVIOUS_LEVEL));
-        Debug.Log(PlayerPrefs.GetString(PrefKeys.PREVIOUS_LEVEL));
     }
 
     public void LoadMainMenu()

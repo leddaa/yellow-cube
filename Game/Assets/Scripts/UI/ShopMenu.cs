@@ -13,6 +13,8 @@ public class ShopMenu : MonoBehaviour
 
     enum Character : int {YELLOWCUBE, DARKMEDIC, HACKER, BLAH, SKULL};
 
+    
+
     public bool MoneyCheck(int amount)
     {
         return amount <= PlayerPrefs.GetInt(PrefKeys.TOTAL_COINS);
@@ -160,7 +162,9 @@ public class ShopMenu : MonoBehaviour
         if (PlayerPrefs.GetInt(PrefKeys.SKULL_PURCHASED) == 1)
         {
             GameObject.FindGameObjectWithTag(Tags.BUY_BUTTON_4).SetActive(false);
-        } 
+        }
+
+        UpdateCoinsText();
 
     }
 

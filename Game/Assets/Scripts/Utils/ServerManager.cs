@@ -80,11 +80,6 @@ public class ServerManager : MonoBehaviour
     {
         string fireobject = JsonUtility.ToJson(myFireObject);
 
-        if(myFireObject.usr.Equals("") || myFireObject.lvl.Equals(""))
-        {
-            return;
-        }
-
         pubnub.Publish()
             .Channel(PUBLISH_CHANNEL)
             .Message(fireobject)

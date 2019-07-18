@@ -15,7 +15,9 @@ public class PlayerManager : MonoBehaviour
 {
 
     public Character[] characters;
-    public GameObject crown;
+    public GameObject crownGold;
+    public GameObject crownSilver;
+    public GameObject crownBronze;
 
     private MeshFilter meshFilter;
     private new Renderer renderer;
@@ -41,7 +43,15 @@ public class PlayerManager : MonoBehaviour
         Level level = GameObject.FindGameObjectWithTag(Tags.DATA_STORE).GetComponent<DataStore>().GetLevel(SceneManager.GetActiveScene().name);
         if(PlayerPrefs.GetString(PrefKeys.USERNAME).Equals(level.usernames[0]))
         {
-            Instantiate(crown);
+            Instantiate(crownGold);
+        }
+        else if (PlayerPrefs.GetString(PrefKeys.USERNAME).Equals(level.usernames[1]))
+        {
+            Instantiate(crownSilver);
+        }
+        else if (PlayerPrefs.GetString(PrefKeys.USERNAME).Equals(level.usernames[2]))
+        {
+            Instantiate(crownBronze);
         }
 
     }

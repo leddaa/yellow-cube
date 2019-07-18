@@ -57,7 +57,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4c6c3b23369de9747bb6750bb905ab07, type: 2}
+  - {fileID: 2100000, guid: f86ac766244dfa041ab47e9135950133, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 1204372988996074790}
   - component: {fileID: 5806383634603676484}
   m_Layer: 0
-  m_Name: crown
+  m_Name: CrownSilver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

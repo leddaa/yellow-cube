@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CoinPickup : MonoBehaviour
 {
@@ -9,11 +7,17 @@ public class CoinPickup : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        
+        if (other.gameObject.tag == Tags.PLAYER)
         {
-            Instantiate(pickupEffect, transform.position, transform.rotation);
+            gameObject.GetComponent<BoxCollider>().enabled = false;
+            transform.GetChild(0).gameObject.SetActive(false);
+            pickupEffect.GetComponent<ParticleSystem>().Play(true);
 
-            Debug.Log("pow");
+            int totalYCCoins = GameObject.FindGameObjectWithTag(Tags.DATA_STORE).GetComponent<DataStore>().GetInt(DatastoreKeys.TOTAL_YC_COINS, 0);
+            Debug.Log("Total YC Coins before: " + totalYCCoins);
+            GameObject.FindGameObjectWithTag(Tags.DATA_STORE).GetComponent<DataStore>().SetInt(DatastoreKeys.TOTAL_YC_COINS, totalYCCoins + 1);
+            Debug.Log("Total YC Coins after: " + GameObject.FindGameObjectWithTag(Tags.DATA_STORE).GetComponent<DataStore>().GetInt(DatastoreKeys.TOTAL_YC_COINS, 0));
         }
     }
 }

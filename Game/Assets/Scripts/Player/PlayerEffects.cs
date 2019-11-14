@@ -27,14 +27,4 @@ public class PlayerEffects : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == Tags.PLAYER_COIN)
-        {
-            // Destroy(GameObject.FindGameObjectWithTag(Tags.PLAYER_COIN));
-            GameObject.FindGameObjectWithTag(Tags.PLAYER_COIN).SetActive(false);
-            Debug.Log("Ding ding! Coin picked up!");
-        }
-
-    }
 }

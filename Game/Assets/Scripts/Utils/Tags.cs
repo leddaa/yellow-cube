@@ -26,11 +26,13 @@
     public static string STAR2 = "Star2";
     public static string STAR3 = "Star3";
     public static string COINS_TEXT = "CoinsText";
+    public static string YC_COINS_TEXT = "YCCoinsText";
     public static string DUMMY_PLAYER = "DummyPlayer";
     public static string BUY_BUTTON_1 = "BuyButton1";
     public static string BUY_BUTTON_2 = "BuyButton2";
     public static string BUY_BUTTON_3 = "BuyButton3";
     public static string BUY_BUTTON_4 = "BuyButton4";
+    public static string BUY_BUTTON_YC_1 = "BuyButtonYC1";
 
     // Select Level Menu
     public static string BUTTON_LEVEL_1 = "ButtonLevel1";
@@ -48,11 +50,12 @@
     public static string BALL = "Ball";
     public static string DOOR = "Door";
     public static string PLAYER_CLIP = "PlayerClip";
-
     //Player
     public static string PLAYER_PARTICLESYSTEM = "PlayerParticleSystem";
     public static string PLAYER_KILL = "PlayerKill";
     public static string PLAYER_COIN = "Coin";
+
+
 
 }
 

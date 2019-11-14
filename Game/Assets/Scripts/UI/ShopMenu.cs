@@ -10,14 +10,21 @@ public class ShopMenu : MonoBehaviour
     private readonly int HACKER_PRICE = 500;
     private readonly int BLAH_PRICE = 500;
     private readonly int SKULL_PRICE = 500;
+    private readonly int GOLDEN_SKULL_PRICE = 5;
 
-    enum Character : int {YELLOWCUBE, DARKMEDIC, HACKER, BLAH, SKULL};
+
+    enum Character : int {YELLOWCUBE, DARKMEDIC, HACKER, BLAH, SKULL, GOLDENSKULL};
 
     
 
     public bool MoneyCheck(int amount)
     {
         return amount <= PlayerPrefs.GetInt(PrefKeys.TOTAL_COINS);
+    }
+
+    public bool MoneyCheckYC(int YCamount)
+    {
+        return YCamount <= GameObject.FindGameObjectWithTag(Tags.DATA_STORE).GetComponent<DataStore>().GetInt(DatastoreKeys.TOTAL_YC_COINS, 0);
     }
 
     // Standard skin - Yellow Cube
@@ -124,6 +131,32 @@ public class ShopMenu : MonoBehaviour
             }
     }
 
+    public void PurchaseSkin5() // Golden Skull Purchase || YC
+    {
+        int totalYCCoins = GameObject.FindGameObjectWithTag(Tags.DATA_STORE).GetComponent<DataStore>().GetInt(DatastoreKeys.TOTAL_YC_COINS, 0);
+        if (MoneyCheckYC(GOLDEN_SKULL_PRICE))
+        {
+            PlayerPrefs.SetInt(PrefKeys.DUMMY_CHARACTER, (int)Character.GOLDENSKULL);
+            PlayerPrefs.SetInt(PrefKeys.CURRENT_CHARACTER, (int)Character.GOLDENSKULL);
+            PlayerPrefs.SetInt(PrefKeys.TOTAL_COINS, (PlayerPrefs.GetInt(PrefKeys.TOTAL_COINS) - GOLDEN_SKULL_PRICE));
+            GameObject.FindGameObjectWithTag(Tags.DATA_STORE).GetComponent<DataStore>().SetInt(DatastoreKeys.TOTAL_YC_COINS, totalYCCoins - GOLDEN_SKULL_PRICE);
+            PlayerPrefs.SetInt(PrefKeys.GOLDEN_SKULL_PURCHASED, 1);
+            GameObject.FindGameObjectWithTag(Tags.BUY_BUTTON_YC_1).SetActive(false);
+
+            UpdateYCCoinsText();
+        }
+    }
+
+    public void Skin5() // Golden Skull Select/Preview
+    {
+        PlayerPrefs.SetInt(PrefKeys.DUMMY_CHARACTER, (int)Character.GOLDENSKULL);
+
+        if (PlayerPrefs.GetInt(PrefKeys.GOLDEN_SKULL_PURCHASED) == 1)
+        {
+            PlayerPrefs.SetInt(PrefKeys.CURRENT_CHARACTER, (int)Character.GOLDENSKULL);
+        }
+    }
+
     // Main Menu Button
     public void LoadMainMenu()
     {
@@ -165,6 +198,7 @@ public class ShopMenu : MonoBehaviour
         }
 
         UpdateCoinsText();
+        UpdateYCCoinsText();
 
     }
 
@@ -172,6 +206,11 @@ public class ShopMenu : MonoBehaviour
     {
         // Update coins amount
         GameObject.FindGameObjectWithTag(Tags.COINS_TEXT).GetComponent<TextMeshProUGUI>().text = PlayerPrefs.GetInt(PrefKeys.TOTAL_COINS).ToString() + " coins";
+    }
+
+    public void UpdateYCCoinsText()
+    {
+        GameObject.FindGameObjectWithTag(Tags.YC_COINS_TEXT).GetComponent<TextMeshProUGUI>().text = GameObject.FindGameObjectWithTag(Tags.DATA_STORE).GetComponent<DataStore>().GetInt(DatastoreKeys.TOTAL_YC_COINS, 0) + " YC Coins";
     }
 
     // Reset

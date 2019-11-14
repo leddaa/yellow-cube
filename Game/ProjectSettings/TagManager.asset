@@ -49,6 +49,9 @@ TagManager:
   - ButtonLevel10
   - Coin
   - PlayerClip
+  - PickUpParticleEffect
+  - YCCoinsText
+  - BuyButtonYC1
   layers:
   - Default
   - TransparentFX

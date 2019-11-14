@@ -58,5 +58,13 @@
     public static string HACKER_PURCHASED = "HackerPurchased";
     public static string BLAH_PURCHASED = "BlahPurchased";
     public static string SKULL_PURCHASED = "SkullPurchased";
+    public static string GOLDEN_SKULL_PURCHASED = "GoldenSkullPurchased";
 
+}
+
+public class DatastoreKeys
+{
+    // Datastore keys
+
+    public static string TOTAL_YC_COINS = "TotalYcCoins";
 }

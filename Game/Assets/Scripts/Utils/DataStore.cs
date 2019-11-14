@@ -90,6 +90,39 @@ public class DataStore : MonoBehaviour
         return (bool)dataStoreLocalObjects.localObjects[key];
     }
 
+    public void SetInt(string key, int value)
+    {
+        if (dataStoreLocalObjects.localObjects.ContainsKey(key))
+        {
+            dataStoreLocalObjects.localObjects[key] = value;
+        }
+        else
+        {
+            dataStoreLocalObjects.localObjects.Add(key, value);
+        }
+
+        SaveLocalObjects(dataStoreLocalObjects);
+    }
+
+    public int GetInt(string key)
+    {
+        if (!dataStoreLocalObjects.localObjects.ContainsKey(key))
+        {
+            throw new UnityException("Int with key " + key + " doesn't exist");
+        }
+
+        return (int)dataStoreLocalObjects.localObjects[key];
+    }
+
+    public int GetInt(string key, int defaulValue)
+    {
+        if (!dataStoreLocalObjects.localObjects.ContainsKey(key))
+        {
+            return defaulValue;
+        }
+
+        return (int)dataStoreLocalObjects.localObjects[key];
+    }
     public void SaveLeaderboards(DataStoreObject data)
     {
         BinaryFormatter formatter = new BinaryFormatter();

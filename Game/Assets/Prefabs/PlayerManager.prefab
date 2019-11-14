@@ -62,4 +62,7 @@ MonoBehaviour:
   - mesh: {fileID: 3425170064966194262, guid: 629508fe451b22a46ba322fb7f9ca192, type: 3}
     material: {fileID: 2100000, guid: 783c73892a1f5934e843f020c9cdf3ff, type: 2}
     deathMaterial: {fileID: 2100000, guid: 783c73892a1f5934e843f020c9cdf3ff, type: 2}
+  - mesh: {fileID: 3425170064966194262, guid: 629508fe451b22a46ba322fb7f9ca192, type: 3}
+    material: {fileID: 2100000, guid: 713f8d12f5dbfb640b7a4874212c2c08, type: 2}
+    deathMaterial: {fileID: 2100000, guid: 713f8d12f5dbfb640b7a4874212c2c08, type: 2}
   crown: {fileID: 7176248289776428073, guid: a800ab0e1459f424f81a9aecc1fde7f3, type: 3}

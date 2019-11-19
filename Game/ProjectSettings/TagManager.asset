@@ -52,6 +52,13 @@ TagManager:
   - PickUpParticleEffect
   - YCCoinsText
   - BuyButtonYC1
+  - LoginScreen
+  - MainMenuScreen
+  - OptionsScreen
+  - ShopScreen
+  - LevelsScreen
+  - CompleteScreen
+  - TotalGems
   layers:
   - Default
   - TransparentFX

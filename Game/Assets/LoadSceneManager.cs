@@ -7,4 +7,9 @@ public class LoadSceneManager : MonoBehaviour
     {
         SceneManager.LoadScene(scene);
     }
+
+    public void LoadPreviousScene()
+    {
+        SceneManager.LoadScene(PlayerPrefs.GetString(PrefKeys.PREVIOUS_LEVEL));
+    }
 }

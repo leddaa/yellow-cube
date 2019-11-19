@@ -210,7 +210,7 @@ public class ShopMenu : MonoBehaviour
 
     public void UpdateYCCoinsText()
     {
-        GameObject.FindGameObjectWithTag(Tags.YC_COINS_TEXT).GetComponent<TextMeshProUGUI>().text = GameObject.FindGameObjectWithTag(Tags.DATA_STORE).GetComponent<DataStore>().GetInt(DatastoreKeys.TOTAL_YC_COINS, 0) + " YC Coins";
+        GameObject.FindGameObjectWithTag(Tags.TOTAL_GEMS).GetComponent<TextMeshProUGUI>().text = GameObject.FindGameObjectWithTag(Tags.DATA_STORE).GetComponent<DataStore>().GetInt(DatastoreKeys.TOTAL_YC_COINS, 0) + " YC Coins";
     }
 
     // Reset

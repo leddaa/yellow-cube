@@ -13,7 +13,7 @@ public class LevelCompleteMenu : MonoBehaviour
         // Set complete time text
         GameObject.FindGameObjectWithTag(Tags.COMPLETE_TIME).GetComponent<Text>().text = ((float)PlayerPrefs.GetInt(PrefKeys.COMPLETE_TIME) / CompleteManager.SECONDS_TO_MICROSECONDS).ToString("0.000", System.Globalization.CultureInfo.InvariantCulture) + " Sec";
         GameObject.FindGameObjectWithTag(Tags.COINS_TEXT).GetComponent<TextMeshProUGUI>().text = PlayerPrefs.GetInt(PrefKeys.TOTAL_COINS).ToString() + " Coins";
-        GameObject.FindGameObjectWithTag(Tags.YC_COINS_TEXT).GetComponent<TextMeshProUGUI>().text = GameObject.FindGameObjectWithTag(Tags.DATA_STORE).GetComponent<DataStore>().GetInt(DatastoreKeys.TOTAL_YC_COINS, 0) + " YC Coins";
+        GameObject.FindGameObjectWithTag(Tags.TOTAL_GEMS).GetComponent<TextMeshProUGUI>().text = GameObject.FindGameObjectWithTag(Tags.DATA_STORE).GetComponent<DataStore>().GetInt(DatastoreKeys.TOTAL_YC_COINS, 0) + " YC Coins";
     }
 
     private void Start()

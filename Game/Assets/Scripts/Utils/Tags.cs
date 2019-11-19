@@ -26,7 +26,7 @@
     public static string STAR2 = "Star2";
     public static string STAR3 = "Star3";
     public static string COINS_TEXT = "CoinsText";
-    public static string YC_COINS_TEXT = "YCCoinsText";
+    public static string TOTAL_GEMS = "TotalGems";
     public static string DUMMY_PLAYER = "DummyPlayer";
     public static string BUY_BUTTON_1 = "BuyButton1";
     public static string BUY_BUTTON_2 = "BuyButton2";

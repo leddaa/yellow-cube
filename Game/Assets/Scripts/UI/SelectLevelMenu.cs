@@ -7,7 +7,7 @@ public class SelectLevelMenu : MonoBehaviour
     // Load Main Menu
     public void LoadMainMenu()
     {
-        SceneManager.LoadScene(Scenes.MAIN_MENU);
+        SceneManager.LoadScene(Scenes.UI_MENU);
     }
 
     // Load Level 1

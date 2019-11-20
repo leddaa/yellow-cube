@@ -3,7 +3,7 @@
 public class MenuManager : MonoBehaviour
 {
 
-    public int menuID = 0;
+    public int menuID;
 
     public GameObject[] menuPanels;
     private GameObject loginScreen;
@@ -16,16 +16,27 @@ public class MenuManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        loginScreen = GameObject.FindGameObjectWithTag("LoginScreen"); // 0
-        mainMenuScreen = GameObject.FindGameObjectWithTag("MainMenuScreen"); // 1
-        optionsScreen = GameObject.FindGameObjectWithTag("OptionsScreen"); // 2
-        shopScreen = GameObject.FindGameObjectWithTag("ShopScreen"); // 3
-        levelsScreen = GameObject.FindGameObjectWithTag("LevelsScreen"); // 4
-        completeScreen = GameObject.FindGameObjectWithTag("CompleteScreen"); // 5
+        loginScreen = GameObject.FindGameObjectWithTag(Tags.CANVAS_LOGIN); // 0
+        mainMenuScreen = GameObject.FindGameObjectWithTag(Tags.CANVAS_MAIN_MENU); // 1
+        optionsScreen = GameObject.FindGameObjectWithTag(Tags.CANVAS_OPTIONS); // 2
+        shopScreen = GameObject.FindGameObjectWithTag(Tags.CANVAS_SHOP); // 3
+        levelsScreen = GameObject.FindGameObjectWithTag(Tags.CANVAS_LEVELS); // 4
+        completeScreen = GameObject.FindGameObjectWithTag(Tags.CANVAS_LEVEL_COMPLETE); // 5
+        
+
+        if (PlayerPrefs.GetString(PrefKeys.USERNAME) != "")
+        {
+            menuID = 0;
+        } else
+        {
+            menuID = 0;
+        }
+        
 
         //        int playerNum = PlayerInfo.playerID;
         //        Debug.Log (playerNum);
         switchToMenu(menuID);
+
     }
 
     // Update is called once per frame

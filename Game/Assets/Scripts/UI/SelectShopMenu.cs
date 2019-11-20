@@ -25,7 +25,7 @@ public class SelectShopMenu : MonoBehaviour
     // Change scene to Main Menu
     public void MainMenuButton()
     {
-        SceneManager.LoadScene(Scenes.MAIN_MENU);
+        SceneManager.LoadScene(Scenes.UI_MENU);
     }
 
 }

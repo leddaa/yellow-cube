@@ -8,18 +8,25 @@ public class InputManager : MonoBehaviour
     private readonly bool musicisplaying;
     private bool leaderBoardEnabled = false;
 
+    private GameObject loginScreen;
+
+    private void Start()
+    {
+        loginScreen = GameObject.FindGameObjectWithTag(Tags.CANVAS_LOGIN);
+    }
+
     private void Update()
     {
         // Exit to Main menu
         if (Input.GetKey(KeyCode.Escape))
         {
-            SceneManager.LoadScene(Scenes.MAIN_MENU);
+            SceneManager.LoadScene(Scenes.UI_MENU);
         }
 
         // Toggle music on/off
         if (Input.GetKeyDown(KeyCode.P))
         {
-            if(SceneManager.GetActiveScene().name != Scenes.MAIN_MENU)
+            if(loginScreen.activeSelf == false)
             {
                 GameObject.FindGameObjectWithTag(Tags.AUDIO_MANAGER).GetComponent<AudioManager>().ToggleMusic();
             }
@@ -28,7 +35,7 @@ public class InputManager : MonoBehaviour
         // Restart/retry
         if (Input.GetKeyDown(KeyCode.R))
         {
-            if (SceneManager.GetActiveScene().name != Scenes.MAIN_MENU)
+            if (SceneManager.GetActiveScene().name != Scenes.UI_MENU)
             {
                 if (SceneManager.GetActiveScene().name != Scenes.LEVEL_COMPLETE)
                 {
@@ -66,7 +73,7 @@ public class InputManager : MonoBehaviour
         // Toggle leaderboard
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-            if (SceneManager.GetActiveScene().name != Scenes.MAIN_MENU &&
+            if (SceneManager.GetActiveScene().name != Scenes.UI_MENU &&
                 SceneManager.GetActiveScene().name != Scenes.OPTIONS_MENU &&
                 SceneManager.GetActiveScene().name != Scenes.SHOP_MENU &&
                 SceneManager.GetActiveScene().name != Scenes.SKINS_MENU &&

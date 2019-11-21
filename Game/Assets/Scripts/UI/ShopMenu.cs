@@ -160,7 +160,7 @@ public class ShopMenu : MonoBehaviour
     // Main Menu Button
     public void LoadMainMenu()
     {
-        SceneManager.LoadScene(Scenes.MAIN_MENU);
+        SceneManager.LoadScene(Scenes.UI_MENU);
     }
 
     // Skins Menu Button

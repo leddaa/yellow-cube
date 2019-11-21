@@ -3,7 +3,7 @@
 
     public static string LEVEL_COMPLETE = "LevelCompleteMenu";
     public static string LEVELS_MENU = "LevelsMenu";
-    public static string MAIN_MENU = "MainMenu";
+    public static string UI_MENU = "UIMenu";
     public static string OPTIONS_MENU = "OptionsMenu";
     public static string SHOP_MENU = "ShopMenu";
     public static string SKINS_MENU = "SkinsMenu";

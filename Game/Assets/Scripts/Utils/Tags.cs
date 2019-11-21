@@ -34,6 +34,14 @@
     public static string BUY_BUTTON_4 = "BuyButton4";
     public static string BUY_BUTTON_YC_1 = "BuyButtonYC1";
 
+    public static string CANVAS_LOGIN = "LoginScreen";
+    public static string CANVAS_MAIN_MENU = "MainMenuScreen";
+    public static string CANVAS_OPTIONS = "OptionsScreen";
+    public static string CANVAS_SHOP = "ShopScreen";
+    public static string CANVAS_LEVELS = "LevelsScreen";
+    public static string CANVAS_LEVEL_COMPLETE = "CompleteScreen";
+    public static string USERNAME = "Username";
+
     // Select Level Menu
     public static string BUTTON_LEVEL_1 = "ButtonLevel1";
     public static string BUTTON_LEVEL_2 = "ButtonLevel2";

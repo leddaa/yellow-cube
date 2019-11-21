@@ -8,6 +8,8 @@ public class UsernameInput : MonoBehaviour
 
     private void Start()
     {
+        // Midlertidig
+        PlayerPrefs.SetString(PrefKeys.USERNAME, "Fudgehog");
         string user = PlayerPrefs.GetString(PrefKeys.USERNAME);
 
         inputField.text = user;

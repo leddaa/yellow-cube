@@ -37,7 +37,7 @@ public class OptionsMenu : MonoBehaviour
         GameObject.FindGameObjectWithTag(Tags.AUDIO_MANAGER).GetComponent<AudioManager>().
             SetSFXVolume(PlayerPrefs.GetFloat(PrefKeys.SFX_VOLUME_LEVEL));
 
-        SceneManager.LoadScene(Scenes.MAIN_MENU);
+        SceneManager.LoadScene(Scenes.UI_MENU);
     }
 
 }

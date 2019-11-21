@@ -33,7 +33,7 @@ public class LevelCompleteMenu : MonoBehaviour
 
     public void LoadMainMenu()
     {
-        SceneManager.LoadScene(Scenes.MAIN_MENU);
+        SceneManager.LoadScene(Scenes.UI_MENU);
     }
 
     public void LoadShop()

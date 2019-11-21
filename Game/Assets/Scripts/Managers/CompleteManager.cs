@@ -3,7 +3,6 @@ using UnityEngine.SceneManagement;
 
 public class CompleteManager : MonoBehaviour
 {
-
     public static int SECONDS_TO_MICROSECONDS = 1000000;
 
     private AudioManager audioManager;
@@ -15,7 +14,6 @@ public class CompleteManager : MonoBehaviour
 
     public void CompleteMap()
     {
-       
         PlayerPrefs.SetString(PrefKeys.PREVIOUS_LEVEL, SceneManager.GetActiveScene().name);
 
         int timeSpent = (int)(GameObject.FindGameObjectWithTag(Tags.TIME_TRACKER).GetComponent<TimeTracker>().timeSpent * SECONDS_TO_MICROSECONDS);
@@ -99,6 +97,5 @@ public class CompleteManager : MonoBehaviour
             PlayerPrefs.SetInt(PrefKeys.LEVEL_10_UNLOCKED, 1); // Level 11 when that time comes
         }
     }
-
 }
 

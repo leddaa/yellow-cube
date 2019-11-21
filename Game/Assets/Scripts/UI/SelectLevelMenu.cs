@@ -3,7 +3,6 @@ using UnityEngine.SceneManagement;
 
 public class SelectLevelMenu : MonoBehaviour
 {
-
     // Load Main Menu
     public void LoadMainMenu()
     {
@@ -69,5 +68,4 @@ public class SelectLevelMenu : MonoBehaviour
     {
         SceneManager.LoadScene(Scenes.LEVEL_10);
     }
-
 }

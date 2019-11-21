@@ -4,7 +4,6 @@ using UnityEngine.SceneManagement;
 
 public class ShopMenu : MonoBehaviour
 {
-
     // Prices
     private readonly int DARK_MEDIC_PRICE = 500;
     private readonly int HACKER_PRICE = 500;
@@ -12,10 +11,7 @@ public class ShopMenu : MonoBehaviour
     private readonly int SKULL_PRICE = 500;
     private readonly int GOLDEN_SKULL_PRICE = 5;
 
-
     enum Character : int {YELLOWCUBE, DARKMEDIC, HACKER, BLAH, SKULL, GOLDENSKULL};
-
-    
 
     public bool MoneyCheck(int amount)
     {
@@ -175,7 +171,7 @@ public class ShopMenu : MonoBehaviour
         SceneManager.LoadScene(Scenes.SHOP_MENU);
     }
 
-    public void Awake()
+    private void Awake()
     {
         if (PlayerPrefs.GetInt(PrefKeys.DARK_MEDIC_PURCHASED) == 1)
         {
@@ -229,5 +225,4 @@ public class ShopMenu : MonoBehaviour
     {
         SceneManager.LoadScene("Level 1 SandBox");
     }
-
 }

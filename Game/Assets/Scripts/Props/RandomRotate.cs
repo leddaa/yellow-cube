@@ -1,13 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class RandomRotate : MonoBehaviour
 {
-
-   
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         transform.Rotate(Vector3.back * 40f * Time.deltaTime);
         transform.Rotate(Vector3.left * 60f * Time.deltaTime);

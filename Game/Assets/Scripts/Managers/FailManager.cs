@@ -3,7 +3,6 @@ using UnityEngine.SceneManagement;
 
 public class FailManager : MonoBehaviour
 {
-
     public static int DEPTH_OF_MAP = -1;
 
     private Transform playerTransform;
@@ -39,5 +38,4 @@ public class FailManager : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
-
 }

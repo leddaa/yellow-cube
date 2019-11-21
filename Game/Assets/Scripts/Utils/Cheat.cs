@@ -3,10 +3,9 @@ using UnityEngine.UI;
 
 public class Cheat : MonoBehaviour
 {
-
-    public Material materialCheater;
-    public float upForce = 1000;
-    public Rigidbody body;
+    public Material MaterialCheater { get; set; }
+    public float UpwardForce { get; set; } = 1000;
+    public Rigidbody Body { get; set; }
 
     private TimeTracker timeTracker;
 
@@ -15,16 +14,15 @@ public class Cheat : MonoBehaviour
         timeTracker = GameObject.FindGameObjectWithTag(Tags.TIME_TRACKER).GetComponent<TimeTracker>();
     }
 
-    void Update()
+    private void Update()
     {
         if (Input.GetKey("f"))
         {
-            body.AddForce(0, upForce * Time.deltaTime, 0 );
+            Body.AddForce(0, UpwardForce * Time.deltaTime, 0 );
             timeTracker.timeSpent += 300 * Time.deltaTime;
             GameObject.FindGameObjectWithTag(Tags.CHEAT_TEXT).GetComponent<Text>().text = "Cheats Activated!";
             Renderer rend = GetComponent<Renderer>();
-            rend.material = materialCheater;
+            rend.material = MaterialCheater;
         }
     }
-
 }

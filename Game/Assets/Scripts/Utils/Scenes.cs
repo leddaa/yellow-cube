@@ -1,6 +1,5 @@
 ﻿public class Scenes
 {
-
     public static string LEVEL_COMPLETE = "LevelCompleteMenu";
     public static string LEVELS_MENU = "LevelsMenu";
     public static string UI_MENU = "UIMenu";
@@ -18,5 +17,4 @@
     public static string LEVEL_8 = "Level 8";
     public static string LEVEL_9 = "Level 9";
     public static string LEVEL_10 = "Level 10";
-
 }

@@ -1,19 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerEffects : MonoBehaviour
 {
-
-    private float TRAIL_EFFECT_TRIGGER_SPEED = 32f;
+    private readonly float TRAIL_EFFECT_TRIGGER_SPEED = 32;
     private Rigidbody rigidBody;
-
 
     void Start()
     {
         rigidBody = GetComponent<Rigidbody>();
     }
-
    
     void Update()
     {
@@ -26,5 +21,4 @@ public class PlayerEffects : MonoBehaviour
             GameObject.FindGameObjectWithTag(Tags.PLAYER_PARTICLESYSTEM).GetComponent<ParticleSystem>().Stop();
         }
     }
-
 }

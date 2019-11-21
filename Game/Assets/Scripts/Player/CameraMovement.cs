@@ -2,7 +2,6 @@
 
 public class CameraMovement : MonoBehaviour
 {
-
     private Transform playerTransform;
     private Vector3 offset;
     public float smoothSpeed = 10f;
@@ -29,5 +28,4 @@ public class CameraMovement : MonoBehaviour
         Vector3 smoothedPos = Vector3.Lerp(initialPos, pos, smoothSpeed * Time.deltaTime);
         transform.position = smoothedPos;
     }
-
 }

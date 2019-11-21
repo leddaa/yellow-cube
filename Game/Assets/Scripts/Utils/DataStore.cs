@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 [Serializable]
 public class DataStoreObject
@@ -26,7 +25,6 @@ public class DataStoreLocalObjects
 
 public class DataStore : MonoBehaviour
 {
-
     private static DataStore Instance = null;
     private static readonly string LEADERBOARDS_FILE_NAME = "leaderboards.yc";
     private static readonly string OBJECTS_FILE_NAME = "objects.yc";
@@ -233,5 +231,4 @@ public class DataStore : MonoBehaviour
         Debug.Log("Level Usernames: " + usernames);
         Debug.Log("Level Scores: " + scores);
     }
-
 }

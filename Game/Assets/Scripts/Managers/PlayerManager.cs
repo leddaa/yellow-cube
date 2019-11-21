@@ -4,16 +4,13 @@ using UnityEngine.SceneManagement;
 [System.Serializable]
 public class Character
 {
-
     public Mesh mesh;
     public Material material;
     public Material deathMaterial;
-
 }
 
 public class PlayerManager : MonoBehaviour
 {
-
     public Character[] characters;
     public GameObject crown;
 
@@ -43,7 +40,5 @@ public class PlayerManager : MonoBehaviour
         {
             Instantiate(crown);
         }
-
     }
-
 }

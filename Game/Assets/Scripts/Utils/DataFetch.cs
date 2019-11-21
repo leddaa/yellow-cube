@@ -2,10 +2,9 @@
 
 public class DataFetch : MonoBehaviour
 {
-
     private static bool hasFetched = false;
 
-    void Start()
+    private void Start()
     {
         if(!hasFetched)
         {
@@ -14,5 +13,4 @@ public class DataFetch : MonoBehaviour
         
         hasFetched = true;
     }
-
 }

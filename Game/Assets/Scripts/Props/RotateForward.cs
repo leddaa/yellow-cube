@@ -2,12 +2,10 @@
 
 public class RotateForward : MonoBehaviour
 {
+    public float speed = 50;
 
-    public float speed = 50f;
-
-    void Update()
+    private void Update()
     {
         transform.Rotate(Vector3.forward * speed * Time.deltaTime);
     }
-
 }

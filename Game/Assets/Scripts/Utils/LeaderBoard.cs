@@ -4,8 +4,7 @@ using UnityEngine.UI;
 
 public class LeaderBoard : MonoBehaviour
 {
-
-    void Start()
+    private void Start()
     {
         GameObject.Find(Tags.LEVEL_TEXT).GetComponent<Text>().text = SceneManager.GetActiveScene().name;
 
@@ -29,5 +28,4 @@ public class LeaderBoard : MonoBehaviour
             scorecounter++;
         }
     }
-
 }

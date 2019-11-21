@@ -3,7 +3,6 @@ using UnityEngine.UI;
 
 public class LevelsMenuManager : MonoBehaviour
 {
-
     private void DisableButton(string button)
     {
         GameObject.FindGameObjectWithTag(button).GetComponent<Image>().color = new Color32(200, 200, 200, 100);
@@ -67,5 +66,4 @@ public class LevelsMenuManager : MonoBehaviour
             DisableButton(Tags.BUTTON_LEVEL_10);
         }
     }
-
 }

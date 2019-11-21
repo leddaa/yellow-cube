@@ -2,7 +2,6 @@
 
 public class RewardManager : MonoBehaviour
 {
-
     private int totalCoins;
     private int threeStarsTime;
     private int twoStarsTime;
@@ -51,7 +50,6 @@ public class RewardManager : MonoBehaviour
                 GameObject.FindGameObjectWithTag(Tags.LEVEL_COMPLETE_TITLE).SetActive(false);
                 GameObject.FindGameObjectWithTag(Tags.LEVEL_FAILED_TITLE).SetActive(true);
                 PlayerPrefs.SetInt(PrefKeys.STAR_TIME_0, 0);
-
                 break;
 
             case 1:
@@ -62,7 +60,6 @@ public class RewardManager : MonoBehaviour
                 PlayerPrefs.SetInt(PrefKeys.STAR_TIME_0, 1);
                 PlayerPrefs.SetInt(PrefKeys.TOTAL_COINS, totalCoins + oneStarsCoinsAmount);
                 Debug.Log("Total Coins after: " + PlayerPrefs.GetInt(PrefKeys.TOTAL_COINS));
-
                 break;
 
             case 2:
@@ -73,7 +70,6 @@ public class RewardManager : MonoBehaviour
                 PlayerPrefs.SetInt(PrefKeys.STAR_TIME_0, 1);
                 PlayerPrefs.SetInt(PrefKeys.TOTAL_COINS, totalCoins + twoStarsCoinsAmount);
                 Debug.Log("Total Coins after: " + PlayerPrefs.GetInt(PrefKeys.TOTAL_COINS));
-
                 break;
 
             case 3:
@@ -84,9 +80,7 @@ public class RewardManager : MonoBehaviour
                 PlayerPrefs.SetInt(PrefKeys.STAR_TIME_0, 1);
                 PlayerPrefs.SetInt(PrefKeys.TOTAL_COINS, totalCoins + threeStarsCoinsAmount);
                 Debug.Log("Total Coins after: " + PlayerPrefs.GetInt(PrefKeys.TOTAL_COINS));
-
                 break;
         }
     }
-
 }

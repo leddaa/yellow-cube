@@ -2,7 +2,6 @@
 
 public class SkinPreview : MonoBehaviour
 {
-
     private MeshFilter meshFilter;
     private new Renderer renderer;
     private readonly MeshFilter newMeshFilter;
@@ -15,11 +14,10 @@ public class SkinPreview : MonoBehaviour
         playerManager = GameObject.FindGameObjectWithTag(Tags.PLAYER_MANAGER).GetComponent<PlayerManager>();
     }
 
-    void Update()
+    private void Update()
     {
         int index = PlayerPrefs.GetInt(PrefKeys.DUMMY_CHARACTER);
         meshFilter.mesh = playerManager.characters[index].mesh;
         renderer.material = playerManager.characters[index].material;
     }
-
 }

@@ -3,7 +3,6 @@ using UnityEngine.SceneManagement;
 
 public class SelectShopMenu : MonoBehaviour
 {
-
     // Change scene to Skins Shop
     public void SkinsButton()
     {
@@ -27,5 +26,4 @@ public class SelectShopMenu : MonoBehaviour
     {
         SceneManager.LoadScene(Scenes.UI_MENU);
     }
-
 }

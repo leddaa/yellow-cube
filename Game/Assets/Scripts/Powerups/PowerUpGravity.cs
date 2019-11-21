@@ -3,10 +3,9 @@ using UnityEngine;
 
 public class PowerUpGravity : MonoBehaviour
 {
-
     public GameObject pickupEffect;
     public float gravity;
-    public float duration = 5f;
+    public float duration = 5;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -16,7 +15,7 @@ public class PowerUpGravity : MonoBehaviour
         }
     }
 
-    IEnumerator Pickup(Collider player)
+    private IEnumerator Pickup(Collider player)
     {
         Instantiate(pickupEffect, transform.position, transform.rotation);
 
@@ -27,13 +26,12 @@ public class PowerUpGravity : MonoBehaviour
         GetComponent<MeshRenderer>().enabled = false;
         GetComponent<BoxCollider>().enabled = false;
 
-
         // Pause
         yield return new WaitForSeconds(duration);
+
         // Reverse effect
         Physics.gravity = new Vector3(0, -9.81f, 0);
 
         Destroy(gameObject);
     }
-
 }

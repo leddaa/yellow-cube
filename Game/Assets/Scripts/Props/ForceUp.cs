@@ -1,11 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ForceUp : MonoBehaviour
 {
-
     public float upForce;
+
     private PlayerBooster playerBooster;
 
     void Awake()
@@ -16,10 +14,5 @@ public class ForceUp : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         playerBooster.Boost(upForce);
-
-        
     }
-
-
-
 }

@@ -4,7 +4,6 @@ using UnityEngine.UI;
 
 public class InputManager : MonoBehaviour
 {
-
     private readonly bool musicisplaying;
     private bool leaderBoardEnabled = false;
 
@@ -106,5 +105,4 @@ public class InputManager : MonoBehaviour
             }
         }
     }
-
 }

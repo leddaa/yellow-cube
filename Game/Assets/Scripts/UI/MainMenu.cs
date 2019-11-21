@@ -3,7 +3,6 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-
     public void LoadLevel1()
     {
         SceneManager.LoadScene(Scenes.LEVEL_1);
@@ -33,5 +32,4 @@ public class MainMenu : MonoBehaviour
     {
         Application.Quit();
     }
-
 }

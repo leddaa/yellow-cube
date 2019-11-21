@@ -1,10 +1,7 @@
-﻿// Boosting the player up. (Upforce)
-
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerBooster : MonoBehaviour
 {
-
     private Rigidbody rigidBody;
 
     void Awake()
@@ -16,5 +13,4 @@ public class PlayerBooster : MonoBehaviour
     { 
         rigidBody.AddForce(0, upForce * Time.deltaTime, 0);
     }
-
 }

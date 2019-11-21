@@ -2,12 +2,10 @@
 
 public class RotateRight: MonoBehaviour
 {
+    public float speed = 25;
 
-    public float speed = 25f;
-
-    void Update()
+    private void Update()
     {
         transform.Rotate(Vector3.right * speed * Time.deltaTime);
     }
-
 }

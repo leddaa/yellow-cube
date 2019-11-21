@@ -1,6 +1,5 @@
 ﻿public class Tags
 {
-
     public static string AUDIO_MANAGER = "AudioManager";
     public static string GAME_MANAGER = "Manager";
     public static string DATA_STORE = "DataStore";
@@ -9,7 +8,6 @@
     public static string LEVEL_DATA = "LevelData";
     public static string PLAYER_MANAGER = "PlayerManager";
     public static string SERVER_MANAGER = "ServerManager";
-
 
     // UI
     public static string LEVEL_COMPLETE_TITLE = "LevelCompleteTitle";
@@ -34,6 +32,7 @@
     public static string BUY_BUTTON_4 = "BuyButton4";
     public static string BUY_BUTTON_YC_1 = "BuyButtonYC1";
 
+    // Screens
     public static string CANVAS_LOGIN = "LoginScreen";
     public static string CANVAS_MAIN_MENU = "MainMenuScreen";
     public static string CANVAS_OPTIONS = "OptionsScreen";
@@ -62,8 +61,4 @@
     public static string PLAYER_PARTICLESYSTEM = "PlayerParticleSystem";
     public static string PLAYER_KILL = "PlayerKill";
     public static string PLAYER_COIN = "Coin";
-
-
-
 }
-

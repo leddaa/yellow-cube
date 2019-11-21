@@ -2,7 +2,6 @@
 
 public class CompleteTrigger : MonoBehaviour
 {
-
     public CompleteManager completeManager;
 
     private void Awake()
@@ -14,5 +13,4 @@ public class CompleteTrigger : MonoBehaviour
     {
         completeManager.CompleteMap();
     }
-
 }

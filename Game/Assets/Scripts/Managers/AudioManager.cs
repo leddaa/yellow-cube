@@ -5,18 +5,15 @@ using UnityEngine.Audio;
 [Serializable]
 public class Sound
 {
-
     public AudioClip clip;
     public string name;
 
     [HideInInspector]
     public AudioSource source;
-
 }
 
 public class AudioManager : MonoBehaviour
 {
-
     public AudioMixerGroup musicAudioMixerGroup;
     public AudioMixerGroup sfxAudioMixerGroup;
 
@@ -98,6 +95,5 @@ public class AudioManager : MonoBehaviour
     {
         musicAudioMixerGroup.audioMixer.SetFloat("SFXVolume", Mathf.Log(level) * 20);
     }
-
 }
  

@@ -1,11 +1,10 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using TMPro;
 
 public class LevelCompleteMenu : MonoBehaviour
 {
-
     private static readonly string HIGH_SCORE_KEY_PREFIX = "highscore_";
 
     private void Awake()
@@ -61,5 +60,4 @@ public class LevelCompleteMenu : MonoBehaviour
             GameObject.FindGameObjectWithTag(Tags.SERVER_MANAGER).GetComponent<ServerManager>().Publish(myFireObject);
         }
     }
-
 }

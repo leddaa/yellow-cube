@@ -2,12 +2,10 @@
 
 public class RotateDown : MonoBehaviour
 {
+    public float speed = 75;
 
-    public float speed = 75f;
-
-    void Update()
+    private void Update()
     {
         transform.Rotate(Vector3.down * speed * Time.deltaTime);
     }
-
 }

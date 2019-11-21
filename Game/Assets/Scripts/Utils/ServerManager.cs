@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class MyClass
 {
-
     public string usr;
     public int scr;
     public string lvl;
@@ -120,5 +119,4 @@ public class ServerManager : MonoBehaviour
             dataStore.SaveLeaderboards(dataStoreObject);
         }
     }
-
 }

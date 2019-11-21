@@ -4,30 +4,29 @@ using UnityEngine.UI;
 
 public class OptionsMenu : MonoBehaviour
 {
-
-    public Slider musicSlider;
-    public Slider sfxSlider;
+    public Slider MusicSlider { get; set; }
+    public Slider SfxSlider { get; set; }
 
     private void Start()
     {
-        musicSlider.SetValueWithoutNotify(PlayerPrefs.GetFloat(PrefKeys.MUSIC_VOLUME_LEVEL, 0.5f));
-        sfxSlider.SetValueWithoutNotify(PlayerPrefs.GetFloat(PrefKeys.SFX_VOLUME_LEVEL, 0.5f));
+        MusicSlider.SetValueWithoutNotify(PlayerPrefs.GetFloat(PrefKeys.MUSIC_VOLUME_LEVEL, 0.5f));
+        SfxSlider.SetValueWithoutNotify(PlayerPrefs.GetFloat(PrefKeys.SFX_VOLUME_LEVEL, 0.5f));
     }
 
     public void OnMusicSliderValueChanged()
     {
-        GameObject.FindGameObjectWithTag(Tags.AUDIO_MANAGER).GetComponent<AudioManager>().SetMusicVolume(musicSlider.value);
+        GameObject.FindGameObjectWithTag(Tags.AUDIO_MANAGER).GetComponent<AudioManager>().SetMusicVolume(MusicSlider.value);
     }
 
     public void OnSFXSliderValueChanged()
     {
-        Debug.Log(sfxSlider.value);
+        Debug.Log(SfxSlider.value);
     }
 
     public void Apply()
     {
-        PlayerPrefs.SetFloat(PrefKeys.MUSIC_VOLUME_LEVEL, musicSlider.value);
-        PlayerPrefs.SetFloat(PrefKeys.SFX_VOLUME_LEVEL, sfxSlider.value);
+        PlayerPrefs.SetFloat(PrefKeys.MUSIC_VOLUME_LEVEL, MusicSlider.value);
+        PlayerPrefs.SetFloat(PrefKeys.SFX_VOLUME_LEVEL, SfxSlider.value);
     }
 
     public void MainMenu()
@@ -39,5 +38,4 @@ public class OptionsMenu : MonoBehaviour
 
         SceneManager.LoadScene(Scenes.UI_MENU);
     }
-
 }

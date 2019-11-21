@@ -1,11 +1,13 @@
 ﻿using UnityEngine;
 
+// TODO: enum for screens
+
 public class MenuManager : MonoBehaviour
 {
-
     public int menuID;
 
     public GameObject[] menuPanels;
+
     private GameObject loginScreen;
     private GameObject mainMenuScreen;
     private GameObject optionsScreen;
@@ -14,7 +16,7 @@ public class MenuManager : MonoBehaviour
     private GameObject completeScreen;
 
     // Use this for initialization
-    void Start()
+    private void Start()
     {
         loginScreen = GameObject.FindGameObjectWithTag(Tags.CANVAS_LOGIN); // 0
         mainMenuScreen = GameObject.FindGameObjectWithTag(Tags.CANVAS_MAIN_MENU); // 1
@@ -23,63 +25,44 @@ public class MenuManager : MonoBehaviour
         levelsScreen = GameObject.FindGameObjectWithTag(Tags.CANVAS_LEVELS); // 4
         completeScreen = GameObject.FindGameObjectWithTag(Tags.CANVAS_LEVEL_COMPLETE); // 5
         
-
         if (PlayerPrefs.GetString(PrefKeys.USERNAME) != "")
         {
             menuID = 0;
-        } else
+        }
+        else
         {
             menuID = 0;
         }
-        
 
-        //        int playerNum = PlayerInfo.playerID;
-        //        Debug.Log (playerNum);
-        switchToMenu(menuID);
-
+        SwitchToMenu(menuID);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SwitchToMenu(int menuID)
     {
-
-    }
-
-    public void switchToMenu(int menuID)
-    {
-
         foreach (GameObject panel in menuPanels)
         {
-            //            panel.gameObject.renderer.enabled=false;
             panel.gameObject.SetActive(false);
-            Debug.Log(panel.name + "SetActive = False");
         }
 
         switch (menuID)
         {
             case 0:
                 loginScreen.gameObject.SetActive(true);
-                Debug.Log("Case 0");
                 break;
             case 1:
                 mainMenuScreen.gameObject.SetActive(true);
-                Debug.Log("Case 1");
                 break;
             case 2:
                 optionsScreen.gameObject.SetActive(true);
-                Debug.Log("Case 2");
                 break;
             case 3:
                 shopScreen.gameObject.SetActive(true);
-                Debug.Log("Case 3");
                 break;
             case 4:
                 levelsScreen.gameObject.SetActive(true);
-                Debug.Log("Case 4");
                 break;
             case 5:
                 completeScreen.gameObject.SetActive(true);
-                Debug.Log("Case 5");
                 break;
         }
     }

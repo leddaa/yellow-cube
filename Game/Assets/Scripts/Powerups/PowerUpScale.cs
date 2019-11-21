@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class PowerUpScale : MonoBehaviour
 {
-
     public GameObject pickupEffect;
     public float multiplier = 1.5f;
     public float duration = 5f;
@@ -27,13 +26,12 @@ public class PowerUpScale : MonoBehaviour
         GetComponent<MeshRenderer>().enabled = false;
         GetComponent<BoxCollider>().enabled = false;
 
-
         // Pause
         yield return new WaitForSeconds(duration);
+
         // Reverse effect
         player.transform.localScale /= multiplier;
 
         Destroy(gameObject);
     }
-
 }

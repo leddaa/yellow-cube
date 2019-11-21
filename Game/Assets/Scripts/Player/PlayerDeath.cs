@@ -3,14 +3,12 @@ using UnityEngine.SceneManagement;
 
 public class PlayerDeath : MonoBehaviour
 {
-
     public float cubeSize = 0.2f;
     public int cubesInRow = 5;
     public int explosionForce;
     public int explosionRadius;
     public int explosionUpward;
     public GameObject deathEffect;
-
     private Material material;
     
     float cubesPivotDistance;
@@ -32,12 +30,11 @@ public class PlayerDeath : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == Tags.PLAYER_KILL)
+        if (other.gameObject.tag == Tags.PLAYER_KILL)
         {
             Explode();
             Invoke("RestartLevel", 1.7f);
         }
-        
     }
 
     public void Explode()
@@ -93,9 +90,7 @@ public class PlayerDeath : MonoBehaviour
         piece.transform.localScale = new Vector3(cubeSize, cubeSize, cubeSize);
 
         // add rigidbody and set mass
-
         piece.AddComponent<Rigidbody>();
         piece.GetComponent<Rigidbody>().mass = cubeSize;
     }
-
 }

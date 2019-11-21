@@ -1,4 +1,4 @@
-﻿public class PrefKeys
+﻿public static class PrefKeys
 {
     public static readonly string USERNAME = "username";
 
@@ -62,9 +62,7 @@
 
 }
 
-public class DatastoreKeys
+public static class DatastoreKeys
 {
-    // Datastore keys
-
     public static string TOTAL_YC_COINS = "TotalYcCoins";
 }

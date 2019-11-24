@@ -4,7 +4,7 @@
 
 public class MenuManager : MonoBehaviour
 {
-    public int menuID;
+    private int menuID;
 
     public GameObject[] menuPanels;
 
@@ -27,11 +27,11 @@ public class MenuManager : MonoBehaviour
         
         if (PlayerPrefs.GetString(PrefKeys.USERNAME) != "")
         {
-            menuID = 0;
+            menuID = 0; 
         }
         else
         {
-            menuID = 0;
+            menuID = 1;
         }
 
         SwitchToMenu(menuID);
@@ -39,6 +39,8 @@ public class MenuManager : MonoBehaviour
 
     public void SwitchToMenu(int menuID)
     {
+        Debug.Log($"SwitchToMenu({ menuID })");
+
         foreach (GameObject panel in menuPanels)
         {
             panel.gameObject.SetActive(false);

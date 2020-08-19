@@ -10,6 +10,7 @@ public class PlayerDeath : MonoBehaviour
     public int explosionUpward;
     public GameObject deathEffect;
     private Material material;
+    private Camera camera;
     
     float cubesPivotDistance;
     Vector3 cubesPivot;
@@ -18,6 +19,7 @@ public class PlayerDeath : MonoBehaviour
     {
         int index = PlayerPrefs.GetInt(PrefKeys.CURRENT_CHARACTER);
         material = GameObject.FindGameObjectWithTag(Tags.PLAYER_MANAGER).GetComponent<PlayerManager>().characters[index].deathMaterial;
+        camera = (Camera)FindObjectOfType(typeof(Camera));
     }
 
     private void Start()
@@ -35,6 +37,8 @@ public class PlayerDeath : MonoBehaviour
             Explode();
             Invoke("RestartLevel", 1.7f);
         }
+
+        camera.GetComponent<CameraEffects>().Shake();
     }
 
     public void Explode()

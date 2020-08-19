@@ -17,12 +17,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Other/SkinsMenu.unity
     guid: f74332660ae74cf4bb4012a9b07068ec
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Levels/Tutorial Level.unity
     guid: 69185926267bf784093592604024df2b
@@ -38,15 +32,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/Level 4.unity
     guid: 6e84c6684f2fea94a9eb874662f69eef
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level 5.unity
+    guid: 904b5d72b791ae0438f9e6c8d5c29a8e
   - enabled: 1
     path: Assets/Scenes/Levels/Level 6.unity
     guid: 4f9b591a9daa8374992d19502121bc8d
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level 7.unity
+    guid: 4d36ff4c22e5ca141b852f50e91c7b4f
   - enabled: 1
     path: Assets/Scenes/Levels/Level 8.unity
     guid: 78ea77acde69a2544b756eb42262b0a2
@@ -59,13 +53,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Sandbox/Vegard/Level 1 SandBox.unity
     guid: e26406758efcae6438d87c288335eca6
-  - enabled: 1
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 1
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 1
-    path: 
-    guid: 00000000000000000000000000000000
   m_configObjects: {}

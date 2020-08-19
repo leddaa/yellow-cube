@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Linq;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PlayerDeath : MonoBehaviour
@@ -34,11 +35,11 @@ public class PlayerDeath : MonoBehaviour
     {
         if (other.gameObject.tag == Tags.PLAYER_KILL)
         {
+            camera.GetComponent<CameraEffects>().Shake();
             Explode();
             Invoke("RestartLevel", 1.7f);
         }
 
-        camera.GetComponent<CameraEffects>().Shake();
     }
 
     public void Explode()
@@ -65,13 +66,19 @@ public class PlayerDeath : MonoBehaviour
         Vector3 explosionPos = transform.position;
         // Get colliders in that position and radius
         Collider[] colliders = Physics.OverlapSphere(explosionPos, explosionRadius);
+        Debug.Log(colliders.Length);
+        var random = new System.Random();
         // Add explosion force to all colliders in that overlap sphere
         foreach (Collider hit in colliders)
         {
             Rigidbody rb = hit.GetComponent<Rigidbody>();
             if (rb != null)
             {
-                rb.AddExplosionForce(explosionForce, transform.position, explosionRadius, explosionUpward);
+                
+                var r = random.Next(20, 200);
+                Debug.Log(r);
+                
+                rb.AddExplosionForce(r, transform.position, explosionRadius, explosionUpward);
             }
         }
     }

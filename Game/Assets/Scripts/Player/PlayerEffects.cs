@@ -2,7 +2,7 @@
 
 public class PlayerEffects : MonoBehaviour
 {
-    private readonly float TRAIL_EFFECT_TRIGGER_SPEED = 32;
+    private readonly float TRAIL_EFFECT_TRIGGER_SPEED = 18f;
     private Rigidbody rigidBody;
 
     void Start()

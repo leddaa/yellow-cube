@@ -4,7 +4,8 @@ public class PlayerMovement : MonoBehaviour
 {
     private readonly float FORWARD_FORCE = 1000f;
     private readonly float SIDE_FORCE = 1000f;
-    private readonly float MAX_VELOCITY = 35f;
+    // private readonly float MAX_VELOCITY = 20f;
+    private readonly float MAX_VELOCITY = 20f;
 
     private Rigidbody rigidBody;
 

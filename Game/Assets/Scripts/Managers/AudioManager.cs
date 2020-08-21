@@ -17,29 +17,30 @@ public class AudioManager : MonoBehaviour
     public AudioMixerGroup musicAudioMixerGroup;
     public AudioMixerGroup sfxAudioMixerGroup;
 
-    private static AudioManager Instance = null;
-
     [HideInInspector]
     public AudioSource musicSource;
     public AudioClip musicClip;
     public Sound[] sounds;
+    public bool musicOnByDefault;
     private bool musicisplaying;
+
+    private static AudioManager _instance = null;
 
     private void Awake()
     {
         // If there is not already an instance of SoundManager, set it to this.
-        if (Instance == null)
+        if (_instance == null)
         {
-            Instance = this;
+            _instance = this;
         }
+
         // If an instance already exists, destroy whatever this object is to enforce the singleton.
-        else if (Instance != this)
+        else if (_instance != this)
         {
             Destroy(gameObject);
         }
 
-        // Set so it's true by default when game loads.
-        musicisplaying = true;
+        musicisplaying = false;
 
         // Set AudioManager to DontDestroyOnLoad so that it won't be destroyed when reloading the scene.
         DontDestroyOnLoad(gameObject);
@@ -49,7 +50,9 @@ public class AudioManager : MonoBehaviour
         musicSource.clip = musicClip;
         musicSource.loop = true;
         musicSource.outputAudioMixerGroup = musicAudioMixerGroup;
-        musicSource.Play();
+
+        if (musicOnByDefault)
+            musicSource.Play();
 
         // Init sounds
         foreach (Sound s in sounds)

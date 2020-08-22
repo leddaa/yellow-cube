@@ -1,11 +1,8 @@
 ﻿using UnityEngine;
 
-public class ResetPosition_TutorialCave : MonoBehaviour
+public class ResetPositionTutorialCave : MonoBehaviour
 {
-
-
-    public Vector3 PlayerPosition;
-
+    public Vector3 playerPosition;
 
     private void OnTriggerStay(Collider player)
     {
@@ -17,11 +14,9 @@ public class ResetPosition_TutorialCave : MonoBehaviour
             if (playerSize.x != 0.5)
             {
                 Debug.Log("Reset player position");
-                player.transform.localPosition = PlayerPosition;
+                player.transform.localPosition = playerPosition;
                 
             }
         }
     }
-
-  
 }

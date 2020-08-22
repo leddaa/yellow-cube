@@ -23,26 +23,23 @@ public class GoalManager : MonoBehaviour
 
     public void EnterGoal()
     {
-        Debug.Log($"Setting previous level to: {SceneManager.GetActiveScene().name}");
-        PlayerPrefs.SetString(PrefKeys.PREVIOUS_LEVEL, SceneManager.GetActiveScene().name);
+        int timeSpent = (int) (Time.timeSinceLevelLoad * SECONDS_TO_MICROSECONDS);
+        Store.SetInt(StoreKeys.TimeSpent, timeSpent);
 
-        #region todo
-        //int timeSpent = (int)(GameObject.FindGameObjectWithTag(Tags.TIME_TRACKER).GetComponent<TimeTracker>().timeSpent * SECONDS_TO_MICROSECONDS);
-        //PlayerPrefs.SetInt(PrefKeys.COMPLETE_TIME, timeSpent);
-        //GameObject.FindGameObjectWithTag(Tags.TIME_TRACKER).GetComponent<TimeTracker>().mapCompleted = true;
-
-        //Debug.Log("timespent: " + timeSpent);
-
-        //PlayerPrefs.SetInt(PrefKeys.TOTAL_FAIL_COUNTER, PlayerPrefs.GetInt(PrefKeys.FAIL_COUNTER));
-        //PlayerPrefs.SetInt(PrefKeys.FAIL_COUNTER, 0);
-        #endregion
+        var currentHighscore = Store.GetHighcore(SceneManager.GetActiveScene().name);
+        if (currentHighscore == null || timeSpent < currentHighscore)
+        {
+            Store.SetHighscore(SceneManager.GetActiveScene().name, timeSpent);
+            Store.SetBool(StoreKeys.IsNewHighscore, true);
+        }
+        else
+        {
+            Store.SetBool(StoreKeys.IsNewHighscore, false);
+        }
 
         audioManager.Play(Audio.COMPLETE_SOUND);
 
         ShowCompletionPanel();
-
-        // Get time for level failed
-        PlayerPrefs.SetInt(PrefKeys.STAR_TIME_0, 0);
 
         // Unlock next level
         if (PlayerPrefs.GetString(PrefKeys.PREVIOUS_LEVEL) == Scenes.LEVEL_1)

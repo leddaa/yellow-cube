@@ -4616,10 +4616,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 546398894}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 908c98fd2b217a046a51a393443e3367, type: 3}
+  m_Script: {fileID: 11500000, guid: 2b4c215a2944d0949ac7aa51bf6f9b0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerPosition: {x: 60.1, y: 49.13, z: 51.75}
 --- !u!65 &546398897
 BoxCollider:
   m_ObjectHideFlags: 0

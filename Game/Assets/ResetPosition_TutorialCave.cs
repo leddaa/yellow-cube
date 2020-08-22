@@ -1,8 +1,4 @@
-﻿using Org.BouncyCastle.Security;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine;
 
 public class ResetPosition_TutorialCave : MonoBehaviour
 {

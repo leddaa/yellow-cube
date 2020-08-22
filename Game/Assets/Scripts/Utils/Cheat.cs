@@ -4,8 +4,8 @@ using UnityEngine.UI;
 public class Cheat : MonoBehaviour
 {
     public Material MaterialCheater { get; set; }
-    public float UpwardForce { get; set; } = 1000;
-    public Rigidbody Body { get; set; }
+    public float UpwardForce;
+    public Rigidbody Body;
 
     private TimeTracker timeTracker;
 
@@ -14,15 +14,31 @@ public class Cheat : MonoBehaviour
         timeTracker = GameObject.FindGameObjectWithTag(Tags.TIME_TRACKER).GetComponent<TimeTracker>();
     }
 
+    private void Rotate()
+    {
+        var toggle = this.GetComponent<RandomRotate>().enabled;
+
+        if (toggle == true)
+        {
+            this.GetComponent<RandomRotate>().enabled = false;
+        }
+        else
+        {
+            this.GetComponent<RandomRotate>().enabled = true;
+        }
+    }
+
     private void Update()
     {
         if (Input.GetKey("f"))
         {
             Body.AddForce(0, UpwardForce * Time.deltaTime, 0 );
-            timeTracker.timeSpent += 300 * Time.deltaTime;
-            GameObject.FindGameObjectWithTag(Tags.CHEAT_TEXT).GetComponent<Text>().text = "Cheats Activated!";
-            Renderer rend = GetComponent<Renderer>();
-            rend.material = MaterialCheater;
         }
+
+        if (Input.GetKeyDown("g"))
+        {
+            Rotate();
+        }
+
     }
 }

@@ -28,13 +28,11 @@ public class AudioManager : MonoBehaviour
 
     private void Awake()
     {
-        // If there is not already an instance of SoundManager, set it to this.
         if (_instance == null)
         {
             _instance = this;
         }
 
-        // If an instance already exists, destroy whatever this object is to enforce the singleton.
         else if (_instance != this)
         {
             Destroy(gameObject);

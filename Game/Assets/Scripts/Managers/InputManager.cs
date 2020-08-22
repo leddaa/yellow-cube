@@ -56,12 +56,6 @@ public class InputManager : MonoBehaviour
             }
         }
 
-        // Publish and receive data
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            GameObject.FindGameObjectWithTag(Tags.SERVER_MANAGER).GetComponent<ServerManager>().Fire(new MyClass("Input_fetch", 100000000, "Level 1"));
-        }
-
         // Reset player prefs
         if (Input.GetKeyDown(KeyCode.M) && Input.GetKey(KeyCode.LeftControl))
         {

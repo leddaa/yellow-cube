@@ -2,15 +2,15 @@
 
 public class CompleteTrigger : MonoBehaviour
 {
-    public CompleteManager completeManager;
+    public GoalManager completeManager;
 
     private void Awake()
     {
-        completeManager = GameObject.FindGameObjectWithTag(Tags.GAME_MANAGER).GetComponent<CompleteManager>();
+        completeManager = GameObject.FindGameObjectWithTag(Tags.GAME_MANAGER).GetComponent<GoalManager>();
     }
 
     private void OnTriggerEnter()
     {
-        completeManager.CompleteMap();
+        completeManager.EnterGoal();
     }
 }

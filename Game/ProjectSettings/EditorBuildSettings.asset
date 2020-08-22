@@ -9,15 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/UIMenu.unity
     guid: e1111bed453e87e4cbaf486e68fddcac
   - enabled: 1
-    path: Assets/Scenes/Other/MainMenu.unity
-    guid: c47f15558098bcd4b992ffc94d6681ff
-  - enabled: 1
-    path: Assets/Scenes/Other/LevelCompleteMenu.unity
-    guid: d24ab1c310848384d877afcac51ba215
-  - enabled: 1
-    path: Assets/Scenes/Other/ShopMenu.unity
-    guid: 1681910daf7073e4c99208f21f679910
-  - enabled: 1
     path: Assets/Scenes/Other/SkinsMenu.unity
     guid: f74332660ae74cf4bb4012a9b07068ec
   - enabled: 1

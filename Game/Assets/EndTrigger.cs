@@ -5,11 +5,11 @@ public class EndTrigger : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public CompleteManager completeManager;
+    public GoalManager completeManager;
     
     void OnTriggerEnter()
     {
-        completeManager.CompleteMap();
+        completeManager.EnterGoal();
         
     }
 

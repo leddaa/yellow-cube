@@ -5,19 +5,6 @@ using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 
 [Serializable]
-public class DataStoreObject
-{
-    public Dictionary<string, Level> levels = new Dictionary<string, Level>();
-}
-
-[Serializable]
-public class Level
-{
-    public string[] usernames;
-    public int[] scores;
-}
-
-[Serializable]
 public class DataStoreLocalObjects
 {
     public Dictionary<string, object> localObjects = new Dictionary<string, object>();
@@ -25,44 +12,23 @@ public class DataStoreLocalObjects
 
 public class DataStore : MonoBehaviour
 {
-    private static DataStore Instance = null;
-    private static readonly string LEADERBOARDS_FILE_NAME = "leaderboards.yc";
+    private static DataStore _instance = null;
     private static readonly string OBJECTS_FILE_NAME = "objects.yc";
-
-    private static DataStoreObject dataStoreObject;
 
     private static DataStoreLocalObjects dataStoreLocalObjects;
 
     private void Awake()
     {
-        if (Instance == null)
+        if (_instance == null)
         {
-            Instance = this;
+            _instance = this;
         }
-        else if (Instance != this)
+        else if (_instance != this)
         {
             Destroy(gameObject);
         }
 
-        dataStoreObject = LoadLeaderboards();
-
         dataStoreLocalObjects = LoadLocalObjects();
-    }
-
-    public Level GetLevel(string key)
-    {
-        if (!dataStoreObject.levels.ContainsKey(key)) // Key doesn't exist
-        {
-            Level level = new Level();
-            level.usernames = new string[] { "local_dummy", "local_dummy", "local_dummy", "local_dummy", "local_dummy" };
-            level.scores = new int[] { 100000000, 100000000, 100000000, 100000000, 100000000 };
-
-            dataStoreObject.levels.Add(key, level);
-        }
-
-        PrintLevel(key);
-
-        return dataStoreObject.levels[key];
     }
 
     public void SetBool(string key, bool value)
@@ -121,18 +87,6 @@ public class DataStore : MonoBehaviour
 
         return (int)dataStoreLocalObjects.localObjects[key];
     }
-    public void SaveLeaderboards(DataStoreObject data)
-    {
-        BinaryFormatter formatter = new BinaryFormatter();
-
-        FileStream file = GetFile(LEADERBOARDS_FILE_NAME);
-
-        formatter.Serialize(file, data);
-
-        file.Close();
-
-        dataStoreObject = data;
-    }
 
     public void SaveLocalObjects(DataStoreLocalObjects data)
     {
@@ -145,25 +99,6 @@ public class DataStore : MonoBehaviour
         file.Close();
 
         dataStoreLocalObjects = data;
-    }
-
-    private DataStoreObject LoadLeaderboards()
-    {
-        if (File.Exists(Application.persistentDataPath + LEADERBOARDS_FILE_NAME))
-        {
-            BinaryFormatter formatter = new BinaryFormatter();
-            FileStream file = File.Open(Application.persistentDataPath + LEADERBOARDS_FILE_NAME, FileMode.Open);
-
-            DataStoreObject data = (DataStoreObject)formatter.Deserialize(file);
-            file.Close();
-
-            return data;
-        }
-        else
-        {
-            Debug.Log("Error: DataStoreObject is null");
-            return null;
-        }
     }
 
     private DataStoreLocalObjects LoadLocalObjects()
@@ -204,31 +139,5 @@ public class DataStore : MonoBehaviour
         }
 
         return file;
-    }
-
-    public void PrintLevels()
-    {
-        foreach (string key in dataStoreObject.levels.Keys)
-        {
-            PrintLevel(key);
-        }
-    }
-
-    private void PrintLevel(string key)
-    {
-        string usernames = "";
-        string scores = "";
-
-        foreach (string usr in dataStoreObject.levels[key].usernames)
-        {
-            usernames += " " + usr;
-        }
-        foreach (int scr in dataStoreObject.levels[key].scores)
-        {
-            scores += " " + scr;
-        }
-
-        Debug.Log("Level Usernames: " + usernames);
-        Debug.Log("Level Scores: " + scores);
     }
 }

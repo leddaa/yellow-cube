@@ -27,15 +27,15 @@ public class RewardManager : MonoBehaviour
 
         int caseSwitch = 1;
 
-        if (threeStarsTime * CompleteManager.SECONDS_TO_MICROSECONDS> completeTime)
+        if (threeStarsTime * GoalManager.SECONDS_TO_MICROSECONDS> completeTime)
         {
             caseSwitch = 3;
         } else if
-            (twoStarsTime * CompleteManager.SECONDS_TO_MICROSECONDS > completeTime)
+            (twoStarsTime * GoalManager.SECONDS_TO_MICROSECONDS > completeTime)
         {
             caseSwitch = 2;
         } else if
-            (oneStarsTime * CompleteManager.SECONDS_TO_MICROSECONDS > completeTime)
+            (oneStarsTime * GoalManager.SECONDS_TO_MICROSECONDS > completeTime)
         {
             caseSwitch = 1;
         }

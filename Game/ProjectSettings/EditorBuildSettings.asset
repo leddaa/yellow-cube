@@ -42,9 +42,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/Level 9.unity
     guid: 4101b1d387d09324a840fba4d27ccd8a
   - enabled: 1
-    path: Assets/Scenes/Levels/Level 10.unity
+    path: Assets/Scenes/Levels/Level 10 old.unity
     guid: 02080d939868220468c228473f68622a
   - enabled: 1
-    path: Assets/Sandbox/Vegard/Level 1 SandBox.unity
+    path: Assets/Sandbox/Level 1 SandBox.unity
     guid: e26406758efcae6438d87c288335eca6
   m_configObjects: {}

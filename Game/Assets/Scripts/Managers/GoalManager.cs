@@ -23,9 +23,7 @@ public class GoalManager : MonoBehaviour
 
     public void EnterGoal()
     {
-        GameObject.FindGameObjectWithTag(Tags.TIME_TRACKER).GetComponent<TimeTracker>().mapCompleted = true;
-
-        int timeSpent = (int)(GameObject.FindGameObjectWithTag(Tags.TIME_TRACKER).GetComponent<TimeTracker>().timeSpent * SECONDS_TO_MICROSECONDS);
+        int timeSpent = (int) (Time.timeSinceLevelLoad * SECONDS_TO_MICROSECONDS);
         Store.SetInt(StoreKeys.TimeSpent, timeSpent);
 
         var currentHighscore = Store.GetHighcore(SceneManager.GetActiveScene().name);

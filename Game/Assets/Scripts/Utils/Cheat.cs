@@ -7,13 +7,6 @@ public class Cheat : MonoBehaviour
     public float UpwardForce;
     public Rigidbody Body;
 
-    private TimeTracker timeTracker;
-
-    private void Awake()
-    {
-        timeTracker = GameObject.FindGameObjectWithTag(Tags.TIME_TRACKER).GetComponent<TimeTracker>();
-    }
-
     private void Rotate()
     {
         var toggle = this.GetComponent<RandomRotate>().enabled;

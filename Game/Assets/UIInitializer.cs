@@ -10,5 +10,7 @@ public class UIInitializer : MonoBehaviour
         var y = Screen.height - 40;
         GameObject go = Instantiate(coinsPanel, new Vector3(x, y, 0), Quaternion.identity);
         go.transform.SetParent(GameObject.Find("Canvas").transform);
+
+        Store.SetBool(StoreKeys.IsPlayerInGoal, false);
     }
 }

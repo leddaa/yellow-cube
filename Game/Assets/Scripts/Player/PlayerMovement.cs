@@ -16,6 +16,12 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (Store.GetBool(StoreKeys.IsPlayerInGoal))
+        {
+            rigidBody.velocity = new Vector3(0, 0, 0);
+            return;
+        }
+
         if (Input.GetKey("w") || Input.GetKey("up"))
         {
             rigidBody.AddForce(0, 0, FORWARD_FORCE * Time.deltaTime);

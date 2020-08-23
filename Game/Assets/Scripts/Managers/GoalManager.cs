@@ -39,6 +39,8 @@ public class GoalManager : MonoBehaviour
 
         audioManager.Play(Audio.COMPLETE_SOUND);
 
+        Store.SetBool(StoreKeys.IsPlayerInGoal, true);
+
         ShowCompletionPanel();
 
         // Unlock next level

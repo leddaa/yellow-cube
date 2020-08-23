@@ -56,4 +56,4 @@ MonoBehaviour:
   - clip: {fileID: 8300000, guid: 8c322d57e51f0e447b466214d03d99ca, type: 3}
     name: PowerUp_Sound
     source: {fileID: 0}
-  musicOnByDefault: 1
+  musicOnByDefault: 0

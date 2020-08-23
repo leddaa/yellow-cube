@@ -2,4 +2,5 @@
 {
     public const string TimeSpent = "timeSpent";
     public const string IsNewHighscore = "isNewHighscore";
+    public const string Coins = "coins";
 }

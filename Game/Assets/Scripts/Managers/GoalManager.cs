@@ -15,8 +15,8 @@ public class GoalManager : MonoBehaviour
 
     public void ShowCompletionPanel()
     {
-        var x = Screen.width - (340 / 2);
-        var y = Screen.height - (380 / 2);
+        var x = Screen.width / 2;
+        var y = Screen.height / 2;
         GameObject go = Instantiate(completionPanel, new Vector3(x, y, 0), Quaternion.identity);
         go.transform.SetParent(GameObject.Find("Canvas").transform);
     }

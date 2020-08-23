@@ -67,6 +67,19 @@ public static class Store
         return (int)storeObject.dictionary[key];
     }
 
+    public static int GetIntOrDefault(string key)
+    {
+        EnsureLoaded();
+
+        if (storeObject == null)
+            throw new UnityException($"Store object not initialized when setting key {key}.");
+
+        if (!storeObject.dictionary.ContainsKey(key))
+            return 0;
+
+        return (int)storeObject.dictionary[key];
+    }
+
     public static void SetHighscore(string mapName, int value)
     {
         var key = $"highscore_{mapName}";
